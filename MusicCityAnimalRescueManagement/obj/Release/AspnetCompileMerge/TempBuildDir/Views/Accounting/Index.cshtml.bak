@@ -1,0 +1,126 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.AccountEntries.ExpenseEntry>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Expense", "IntakeExpense")
+</p>
+@*<table class="table">*@
+<table class="tables" id="ExpenseEntries">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EffectiveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrAccountType.AccountTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuppliesDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuppliesComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetBillsDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetBillsComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicineDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicineComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurancePremiumsDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurancePremiumsComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FosterReimbursementDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FosterReimbursementComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiscellaneousExpenseDecimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiscellaneousExpenseComment)
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EffectiveDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SuppliesDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SuppliesComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VetBillsDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VetBillsComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicineDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicineComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsurancePremiumsDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsurancePremiumsComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FosterReimbursementDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FosterReimbursementComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiscellaneousExpenseDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiscellaneousExpenseComment)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditExpense", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "DetailsExpense", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteExpense", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#ExpenseEntries").DataTable();
+        });
+
+    </script>
+}
