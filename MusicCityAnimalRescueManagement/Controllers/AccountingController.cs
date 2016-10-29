@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.AccountEntries;
+using MusicCityAnimalRescueManagement.ViewModels;
+using System.Dynamic;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
@@ -24,13 +26,13 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View();
         }
 
+
         public ActionResult Entries()
         {
-            //var expenseEntries = db.ExpenseEntries.Include(e => e.StrAccountType);
-            //return View(expenseEntries.ToList());
-            var model = db.AccountingViewModels.Include(e => e.StrAccountType);
-            //return View(e.ToList());
-            return View();
+            dynamic Entries = new ExpandoObject();
+            Entries.ExpenseEntries = GetExpenseEntries();
+            Entries.IncomeEntries = GetIncomeEntries();
+            return View(Entries);
         }
 
         public ActionResult ListExpenses()
@@ -252,5 +254,16 @@ namespace MusicCityAnimalRescueManagement.Controllers
         }
 
 
+        public List<ExpenseEntry> GetExpenseEntries()
+        {
+            List<ExpenseEntry> ExpenseEntry = new List<ExpenseEntry>();
+            ExpenseEntry = db.ExpenseEntries.Include(e => e.StrAccountType).ToList();
+            return ExpenseEntry;
+        }
+
+        public List<IncomeEntry> GetIncomeEntries()
+        {
+            return db.IncomeEntries.ToList();
+        }
     }
 }

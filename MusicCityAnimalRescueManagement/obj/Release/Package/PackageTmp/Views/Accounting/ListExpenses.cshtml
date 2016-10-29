@@ -66,6 +66,12 @@
             @*<th></th>*@
         </tr>
     </thead>
+    <tfoot>
+        <tr>
+            <th colspan="9" style="text-align:right">Total:</th>
+            <th></th>
+        </tr>
+    </tfoot>
     <tbody>
         @foreach (var item in Model)
         {
@@ -123,61 +129,74 @@
     </tbody>
 
 </table>
-@*@section scripts*@
-@*{
+
+
+@section scripts
+{
     @Scripts.Render("~/bundles/dataTables")
 
-
     <script>
+        $('#ExpenseEntries').DataTable({
+            drawCallback: function () {
+                var api = this.api();
+                $(api.table().footer()).html(
+                  api.column(4, { page: 'current' }).data().sum()
+                );
+            }
+        });
+    </script>
+}
+
+    @*<script>
         $(document).ready(function () {
             $('#ExpenseEntries').DataTable({
-                "footerCallback": function ( row, data, start, end, display ) {
-                    var api = this.api();
+                "footerCallback": function (row, data, start, end, display) {
+                    var api = this.api(), data;
+
                     // Remove the formatting to get integer data for summation
-                    var intVal = function ( i ) {
- 
+                    var intVal = function (i) {
                         return typeof i === 'string' ?
-                            i.replace(/[\$,]/g, '')*1 :
+                            i.replace(()/[\$,]/g, '') * 1 :
                             typeof i === 'number' ?
                             i : 0;
-                         
                     };
-  
+
                     // Total over all pages
- 
-                    if (api.column(COLNUMBER).data().length){
-                        var total = api
-                        .column( COLNUMBER )
-                        .data()
-                        .reduce( function (a, b) {
-                            return intVal(a) + intVal(b);
-                        } ) }
-                    else{ total = 0};
-                 
-  
-                    // Total over this page
-             
-                    if (api.column(COLNUMBER).data().length){
-                        var pageTotal = api
-                            .column( COLNUMBER, { page: 'current'} )
+                    if ( api.column( 4 ).data().length )
+                    {
+                        total = api
+                            .column(4)
                             .data()
-                            .reduce( function (a, b) {
+                            .reduce(function (a, b) {
                                 return intVal(a) + intVal(b);
-                            } ) }
-                    else{ pageTotal = 0};
-  
-                    // Update footer
-                    $( api.column(COLNUMBER).footer() ).html(
-                        '$'+pageTotal
-                    );
+                            }, 0);
+
+                        // Total over this page
+                        pageTotal = api
+                            .column(4, { page: 'current' })
+                            .data()
+                            .reduce(function (a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        // Update footer
+                        $(api.column(4).footer()).html(
+                            '$' + pageTotal + ' ( $' + total + ' total)'
+                        );
+                    }
                 }
             });
         });
+        </script>*@
+}
 
-    </script>
-}*@
 
-@section scripts
+
+
+
+
+
+@*@section scripts
 {
     @Scripts.Render("~/bundles/dataTables")
 
@@ -188,4 +207,4 @@
         });
 
     </script>
-}
+}*@

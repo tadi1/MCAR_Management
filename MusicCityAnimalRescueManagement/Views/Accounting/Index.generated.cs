@@ -47,7 +47,18 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n\r\n\r\n\r\n<h2>Accounting Home</h2>\r\n\r\n<p>\r\n    \r\n\r\n");
+WriteLiteral("\r\n\r\n\r\n\r\n\r\n<h2>Accounting Home</h2>\r\n\r\n<p>\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 14 "..\..\Views\Accounting\Index.cshtml"
+Write(Html.ActionLink("Work in Progress: Show Incomes and Expenses", "Entries"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("<br />\r\n\r\n");
 
 WriteLiteral("    ");
 

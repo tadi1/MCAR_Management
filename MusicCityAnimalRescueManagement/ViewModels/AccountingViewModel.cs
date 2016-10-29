@@ -9,8 +9,10 @@ namespace MusicCityAnimalRescueManagement.ViewModels
     public class AccountingViewModel
     {
         public int id { get; set; }
-        public IEnumerable<ExpenseEntry> ExpenseEntry { get; set; }
-        public IEnumerable<IncomeEntry> IncomeEntry { get; set; }
+        public ExpenseEntry ExpenseEntryObj { get; set; }
+        public IncomeEntry IncomeEntryObj { get; set; }
+        //public IEnumerable<ExpenseEntry> ExpenseEntry { get; set; }
+        //public IEnumerable<IncomeEntry> IncomeEntry { get; set; }
         public string StrAccountType { get; set; }
     }
 }

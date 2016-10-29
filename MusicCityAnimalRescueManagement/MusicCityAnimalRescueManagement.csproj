@@ -330,6 +330,14 @@
     <Compile Include="Migrations\201610280048276_AddingAcctTypeToVM.Designer.cs">
       <DependentUpon>201610280048276_AddingAcctTypeToVM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610290007276_settinguppartialview.cs" />
+    <Compile Include="Migrations\201610290007276_settinguppartialview.Designer.cs">
+      <DependentUpon>201610290007276_settinguppartialview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610290044110_TryingDynamic.cs" />
+    <Compile Include="Migrations\201610290044110_TryingDynamic.Designer.cs">
+      <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1100,6 +1108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610280048276_AddingAcctTypeToVM.resx">
       <DependentUpon>201610280048276_AddingAcctTypeToVM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610290007276_settinguppartialview.resx">
+      <DependentUpon>201610290007276_settinguppartialview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610290044110_TryingDynamic.resx">
+      <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.AccountEntries.IncomeEntry>
+
+@{
+    ViewBag.Title = "ListIncomes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListIncomes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StrAccountType.AccountTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumCatAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumDogAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdoptionsDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumCatAdoptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumDogAdoptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdoptionsComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationsDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationsComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiscellaneousIncomeDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiscellaneousIncomeComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

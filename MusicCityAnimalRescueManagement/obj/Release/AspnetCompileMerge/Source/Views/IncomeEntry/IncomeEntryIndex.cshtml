@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.AccountEntries.IncomeEntry>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(2){text-align: right;}
+    td:nth-child(4){text-align: right;}
+    td:nth-child(5){text-align: right;}
+    td:nth-child(6){text-align: right;}
+    td:nth-child(8){text-align: right;}
+    td:nth-child(10){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>IncomeEntry</h4>
+<p>
+    @Html.ActionLink("Create New", "IncomeEntryCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.StrAccountType.AccountTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumCatAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumDogAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveDate)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "IncomeEntryEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdoptionsDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumCatAdoptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumDogAdoptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdoptionsComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationsDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationsComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiscellaneousIncomeDecimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiscellaneousIncomeComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveDate)
+        </td>
+
+    </tr>
+}
+
+</table>
