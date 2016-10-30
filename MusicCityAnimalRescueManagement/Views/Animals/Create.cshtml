@@ -1,13 +1,13 @@
 ﻿@model MusicCityAnimalRescueManagement.Models.Animals.Animal
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Animal Intake</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -15,13 +15,19 @@
         <h4>Animal</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id)
-
         <div class="form-group">
             @Html.LabelFor(model => model.MCARId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MCARId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MCARId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalTypeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id", null, "Select animal type", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AnimalTypeID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -90,8 +96,13 @@
                 </div>
             </div>
         </div>
-
         <div class="form-group">
+            @Html.LabelFor(model => model.CurrentFosterID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FosterID", null, "Select current foster", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CurrentFosterID, "", new { @class = "text-danger" })
+            </div>
+        </div>        <div class="form-group">
             @Html.LabelFor(model => model.Adopted, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -137,7 +148,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -146,3 +157,8 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

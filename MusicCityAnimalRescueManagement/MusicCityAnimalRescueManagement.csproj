@@ -346,6 +346,18 @@
     <Compile Include="Migrations\201610300054079_AddedManyDBSets.Designer.cs">
       <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610301626123_FixingAnimalTypes.cs" />
+    <Compile Include="Migrations\201610301626123_FixingAnimalTypes.Designer.cs">
+      <DependentUpon>201610301626123_FixingAnimalTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610301633019_changingkeyinanimaltypes.cs" />
+    <Compile Include="Migrations\201610301633019_changingkeyinanimaltypes.Designer.cs">
+      <DependentUpon>201610301633019_changingkeyinanimaltypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610301643171_WorkingOnIntake.cs" />
+    <Compile Include="Migrations\201610301643171_WorkingOnIntake.Designer.cs">
+      <DependentUpon>201610301643171_WorkingOnIntake.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -827,6 +839,7 @@
     <Content Include="Views\Accounting\EditIncome.cshtml" />
     <Content Include="Views\IncomeEntries\ListIncomes.cshtml" />
     <Content Include="Views\IncomeEntries\_ListIncomes.cshtml" />
+    <Content Include="Views\Animals\Create.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1132,6 +1145,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610300054079_AddedManyDBSets.resx">
       <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610301626123_FixingAnimalTypes.resx">
+      <DependentUpon>201610301626123_FixingAnimalTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610301633019_changingkeyinanimaltypes.resx">
+      <DependentUpon>201610301633019_changingkeyinanimaltypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610301643171_WorkingOnIntake.resx">
+      <DependentUpon>201610301643171_WorkingOnIntake.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

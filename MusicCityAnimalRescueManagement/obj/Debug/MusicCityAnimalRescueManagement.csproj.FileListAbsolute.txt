@@ -230,3 +230,6 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagemen
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.TryingDynamic.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.UpdatedAnimalAddedDogVetting.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.AddedManyDBSets.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.FixingAnimalTypes.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.changingkeyinanimaltypes.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.WorkingOnIntake.resources

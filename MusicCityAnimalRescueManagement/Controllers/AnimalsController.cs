@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.Animals;
-using MusicCityAnimalRescueManagement.ViewModels;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
@@ -17,19 +16,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Animals
-        //public ActionResult Index()
-        //{
-        //    //return View(db.Animals.ToList());
-        //    var viewModel = new NewAnimalViewModel();
-
-
-        //    return View(db.Animals.ToList());
-        //}
         public ActionResult Index()
         {
-            //return View(db.Animals.ToList());
-            var Amimals = db.Animals.Include(c => c.AnimalType);
-
             return View(db.Animals.ToList());
         }
 
@@ -48,33 +36,23 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(animal);
         }
 
-        // GET: Animals/Intake
-        public ActionResult Intake()
+        // GET: Animals/Create
+        public ActionResult Create()
         {
-            Location toRemove = new Location
-            {
-                name = "Storage"
-            };
-            //List<Location> locations = db.Locations.ToList();
-            List<Location> locations = db.Locations.Where(x => x.name != "Storage").ToList();
-            var animalTypes = db.AnimalTypes.ToList();
-            locations.Remove(toRemove);
-            var viewModel = new NewAnimalViewModel
-            {
-                 Locations = locations.Where(x => x.name != "Storage").ToList(),
-                 AnimalTypes = animalTypes
-            };
+            ViewBag.id = new SelectList(db.AnimalTypes, "id", "AnimalTypeName");
+            ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
+            //SelectList FosterIDs = new SelectList();
+            //FosterIDs.
 
-            return View(viewModel);
+            return View();
         }
 
-        // POST: Animals/Intake
+        // POST: Animals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public ActionResult Intake([Bind(Include = "id,name,colors,description,housetraining")] Animal animal)
-        public ActionResult Intake(Animal animal)
+        public ActionResult Create([Bind(Include = "id,MCARId,name,AgeY,AgeM,IntakeDate,colors,breed,description,housetraining,Adopted,ReadyForAdoption,MicrochipNumber,PullFee,AdoptionFee")] Animal animal)
         {
             if (ModelState.IsValid)
             {
@@ -83,8 +61,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return RedirectToAction("Index");
             }
 
-            //return View(animal);
-            return View();
+            return View(animal);
         }
 
         // GET: Animals/Edit/5
@@ -107,7 +84,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,colors,description,housetraining")] Animal animal)
+        public ActionResult Edit([Bind(Include = "id,MCARId,name,AgeY,AgeM,IntakeDate,colors,breed,description,housetraining,Adopted,ReadyForAdoption,MicrochipNumber,PullFee,AdoptionFee")] Animal animal)
         {
             if (ModelState.IsValid)
             {

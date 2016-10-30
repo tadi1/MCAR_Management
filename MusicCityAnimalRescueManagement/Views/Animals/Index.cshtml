@@ -8,15 +8,27 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Intake")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="Animals">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AnimalType.Type)
+            @Html.DisplayNameFor(model => model.StrAnimalType.AnimalTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MCARId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IntakeDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.colors)
@@ -31,21 +43,47 @@
             @Html.DisplayNameFor(model => model.housetraining)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Location.name)
+            @Html.DisplayNameFor(model => model.CurrentFoster.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.adopted)
+            @Html.DisplayNameFor(model => model.Adopted)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadyForAdoption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MicrochipNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PullFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionFee)
+        </th>
+        <th>
+            Actions
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AnimalType.Type)
+            @Html.DisplayFor(modelItem => item.StrAnimalType.AnimalTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MCARId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IntakeDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.colors)
@@ -60,10 +98,22 @@
             @Html.DisplayFor(modelItem => item.housetraining)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Location.name)
+            @Html.DisplayFor(modelItem => item.CurrentFoster.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.adopted)
+            @Html.DisplayFor(modelItem => item.Adopted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadyForAdoption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MicrochipNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PullFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdoptionFee)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
