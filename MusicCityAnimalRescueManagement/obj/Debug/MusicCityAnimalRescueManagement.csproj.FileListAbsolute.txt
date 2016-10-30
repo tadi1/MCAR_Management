@@ -228,3 +228,5 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagemen
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.pdb
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.settinguppartialview.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.TryingDynamic.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.UpdatedAnimalAddedDogVetting.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.AddedManyDBSets.resources

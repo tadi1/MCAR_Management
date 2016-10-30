@@ -177,7 +177,7 @@
 </table>
 
 
-<br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 
 <center><h2>Incomes</h2></center>
@@ -238,7 +238,14 @@
                     @entry.StrAccountType.AccountTypeName
                 </td>
                 <td>
-                    $@entry.AdoptionsDecimal
+                    @{
+                        if (entry.AdoptionsDecimal.HasValue)
+                        {
+                            value = "$" + entry.AdoptionsDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
                 </td>
                 <td>
                     @entry.NumCatAdoptions
@@ -250,21 +257,35 @@
                     @entry.AdoptionsComment
                 </td>
                 <td>
-                    $@entry.DonationsDecimal
+                    @{
+                        if (entry.DonationsDecimal.HasValue)
+                        {
+                            value = "$" + entry.DonationsDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
                 </td>
                 <td>
                     @entry.DonationsComment
                 </td>
                 <td>
-                    $@entry.MiscellaneousIncomeDecimal
+                    @{
+                        if (entry.MiscellaneousIncomeDecimal.HasValue)
+                        {
+                            value = "$" + entry.MiscellaneousIncomeDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
                 </td>
                 <td>
                     @entry.MiscellaneousIncomeComment
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "EditExpense", new { id = entry.Id }) |
-                    @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id }) |
-                    @Html.ActionLink("Delete", "DeleteExpense", new { id = entry.Id })
+                    @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
+                    @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) |
+                    @Html.ActionLink("Delete", "DeleteIncome", new { id = entry.Id })
                 </td>
             </tr>
                         }

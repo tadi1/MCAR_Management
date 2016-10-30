@@ -338,6 +338,14 @@
     <Compile Include="Migrations\201610290044110_TryingDynamic.Designer.cs">
       <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.cs" />
+    <Compile Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.Designer.cs">
+      <DependentUpon>201610300048462_UpdatedAnimal-AddedDogVetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610300054079_AddedManyDBSets.cs" />
+    <Compile Include="Migrations\201610300054079_AddedManyDBSets.Designer.cs">
+      <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -346,6 +354,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animals\Animals.cs" />
     <Compile Include="Models\Animals\AnimalType.cs" />
+    <Compile Include="Models\Animals\DogVetting.cs" />
+    <Compile Include="Models\Animals\Medication.cs" />
+    <Compile Include="Models\Animals\Status.cs" />
+    <Compile Include="Models\Animals\Sexes.cs" />
     <Compile Include="Models\Equipment\EquipmentTypes.cs" />
     <Compile Include="Models\Equipment\InventoryItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1114,6 +1126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610290044110_TryingDynamic.resx">
       <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.resx">
+      <DependentUpon>201610300048462_UpdatedAnimal-AddedDogVetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610300054079_AddedManyDBSets.resx">
+      <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

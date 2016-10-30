@@ -43,5 +43,9 @@ namespace MusicCityAnimalRescueManagement.Models
         public DbSet<Equipment.InventoryItem> Inventories { get; set; }
         public DbSet<Equipment.EquipmentTypes> EquipmentTypes { get; set; }
         public DbSet<IncomeEntry> IncomeEntries { get; set; }
+        public DbSet <DogVetting> DogVettings{ get; set; }
+        public DbSet <Medication> Medications { get; set; }
+        public DbSet <Sex> Sexes { get; set; }
+        public DbSet <Status> Statuses { get; set; }
     }
 }
