@@ -16,7 +16,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "MCAR ID")]
         public String MCARId { get; set; }
 
-        [Required]
+        //[Required]
         public AnimalTypes StrAnimalType { get; set; }
 
         [Required]
@@ -36,6 +36,8 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public string AgeM { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Intake Date")]
         public DateTime IntakeDate { get; set; }
 
@@ -54,7 +56,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "House/Litter Box Trained?")]
         public bool housetraining { get; set; }
 
-        [Required]
+        //[Required]
         public Location StrLocation { get; set; }
 
         [Required]

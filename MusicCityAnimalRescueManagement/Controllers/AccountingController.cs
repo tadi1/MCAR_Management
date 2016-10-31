@@ -160,7 +160,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(incomeEntry);
         }
 
-        // GET: IncomeEntries/Create
+        // GET: IncomeEntries/Createf
         public ActionResult CreateIncome()
         {
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName");

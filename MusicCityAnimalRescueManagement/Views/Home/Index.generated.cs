@@ -54,9 +54,8 @@ WriteLiteral(">\r\n    <h1>Music City Animal Rescue Management Portal</h1>\r\n  
 
 WriteLiteral(" class=\"lead\"");
 
-WriteLiteral(@">Use the above links to navigate to the various management tools.</p>
-    <p>This is mainly a proof of concept at the moment. I will try to keep this page up to date, but so far, the only accessible options are adding and viewing expense entries.</p>
-    <p>");
+WriteLiteral(">Use the above links to navigate to the various management tools.</p>\r\n    <p>Thi" +
+"s is mainly a proof of concept at the moment.&nbsp;</p>\r\n    <p>");
 
 WriteLiteral("</p>\r\n</div>\r\n\r\n<div");
 

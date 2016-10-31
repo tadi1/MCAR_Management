@@ -210,153 +210,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610190051019_initialmigration.cs" />
-    <Compile Include="Migrations\201610190051019_initialmigration.Designer.cs">
-      <DependentUpon>201610190051019_initialmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201610302348192_FreshStart.cs" />
+    <Compile Include="Migrations\201610302348192_FreshStart.Designer.cs">
+      <DependentUpon>201610302348192_FreshStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610190052161_seedingaccounttypes.cs" />
-    <Compile Include="Migrations\201610190052161_seedingaccounttypes.Designer.cs">
-      <DependentUpon>201610190052161_seedingaccounttypes.cs</DependentUpon>
+    <Compile Include="Migrations\201610310005275_SeedingTables.cs" />
+    <Compile Include="Migrations\201610310005275_SeedingTables.Designer.cs">
+      <DependentUpon>201610310005275_SeedingTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610200013153_AddedAnimalTypes.cs" />
-    <Compile Include="Migrations\201610200013153_AddedAnimalTypes.Designer.cs">
-      <DependentUpon>201610200013153_AddedAnimalTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200022142_seedingAnimalTypes.cs" />
-    <Compile Include="Migrations\201610200022142_seedingAnimalTypes.Designer.cs">
-      <DependentUpon>201610200022142_seedingAnimalTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200030110_PreparingForAnimalTracking.cs" />
-    <Compile Include="Migrations\201610200030110_PreparingForAnimalTracking.Designer.cs">
-      <DependentUpon>201610200030110_PreparingForAnimalTracking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200034013_SeedingLocations.cs" />
-    <Compile Include="Migrations\201610200034013_SeedingLocations.Designer.cs">
-      <DependentUpon>201610200034013_SeedingLocations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200116379_AddedBreedToAnimal.cs" />
-    <Compile Include="Migrations\201610200116379_AddedBreedToAnimal.Designer.cs">
-      <DependentUpon>201610200116379_AddedBreedToAnimal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200126214_AddedAdoptedFlag.cs" />
-    <Compile Include="Migrations\201610200126214_AddedAdoptedFlag.Designer.cs">
-      <DependentUpon>201610200126214_AddedAdoptedFlag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200139087_AddedIDtoNewAnimalVM.cs" />
-    <Compile Include="Migrations\201610200139087_AddedIDtoNewAnimalVM.Designer.cs">
-      <DependentUpon>201610200139087_AddedIDtoNewAnimalVM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200144399_AddedIDtoNewAnimalVM1.cs" />
-    <Compile Include="Migrations\201610200144399_AddedIDtoNewAnimalVM1.Designer.cs">
-      <DependentUpon>201610200144399_AddedIDtoNewAnimalVM1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200152103_changeAnimalTypes.NameTo.Type.cs" />
-    <Compile Include="Migrations\201610200152103_changeAnimalTypes.NameTo.Type.Designer.cs">
-      <DependentUpon>201610200152103_changeAnimalTypes.NameTo.Type.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200157155_changeAnimalTypes.NameTo.Type2.cs" />
-    <Compile Include="Migrations\201610200157155_changeAnimalTypes.NameTo.Type2.Designer.cs">
-      <DependentUpon>201610200157155_changeAnimalTypes.NameTo.Type2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610200208260_changeAnimalTypes.NameTo.Type3.cs" />
-    <Compile Include="Migrations\201610200208260_changeAnimalTypes.NameTo.Type3.Designer.cs">
-      <DependentUpon>201610200208260_changeAnimalTypes.NameTo.Type3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202150101_AnimaltoInt.cs" />
-    <Compile Include="Migrations\201610202150101_AnimaltoInt.Designer.cs">
-      <DependentUpon>201610202150101_AnimaltoInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202151584_Testing.cs" />
-    <Compile Include="Migrations\201610202151584_Testing.Designer.cs">
-      <DependentUpon>201610202151584_Testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202242047_Testing1.cs" />
-    <Compile Include="Migrations\201610202242047_Testing1.Designer.cs">
-      <DependentUpon>201610202242047_Testing1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202254556_Testing2.cs" />
-    <Compile Include="Migrations\201610202254556_Testing2.Designer.cs">
-      <DependentUpon>201610202254556_Testing2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202257538_Testing3.cs" />
-    <Compile Include="Migrations\201610202257538_Testing3.Designer.cs">
-      <DependentUpon>201610202257538_Testing3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202258321_Testing4.cs" />
-    <Compile Include="Migrations\201610202258321_Testing4.Designer.cs">
-      <DependentUpon>201610202258321_Testing4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202327306_ChangedSomeDataTypes.cs" />
-    <Compile Include="Migrations\201610202327306_ChangedSomeDataTypes.Designer.cs">
-      <DependentUpon>201610202327306_ChangedSomeDataTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610202329015_ChangeNameOfLocationVar.cs" />
-    <Compile Include="Migrations\201610202329015_ChangeNameOfLocationVar.Designer.cs">
-      <DependentUpon>201610202329015_ChangeNameOfLocationVar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610210016449_AddedSomeRequiredTags.cs" />
-    <Compile Include="Migrations\201610210016449_AddedSomeRequiredTags.Designer.cs">
-      <DependentUpon>201610210016449_AddedSomeRequiredTags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260030087_ChangesToAnimal.cs" />
-    <Compile Include="Migrations\201610260030087_ChangesToAnimal.Designer.cs">
-      <DependentUpon>201610260030087_ChangesToAnimal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260035140_NameChanges.cs" />
-    <Compile Include="Migrations\201610260035140_NameChanges.Designer.cs">
-      <DependentUpon>201610260035140_NameChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260051316_NameChanges1.cs" />
-    <Compile Include="Migrations\201610260051316_NameChanges1.Designer.cs">
-      <DependentUpon>201610260051316_NameChanges1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260122365_AddLocationActive.cs" />
-    <Compile Include="Migrations\201610260122365_AddLocationActive.Designer.cs">
-      <DependentUpon>201610260122365_AddLocationActive.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260130582_AddLocationActive1.cs" />
-    <Compile Include="Migrations\201610260130582_AddLocationActive1.Designer.cs">
-      <DependentUpon>201610260130582_AddLocationActive1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610260240525_chageddts.cs" />
-    <Compile Include="Migrations\201610260240525_chageddts.Designer.cs">
-      <DependentUpon>201610260240525_chageddts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610272350212_AddingIncomeItems.cs" />
-    <Compile Include="Migrations\201610272350212_AddingIncomeItems.Designer.cs">
-      <DependentUpon>201610272350212_AddingIncomeItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610280048276_AddingAcctTypeToVM.cs" />
-    <Compile Include="Migrations\201610280048276_AddingAcctTypeToVM.Designer.cs">
-      <DependentUpon>201610280048276_AddingAcctTypeToVM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610290007276_settinguppartialview.cs" />
-    <Compile Include="Migrations\201610290007276_settinguppartialview.Designer.cs">
-      <DependentUpon>201610290007276_settinguppartialview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610290044110_TryingDynamic.cs" />
-    <Compile Include="Migrations\201610290044110_TryingDynamic.Designer.cs">
-      <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.cs" />
-    <Compile Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.Designer.cs">
-      <DependentUpon>201610300048462_UpdatedAnimal-AddedDogVetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610300054079_AddedManyDBSets.cs" />
-    <Compile Include="Migrations\201610300054079_AddedManyDBSets.Designer.cs">
-      <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610301626123_FixingAnimalTypes.cs" />
-    <Compile Include="Migrations\201610301626123_FixingAnimalTypes.Designer.cs">
-      <DependentUpon>201610301626123_FixingAnimalTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610301633019_changingkeyinanimaltypes.cs" />
-    <Compile Include="Migrations\201610301633019_changingkeyinanimaltypes.Designer.cs">
-      <DependentUpon>201610301633019_changingkeyinanimaltypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610301643171_WorkingOnIntake.cs" />
-    <Compile Include="Migrations\201610301643171_WorkingOnIntake.Designer.cs">
-      <DependentUpon>201610301643171_WorkingOnIntake.cs</DependentUpon>
+    <Compile Include="Migrations\201610310023020_TestingStuff.cs" />
+    <Compile Include="Migrations\201610310023020_TestingStuff.Designer.cs">
+      <DependentUpon>201610310023020_TestingStuff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
@@ -1032,7 +896,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AnimalTypes\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -1044,116 +907,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610190051019_initialmigration.resx">
-      <DependentUpon>201610190051019_initialmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610302348192_FreshStart.resx">
+      <DependentUpon>201610302348192_FreshStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610190052161_seedingaccounttypes.resx">
-      <DependentUpon>201610190052161_seedingaccounttypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610310005275_SeedingTables.resx">
+      <DependentUpon>201610310005275_SeedingTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200013153_AddedAnimalTypes.resx">
-      <DependentUpon>201610200013153_AddedAnimalTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200022142_seedingAnimalTypes.resx">
-      <DependentUpon>201610200022142_seedingAnimalTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200030110_PreparingForAnimalTracking.resx">
-      <DependentUpon>201610200030110_PreparingForAnimalTracking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200034013_SeedingLocations.resx">
-      <DependentUpon>201610200034013_SeedingLocations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200116379_AddedBreedToAnimal.resx">
-      <DependentUpon>201610200116379_AddedBreedToAnimal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200126214_AddedAdoptedFlag.resx">
-      <DependentUpon>201610200126214_AddedAdoptedFlag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200139087_AddedIDtoNewAnimalVM.resx">
-      <DependentUpon>201610200139087_AddedIDtoNewAnimalVM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200144399_AddedIDtoNewAnimalVM1.resx">
-      <DependentUpon>201610200144399_AddedIDtoNewAnimalVM1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200152103_changeAnimalTypes.NameTo.Type.resx">
-      <DependentUpon>201610200152103_changeAnimalTypes.NameTo.Type.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200157155_changeAnimalTypes.NameTo.Type2.resx">
-      <DependentUpon>201610200157155_changeAnimalTypes.NameTo.Type2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610200208260_changeAnimalTypes.NameTo.Type3.resx">
-      <DependentUpon>201610200208260_changeAnimalTypes.NameTo.Type3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202150101_AnimaltoInt.resx">
-      <DependentUpon>201610202150101_AnimaltoInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202151584_Testing.resx">
-      <DependentUpon>201610202151584_Testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202242047_Testing1.resx">
-      <DependentUpon>201610202242047_Testing1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202254556_Testing2.resx">
-      <DependentUpon>201610202254556_Testing2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202257538_Testing3.resx">
-      <DependentUpon>201610202257538_Testing3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202258321_Testing4.resx">
-      <DependentUpon>201610202258321_Testing4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202327306_ChangedSomeDataTypes.resx">
-      <DependentUpon>201610202327306_ChangedSomeDataTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610202329015_ChangeNameOfLocationVar.resx">
-      <DependentUpon>201610202329015_ChangeNameOfLocationVar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610210016449_AddedSomeRequiredTags.resx">
-      <DependentUpon>201610210016449_AddedSomeRequiredTags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260030087_ChangesToAnimal.resx">
-      <DependentUpon>201610260030087_ChangesToAnimal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260035140_NameChanges.resx">
-      <DependentUpon>201610260035140_NameChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260051316_NameChanges1.resx">
-      <DependentUpon>201610260051316_NameChanges1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260122365_AddLocationActive.resx">
-      <DependentUpon>201610260122365_AddLocationActive.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260130582_AddLocationActive1.resx">
-      <DependentUpon>201610260130582_AddLocationActive1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610260240525_chageddts.resx">
-      <DependentUpon>201610260240525_chageddts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610272350212_AddingIncomeItems.resx">
-      <DependentUpon>201610272350212_AddingIncomeItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610280048276_AddingAcctTypeToVM.resx">
-      <DependentUpon>201610280048276_AddingAcctTypeToVM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610290007276_settinguppartialview.resx">
-      <DependentUpon>201610290007276_settinguppartialview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610290044110_TryingDynamic.resx">
-      <DependentUpon>201610290044110_TryingDynamic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610300048462_UpdatedAnimal-AddedDogVetting.resx">
-      <DependentUpon>201610300048462_UpdatedAnimal-AddedDogVetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610300054079_AddedManyDBSets.resx">
-      <DependentUpon>201610300054079_AddedManyDBSets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610301626123_FixingAnimalTypes.resx">
-      <DependentUpon>201610301626123_FixingAnimalTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610301633019_changingkeyinanimaltypes.resx">
-      <DependentUpon>201610301633019_changingkeyinanimaltypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610301643171_WorkingOnIntake.resx">
-      <DependentUpon>201610301643171_WorkingOnIntake.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610310023020_TestingStuff.resx">
+      <DependentUpon>201610310023020_TestingStuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
