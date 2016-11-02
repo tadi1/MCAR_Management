@@ -10,6 +10,10 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
     {
         [Required]
         public short id { get; set; }
+        [Required]
+        public int AnimalsID { get; set; }
+        public Animal Animal { get; set; }
+
         /*Vetting*/
         [Required]
         [Display(Name = "Sterilized?")]

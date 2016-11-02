@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.0.5\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -77,6 +81,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -207,20 +215,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncomeEntriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610302348192_FreshStart.cs" />
-    <Compile Include="Migrations\201610302348192_FreshStart.Designer.cs">
-      <DependentUpon>201610302348192_FreshStart.cs</DependentUpon>
+    <Compile Include="Migrations\201611021923320_InitialMigration.cs" />
+    <Compile Include="Migrations\201611021923320_InitialMigration.Designer.cs">
+      <DependentUpon>201611021923320_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610310005275_SeedingTables.cs" />
-    <Compile Include="Migrations\201610310005275_SeedingTables.Designer.cs">
-      <DependentUpon>201610310005275_SeedingTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610310023020_TestingStuff.cs" />
-    <Compile Include="Migrations\201610310023020_TestingStuff.Designer.cs">
-      <DependentUpon>201610310023020_TestingStuff.cs</DependentUpon>
+    <Compile Include="Migrations\201611021925175_Seeding.cs" />
+    <Compile Include="Migrations\201611021925175_Seeding.Designer.cs">
+      <DependentUpon>201611021925175_Seeding.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
@@ -577,6 +582,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootbox.js" />
@@ -589,6 +595,7 @@
     </Content>
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Properties\PublishProfiles\a.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
@@ -704,6 +711,14 @@
     <Content Include="Views\IncomeEntries\ListIncomes.cshtml" />
     <Content Include="Views\IncomeEntries\_ListIncomes.cshtml" />
     <Content Include="Views\Animals\Create.cshtml" />
+    <None Include="Views\Animals\Create.cshtml.bak" />
+    <Content Include="Views\Animals\ContractPDF.cshtml" />
+    <Content Include="Views\Vettings\Create.cshtml" />
+    <Content Include="Views\Vettings\Delete.cshtml" />
+    <Content Include="Views\Vettings\Details.cshtml" />
+    <Content Include="Views\Vettings\Edit.cshtml" />
+    <Content Include="Views\Vettings\Index.cshtml" />
+    <Content Include="Views\Animals\AnimalReport.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -907,14 +922,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610302348192_FreshStart.resx">
-      <DependentUpon>201610302348192_FreshStart.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611021923320_InitialMigration.resx">
+      <DependentUpon>201611021923320_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610310005275_SeedingTables.resx">
-      <DependentUpon>201610310005275_SeedingTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610310023020_TestingStuff.resx">
-      <DependentUpon>201610310023020_TestingStuff.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611021925175_Seeding.resx">
+      <DependentUpon>201611021925175_Seeding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

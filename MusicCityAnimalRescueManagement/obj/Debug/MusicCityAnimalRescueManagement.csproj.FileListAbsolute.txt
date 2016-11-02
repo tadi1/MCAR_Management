@@ -195,7 +195,8 @@ D:\MCAR\MusicCityAnimalRescueManagement\bin\Microsoft.Owin.Security.MicrosoftAcc
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.csprojResolveAssemblyReference.cache
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.dll
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.pdb
-D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.FreshStart.resources
+D:\MCAR\MusicCityAnimalRescueManagement\bin\itextsharp.dll
+D:\MCAR\MusicCityAnimalRescueManagement\bin\Rotativa.dll
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.InitialMigration.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.csproj.GenerateResource.Cache
-D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.SeedingTables.resources
-D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.TestingStuff.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.Seeding.resources

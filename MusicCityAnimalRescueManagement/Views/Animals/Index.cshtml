@@ -114,7 +114,9 @@
                     @Html.DisplayFor(modelItem => item.description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CurrentFosterID)
+                    @Html.DisplayFor(modelItem => item.CurrentFoster.name)
+            
+                    @*@Html.DisplayFor(modelItem => item.CurrentFosterID)*@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MicrochipNumber)
@@ -135,8 +137,12 @@
                     @Html.DisplayFor(modelItem => item.ReadyForAdoption)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                    <br>
+                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    <br>
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                    <br>
                     @Html.ActionLink("Delete", "Delete", new { id = item.id })
                 </td>
             </tr>

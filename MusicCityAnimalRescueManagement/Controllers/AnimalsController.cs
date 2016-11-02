@@ -9,12 +9,21 @@ using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.Animals;
 using MusicCityAnimalRescueManagement.ViewModels;
+using Rotativa;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
     public class AnimalsController : Controller
     {
+
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        List<Animal> animals;
+
+        public AnimalsController()
+        {
+            animals = db.Animals.ToList();
+        }
 
         // GET: Animals
         public ActionResult Index()
@@ -40,6 +49,27 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         // GET: Animals/Create
         public ActionResult Create()
+        {
+            //ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName");
+            //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
+
+            var animalTypes = db.AnimalTypes.ToList();
+            var locations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+            var sexes = db.Sexes.ToList();
+            //SelectList FosterIDs = new SelectList();
+            //FosterIDs.
+            var viewModel = new NewAnimalViewModel
+            {
+                AnimalTypes = animalTypes,
+                Locations = locations,
+                Sexes = sexes
+
+            };
+
+            return View(viewModel);
+        }
+
+        public ActionResult Intake()
         {
             //ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName");
             //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
@@ -134,6 +164,21 @@ namespace MusicCityAnimalRescueManagement.Controllers
             db.Animals.Remove(animal);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ContractPDF()
+        {
+            return View(animals);
+        }
+
+        public ActionResult Print()
+        {
+            return new ActionAsPdf("Index", animals);
+        }
+
+        public ActionResult AnimalReport()
+        {
+            return View(animals);
         }
 
         protected override void Dispose(bool disposing)
