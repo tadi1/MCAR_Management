@@ -17,7 +17,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public String MCARId { get; set; }
 
         //[Required]
-        public AnimalTypes StrAnimalType { get; set; }
+        public AnimalTypes AnimalType { get; set; }
 
         [Required]
         [Display(Name = "Animal Type")]
@@ -62,6 +62,12 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Required]
         [Display(Name = "Current Foster")]
         public int CurrentFosterID { get; set; }
+
+        [Required]
+        [Display(Name = "Pull Location")]
+        public int PullLocationID { get; set; }
+        public Location PullLocation { get; set; }
+
 
         //[Required]
         //[Display(Name = "Current Foster Name")]

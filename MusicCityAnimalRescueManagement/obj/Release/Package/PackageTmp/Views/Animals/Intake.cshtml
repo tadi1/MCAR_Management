@@ -27,7 +27,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.AnimalTypes, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownListFor(model => model.AnimalTypes, new SelectList(Model.AnimalTypes, "id", "Type"), "Select Type", new { htmlAttributes = new { @class = "form-control" } })
+				@Html.DropDownListFor(model => model.AnimalTypes, new SelectList(Model.AnimalTypes, "id", "AnimalTypeName"), "Select Type", new { htmlAttributes = new { @class = "form-control" } })
 				@Html.ValidationMessageFor(model => model.AnimalTypes, "", new { @class = "text-danger" })
 			</div>
 		</div>
@@ -91,11 +91,11 @@
 		</div>*@
 
 		<div class="form-group">
-			@Html.LabelFor(model => model.Animal.adopted, htmlAttributes: new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.Animal.Adopted, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<div class="checkbox">
-					@Html.EditorFor(model => model.Animal.adopted)
-					@Html.ValidationMessageFor(model => model.Animal.adopted, "", new { @class = "text-danger" })
+					@Html.EditorFor(model => model.Animal.Adopted)
+					@Html.ValidationMessageFor(model => model.Animal.Adopted, "", new { @class = "text-danger" })
 				</div>
 			</div>
 		</div>

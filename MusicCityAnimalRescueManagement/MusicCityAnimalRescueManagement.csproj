@@ -214,6 +214,7 @@
     <Compile Include="Controllers\EquipmentTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncomeEntriesController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VettingsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,38 @@
     <Compile Include="Migrations\201611030023329_workingondropdowns.cs" />
     <Compile Include="Migrations\201611030023329_workingondropdowns.Designer.cs">
       <DependentUpon>201611030023329_workingondropdowns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030123174_renames.cs" />
+    <Compile Include="Migrations\201611030123174_renames.Designer.cs">
+      <DependentUpon>201611030123174_renames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030221389_addingPullLocation.cs" />
+    <Compile Include="Migrations\201611030221389_addingPullLocation.Designer.cs">
+      <DependentUpon>201611030221389_addingPullLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030226076_SeedingShelters.cs" />
+    <Compile Include="Migrations\201611030226076_SeedingShelters.Designer.cs">
+      <DependentUpon>201611030226076_SeedingShelters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030233112_addingPullLocation2.cs" />
+    <Compile Include="Migrations\201611030233112_addingPullLocation2.Designer.cs">
+      <DependentUpon>201611030233112_addingPullLocation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030249024_addingPullLocationtest.cs" />
+    <Compile Include="Migrations\201611030249024_addingPullLocationtest.Designer.cs">
+      <DependentUpon>201611030249024_addingPullLocationtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030344582_AddedAddress.cs" />
+    <Compile Include="Migrations\201611030344582_AddedAddress.Designer.cs">
+      <DependentUpon>201611030344582_AddedAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030406335_AddedNotesToLocations.cs" />
+    <Compile Include="Migrations\201611030406335_AddedNotesToLocations.Designer.cs">
+      <DependentUpon>201611030406335_AddedNotesToLocations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030410474_AddedCatsAndDogsToLocations.cs" />
+    <Compile Include="Migrations\201611030410474_AddedCatsAndDogsToLocations.Designer.cs">
+      <DependentUpon>201611030410474_AddedCatsAndDogsToLocations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
@@ -604,9 +637,9 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="App_Browsers\qt.browser" />
-    <None Include="Properties\PublishProfiles\a.pubxml" />
-    <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -727,6 +760,11 @@
     <Content Include="Views\Vettings\Edit.cshtml" />
     <Content Include="Views\Vettings\Index.cshtml" />
     <Content Include="Views\Animals\AnimalReport.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -941,6 +979,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611030023329_workingondropdowns.resx">
       <DependentUpon>201611030023329_workingondropdowns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030123174_renames.resx">
+      <DependentUpon>201611030123174_renames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030221389_addingPullLocation.resx">
+      <DependentUpon>201611030221389_addingPullLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030226076_SeedingShelters.resx">
+      <DependentUpon>201611030226076_SeedingShelters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030233112_addingPullLocation2.resx">
+      <DependentUpon>201611030233112_addingPullLocation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030249024_addingPullLocationtest.resx">
+      <DependentUpon>201611030249024_addingPullLocationtest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030344582_AddedAddress.resx">
+      <DependentUpon>201611030344582_AddedAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030406335_AddedNotesToLocations.resx">
+      <DependentUpon>201611030406335_AddedNotesToLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030410474_AddedCatsAndDogsToLocations.resx">
+      <DependentUpon>201611030410474_AddedCatsAndDogsToLocations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

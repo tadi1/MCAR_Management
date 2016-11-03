@@ -28,7 +28,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Animals
         public ActionResult Index()
         {
-            var animals = db.Animals.Include(e => e.StrAnimalType);
+            var animals = db.Animals.Include(e => e.AnimalType).Include(e => e.CurrentFoster).Include(e => e.PullLocation);
             return View(animals.ToList());
         }
 
@@ -54,14 +54,16 @@ namespace MusicCityAnimalRescueManagement.Controllers
             //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
 
             var animalTypes = db.AnimalTypes.ToList();
-            var locations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+            var fosterLocations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+            var pullLocations = db.Locations.ToList().Where(o => o.isPullLocation == true);
             var sexes = db.Sexes.ToList();
             //SelectList FosterIDs = new SelectList();
             //FosterIDs.
             var viewModel = new NewAnimalViewModel
             {
                 AnimalTypes = animalTypes,
-                Locations = locations,
+                FosterLocations = fosterLocations,
+                PullLocations = pullLocations,
                 Sexes = sexes
 
             };
@@ -82,7 +84,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             var viewModel = new NewAnimalViewModel
             {
                 AnimalTypes = animalTypes,
-                Locations = locations,
+                PullLocations = locations,
                 Sexes = sexes
 
             };

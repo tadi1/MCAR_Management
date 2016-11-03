@@ -4,73 +4,170 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Styles.Render("~/Content/dataTables")
 
-<h2>Index</h2>
+<h2>Foster Animal List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Intake")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AnimalType.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.colors)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.breed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.housetraining)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.adopted)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="Animals">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AnimalType.AnimalTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MCARId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgeY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgeM)
+            </th>
+            <th>
+                Pull Location
+                @*@Html.DisplayNameFor(model => model.PullLocation.name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntakeDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.colors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.breed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                Current Location
+                @*@Html.DisplayNameFor(model => model.CurrentFoster.name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MicrochipNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PullFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdoptionFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.housetraining)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adopted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadyForAdoption)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnimalType.AnimalTypeName)
+                    @*@Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)*@
+                    @*@Html.DisplayFor(modelItem => item.StrAnimalType.AnimalTypeName)*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AnimalType.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.colors)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.breed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.housetraining)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.adopted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+                    @*@if (item.AnimalTypeID.ToString() == "1")
+                    {
+                        @:Dog
+            }
+                    else if (item.AnimalTypeID.ToString() == "0")
+                    {
+                        @:Cat
+            }
+                    else
+                    {*@
+                        @*@:Other
+            }*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MCARId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgeY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgeM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PullLocation.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IntakeDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.colors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.breed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentFoster.name)
+            
+                    @*@Html.DisplayFor(modelItem => item.CurrentFosterID)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MicrochipNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PullFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdoptionFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.housetraining)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adopted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReadyForAdoption)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                    <br>
+                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    <br>
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                    <br>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
 
+        }
+    </tbody>
 </table>
+
+@section scripts
+    {
+        @Scripts.Render("~/bundles/dataTables")
+
+
+        <script>
+            $(document).ready(function () {
+                $("#Animals").DataTable();
+            });
+
+        </script>
+    }
