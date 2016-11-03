@@ -200,3 +200,5 @@ D:\MCAR\MusicCityAnimalRescueManagement\bin\Rotativa.dll
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.InitialMigration.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.csproj.GenerateResource.Cache
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.Seeding.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.AddCurrFosterName.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.workingondropdowns.resources

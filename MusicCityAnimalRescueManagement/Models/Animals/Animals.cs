@@ -63,6 +63,10 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Current Foster")]
         public int CurrentFosterID { get; set; }
 
+        //[Required]
+        //[Display(Name = "Current Foster Name")]
+        //public string CurrentFosterName { get; set; }
+
         public Location CurrentFoster { get; set; }
 
         [Required]

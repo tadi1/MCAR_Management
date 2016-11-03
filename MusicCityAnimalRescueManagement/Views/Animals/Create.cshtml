@@ -24,9 +24,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AnimalTypes, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Animal.AnimalTypeID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.AnimalTypes, new SelectList(Model.AnimalTypes, "id", "AnimalTypeName"), "Select Type", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Animal.AnimalTypeID, new SelectList(Model.AnimalTypes, "id", "AnimalTypeName"), "Select Type", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AnimalTypes, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -95,22 +95,14 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Animal.housetraining, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Animal.housetraining)
-                    @Html.ValidationMessageFor(model => model.Animal.housetraining, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+
 
 
 
         <div class="form-group">
             @Html.LabelFor(model => model.Locations, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Locations, new SelectList(Model.Locations, "id", "name"), "Select Foster", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Animal.CurrentFosterID, new SelectList(Model.Locations, "id", "name"), "Select Foster", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Locations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -123,25 +115,6 @@
             </div>
         </div>*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Animal.Adopted, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Animal.Adopted)
-                    @Html.ValidationMessageFor(model => model.Animal.Adopted, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Animal.ReadyForAdoption, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Animal.ReadyForAdoption)
-                    @Html.ValidationMessageFor(model => model.Animal.ReadyForAdoption, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Animal.MicrochipNumber, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -166,6 +139,37 @@
                 @Html.ValidationMessageFor(model => model.Animal.AdoptionFee, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Animal.housetraining, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Animal.housetraining)
+                    @Html.ValidationMessageFor(model => model.Animal.housetraining, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Animal.Adopted, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Animal.Adopted)
+                    @Html.ValidationMessageFor(model => model.Animal.Adopted, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Animal.ReadyForAdoption, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Animal.ReadyForAdoption)
+                    @Html.ValidationMessageFor(model => model.Animal.ReadyForAdoption, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

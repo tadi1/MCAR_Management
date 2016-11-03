@@ -42,7 +42,7 @@
                 @Html.DisplayNameFor(model => model.description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CurrentFosterID)
+                @Html.DisplayNameFor(model => model.CurrentFoster.name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.MicrochipNumber)
@@ -72,11 +72,11 @@
         {
             <tr>
                 <td>
-                    @*@Html.DisplayFor(modelItem => item.StrAnimalType.AnimalTypeName)*@
+                    @Html.DisplayFor(modelItem => item.StrAnimalType.AnimalTypeName)
                     @*@Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)*@
                     @*@Html.DisplayFor(modelItem => item.StrAnimalType.AnimalTypeName)*@
 
-                    @if (item.AnimalTypeID.ToString() == "1")
+                    @*@if (item.AnimalTypeID.ToString() == "1")
                     {
                         @:Dog
             }
@@ -85,9 +85,9 @@
                         @:Cat
             }
                     else
-                    {
-                        @:Other
-            }
+                    {*@
+                        @*@:Other
+            }*@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MCARId)

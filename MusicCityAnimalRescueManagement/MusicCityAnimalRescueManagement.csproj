@@ -227,6 +227,14 @@
     <Compile Include="Migrations\201611021925175_Seeding.Designer.cs">
       <DependentUpon>201611021925175_Seeding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611030012140_AddCurrFosterName.cs" />
+    <Compile Include="Migrations\201611030012140_AddCurrFosterName.Designer.cs">
+      <DependentUpon>201611030012140_AddCurrFosterName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030023329_workingondropdowns.cs" />
+    <Compile Include="Migrations\201611030023329_workingondropdowns.Designer.cs">
+      <DependentUpon>201611030023329_workingondropdowns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -927,6 +935,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611021925175_Seeding.resx">
       <DependentUpon>201611021925175_Seeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030012140_AddCurrFosterName.resx">
+      <DependentUpon>201611030012140_AddCurrFosterName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030023329_workingondropdowns.resx">
+      <DependentUpon>201611030023329_workingondropdowns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
