@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.Animals;
 using MusicCityAnimalRescueManagement.ViewModels;
-using Rotativa;
+//using Rotativa;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
@@ -77,14 +77,16 @@ namespace MusicCityAnimalRescueManagement.Controllers
             //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
 
             var animalTypes = db.AnimalTypes.ToList();
-            var locations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+            var fosterLocations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+            var pullLocations = db.Locations.ToList().Where(o => o.isPullLocation == true && o.isActive == true).OrderBy(o => o.name);
             var sexes = db.Sexes.ToList();
             //SelectList FosterIDs = new SelectList();
             //FosterIDs.
             var viewModel = new NewAnimalViewModel
             {
                 AnimalTypes = animalTypes,
-                PullLocations = locations,
+                FosterLocations = fosterLocations,
+                PullLocations = pullLocations,
                 Sexes = sexes
 
             };
@@ -175,7 +177,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         public ActionResult Print()
         {
-            return new ActionAsPdf("Index", animals);
+            //return new ActionAsPdf("Index", animals);
+            return null;
         }
 
         public ActionResult AnimalReport()

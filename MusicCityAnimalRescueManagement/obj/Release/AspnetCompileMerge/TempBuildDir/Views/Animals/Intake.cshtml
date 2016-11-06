@@ -65,6 +65,22 @@
 		</div>
 
 		<div class="form-group">
+			@Html.LabelFor(model => model.Animal.Temperament, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Animal.Temperament, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Animal.Temperament, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Animal.AdtlComments, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Animal.AdtlComments, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Animal.AdtlComments, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
 			@Html.LabelFor(model => model.Animal.housetraining, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<div class="checkbox">
@@ -73,12 +89,12 @@
 				</div>
 			</div>
 		</div>
-
+            
 		<div class="form-group">
-			@Html.LabelFor(model => model.Locations, htmlAttributes: new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.FosterLocations, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownListFor(model => model.Locations, new SelectList(Model.Locations, "id", "name"), "Select Foster", new { htmlAttributes = new { @class = "form-control" } })
-				@Html.ValidationMessageFor(model => model.Locations, "", new { @class = "text-danger" })
+				@Html.DropDownListFor(model => model.FosterLocations, new SelectList(Model.FosterLocations, "id", "name"), "Select Foster", new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.FosterLocations, "", new { @class = "text-danger" })
 			</div>
 		</div>
 

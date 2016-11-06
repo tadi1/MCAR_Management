@@ -15,6 +15,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Locations
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Locations.ToList());

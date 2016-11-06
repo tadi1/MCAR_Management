@@ -8,13 +8,18 @@ using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.Animals;
+using MusicCityAnimalRescueManagement.ViewModels;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
     public class VettingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        List<Animal> animals;
+        public VettingsController()
+        {
+            animals = db.Animals.Where(e => e.AnimalTypeID == 1).ToList();
+        }
         // GET: Vettings
         public ActionResult Index()
         {
@@ -37,9 +42,13 @@ namespace MusicCityAnimalRescueManagement.Controllers
         }
 
         // GET: Vettings/Create
-        public ActionResult Create()
+        public ActionResult CreateDog()
         {
-            return View();
+            var viewModel = new NewDogVettingViewModel
+            {
+                Animals = animals
+            };
+            return View(viewModel);
         }
 
         // POST: Vettings/Create
@@ -47,7 +56,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,AnimalsID,Sterilized,SterilizationDate,Rabies,RabiesDate,DA2PPR1,DA2PPR1Date,DA2PPR2,DA2PPR2Date,DA2PPR3,DA2PPR3Date,HeartwormTested,HeartwormDate,DewormerDate")] DogVetting dogVetting)
+        public ActionResult CreateDog([Bind(Include = "id,AnimalsID,Sterilized,SterilizationDate,Rabies,RabiesDate,DA2PPR1,DA2PPR1Date,DA2PPR2,DA2PPR2Date,DA2PPR3,DA2PPR3Date,HeartwormTested,HeartwormDate,DewormerDate")] DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {

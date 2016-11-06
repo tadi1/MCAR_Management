@@ -22,12 +22,10 @@ namespace ASP
     using System.Web.Mvc;
     using System.Web.Mvc.Ajax;
     using System.Web.Mvc.Html;
-    using System.Web.Optimization;
     using System.Web.Routing;
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
-    using MusicCityAnimalRescueManagement;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Accounting/Index.cshtml")]
@@ -53,7 +51,7 @@ WriteLiteral("    ");
 
             
             #line 14 "..\..\Views\Accounting\Index.cshtml"
-Write(Html.ActionLink("Work in Progress: Show Incomes and Expenses", "Entries"));
+Write(Html.ActionLink("Show Incomes and Expenses", "Entries"));
 
             
             #line default

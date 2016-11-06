@@ -190,7 +190,6 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagem
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.dll
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.pdb
 D:\MCAR\MusicCityAnimalRescueManagement\bin\itextsharp.dll
-D:\MCAR\MusicCityAnimalRescueManagement\bin\Rotativa.dll
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.Seeding.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddCurrFosterName.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.workingondropdowns.resources
@@ -202,3 +201,7 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagem
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddedAddress.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddedNotesToLocations.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddedCatsAndDogsToLocations.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments1.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments2.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments3.resources

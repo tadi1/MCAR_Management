@@ -145,17 +145,8 @@ WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n            <p>&copy; ")
             
             #line default
             #line hidden
-WriteLiteral(" - Music City Animal Rescue</p>\r\n        </footer>\r\n    </div>\r\n\r\n    \r\n");
+WriteLiteral(" - Music City Animal Rescue</p>\r\n        </footer>\r\n    </div>\r\n\r\n    \r\n    ");
 
-WriteLiteral("    ");
-
-            
-            #line 27 "..\..\Views\Shared\_Layout.cshtml"
-Write(Scripts.Render("~/bundles/lib"));
-
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n");
 
 WriteLiteral("    ");

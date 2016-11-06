@@ -51,6 +51,9 @@
                 @Html.DisplayNameFor(model => model.description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Temperament)
+            </th>
+            <th>
                 Current Location
                 @*@Html.DisplayNameFor(model => model.CurrentFoster.name)*@
             </th>
@@ -71,6 +74,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReadyForAdoption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdtlComments)
             </th>
             <th>
                 Actions
@@ -127,6 +133,9 @@
                     @Html.DisplayFor(modelItem => item.description)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Temperament)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.CurrentFoster.name)
 
                     @*@Html.DisplayFor(modelItem => item.CurrentFosterID)*@
@@ -148,6 +157,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReadyForAdoption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdtlComments)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
@@ -201,6 +213,9 @@
                 @Html.DisplayNameFor(model => model.description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Temperament)
+            </th>
+            <th>
                 Current Location
                 @*@Html.DisplayNameFor(model => model.CurrentFoster.name)*@
             </th>
@@ -221,6 +236,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReadyForAdoption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdtlComments)
             </th>
             <th>
                 Actions
@@ -277,6 +295,9 @@
                     @Html.DisplayFor(modelItem => item.description)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Temperament)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.CurrentFoster.name)
 
                     @*@Html.DisplayFor(modelItem => item.CurrentFosterID)*@
@@ -298,6 +319,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReadyForAdoption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdtlComments)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
@@ -351,6 +375,9 @@
                 @Html.DisplayNameFor(model => model.description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Temperament)
+            </th>
+            <th>
                 Current Location
                 @*@Html.DisplayNameFor(model => model.CurrentFoster.name)*@
             </th>
@@ -371,6 +398,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReadyForAdoption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdtlComments)
             </th>
             <th>
                 Actions
@@ -427,6 +457,9 @@
                     @Html.DisplayFor(modelItem => item.description)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Temperament)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.CurrentFoster.name)
 
                     @*@Html.DisplayFor(modelItem => item.CurrentFosterID)*@
@@ -448,6 +481,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReadyForAdoption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdtlComments)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })

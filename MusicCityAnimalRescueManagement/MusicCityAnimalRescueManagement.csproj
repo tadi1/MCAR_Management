@@ -81,10 +81,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -268,13 +264,37 @@
     <Compile Include="Migrations\201611030410474_AddedCatsAndDogsToLocations.Designer.cs">
       <DependentUpon>201611030410474_AddedCatsAndDogsToLocations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611052328135_AddTempermentAndComments.cs" />
+    <Compile Include="Migrations\201611052328135_AddTempermentAndComments.Designer.cs">
+      <DependentUpon>201611052328135_AddTempermentAndComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611052329125_AddTempermentAndComments1.cs" />
+    <Compile Include="Migrations\201611052329125_AddTempermentAndComments1.Designer.cs">
+      <DependentUpon>201611052329125_AddTempermentAndComments1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611052333354_AddTempermentAndComments2.cs" />
+    <Compile Include="Migrations\201611052333354_AddTempermentAndComments2.Designer.cs">
+      <DependentUpon>201611052333354_AddTempermentAndComments2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611052334129_AddTempermentAndComments3.cs" />
+    <Compile Include="Migrations\201611052334129_AddTempermentAndComments3.Designer.cs">
+      <DependentUpon>201611052334129_AddTempermentAndComments3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611060133425_unsure.cs" />
+    <Compile Include="Migrations\201611060133425_unsure.Designer.cs">
+      <DependentUpon>201611060133425_unsure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611060143020_HeartWormtestResult.cs" />
+    <Compile Include="Migrations\201611060143020_HeartWormtestResult.Designer.cs">
+      <DependentUpon>201611060143020_HeartWormtestResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
     <Compile Include="Models\AccountEntries\ExpenseEntry.cs" />
     <Compile Include="Models\AccountEntries\IncomeEntry.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Animals\Animals.cs" />
+    <Compile Include="Models\Animals\Animal.cs" />
     <Compile Include="Models\Animals\AnimalType.cs" />
     <Compile Include="Models\Animals\DogVetting.cs" />
     <Compile Include="Models\Animals\Medication.cs" />
@@ -291,6 +311,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountingViewModel.cs" />
     <Compile Include="ViewModels\NewAnimalViewModel.cs" />
+    <Compile Include="ViewModels\NewDogVettingViewModel.cs" />
     <Compile Include="Views\Accounting\CreateExpense.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -623,7 +644,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootbox.js" />
@@ -636,7 +656,6 @@
     </Content>
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
-    <Content Include="App_Browsers\qt.browser" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
@@ -754,7 +773,7 @@
     <Content Include="Views\Animals\Create.cshtml" />
     <None Include="Views\Animals\Create.cshtml.bak" />
     <Content Include="Views\Animals\ContractPDF.cshtml" />
-    <Content Include="Views\Vettings\Create.cshtml" />
+    <Content Include="Views\Vettings\CreateDog.cshtml" />
     <Content Include="Views\Vettings\Delete.cshtml" />
     <Content Include="Views\Vettings\Details.cshtml" />
     <Content Include="Views\Vettings\Edit.cshtml" />
@@ -1003,6 +1022,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611030410474_AddedCatsAndDogsToLocations.resx">
       <DependentUpon>201611030410474_AddedCatsAndDogsToLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611052328135_AddTempermentAndComments.resx">
+      <DependentUpon>201611052328135_AddTempermentAndComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611052329125_AddTempermentAndComments1.resx">
+      <DependentUpon>201611052329125_AddTempermentAndComments1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611052333354_AddTempermentAndComments2.resx">
+      <DependentUpon>201611052333354_AddTempermentAndComments2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611052334129_AddTempermentAndComments3.resx">
+      <DependentUpon>201611052334129_AddTempermentAndComments3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611060133425_unsure.resx">
+      <DependentUpon>201611060133425_unsure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611060143020_HeartWormtestResult.resx">
+      <DependentUpon>201611060143020_HeartWormtestResult.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
