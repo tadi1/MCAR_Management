@@ -1,0 +1,137 @@
+﻿@model MusicCityAnimalRescueManagement.Models.Animals.DogVetting
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DogVetting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalsID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalsID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sterilized)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sterilized)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SterilizationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rabies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rabies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabiesDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR1Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR1Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR2Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR2Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR3Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR3Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartwormTested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormTested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartwormDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DewormerDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DewormerDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

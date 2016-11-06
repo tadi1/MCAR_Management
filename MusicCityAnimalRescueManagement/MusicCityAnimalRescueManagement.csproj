@@ -288,6 +288,42 @@
     <Compile Include="Migrations\201611060143020_HeartWormtestResult.Designer.cs">
       <DependentUpon>201611060143020_HeartWormtestResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611062051572_SeedingOtherLocation.cs" />
+    <Compile Include="Migrations\201611062051572_SeedingOtherLocation.Designer.cs">
+      <DependentUpon>201611062051572_SeedingOtherLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062105380_UpdatedDogVetting.cs" />
+    <Compile Include="Migrations\201611062105380_UpdatedDogVetting.Designer.cs">
+      <DependentUpon>201611062105380_UpdatedDogVetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062118197_isVettingLocation.cs" />
+    <Compile Include="Migrations\201611062118197_isVettingLocation.Designer.cs">
+      <DependentUpon>201611062118197_isVettingLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062120517_updatedVaxLocations.cs" />
+    <Compile Include="Migrations\201611062120517_updatedVaxLocations.Designer.cs">
+      <DependentUpon>201611062120517_updatedVaxLocations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062125488_SeedingAnimalHouse.cs" />
+    <Compile Include="Migrations\201611062125488_SeedingAnimalHouse.Designer.cs">
+      <DependentUpon>201611062125488_SeedingAnimalHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062127333_SeedingAnimalHouseandAddingShowLast.cs" />
+    <Compile Include="Migrations\201611062127333_SeedingAnimalHouseandAddingShowLast.Designer.cs">
+      <DependentUpon>201611062127333_SeedingAnimalHouseandAddingShowLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062128477_SeedingAnimalHouse1.cs" />
+    <Compile Include="Migrations\201611062128477_SeedingAnimalHouse1.Designer.cs">
+      <DependentUpon>201611062128477_SeedingAnimalHouse1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062201017_UpdatingMeds.cs" />
+    <Compile Include="Migrations\201611062201017_UpdatingMeds.Designer.cs">
+      <DependentUpon>201611062201017_UpdatingMeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611062231421_AdtlCommentsToDogVetting.cs" />
+    <Compile Include="Migrations\201611062231421_AdtlCommentsToDogVetting.Designer.cs">
+      <DependentUpon>201611062231421_AdtlCommentsToDogVetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -657,6 +693,7 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\HomeServer.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -1040,6 +1077,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611060143020_HeartWormtestResult.resx">
       <DependentUpon>201611060143020_HeartWormtestResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062051572_SeedingOtherLocation.resx">
+      <DependentUpon>201611062051572_SeedingOtherLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062105380_UpdatedDogVetting.resx">
+      <DependentUpon>201611062105380_UpdatedDogVetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062118197_isVettingLocation.resx">
+      <DependentUpon>201611062118197_isVettingLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062120517_updatedVaxLocations.resx">
+      <DependentUpon>201611062120517_updatedVaxLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062125488_SeedingAnimalHouse.resx">
+      <DependentUpon>201611062125488_SeedingAnimalHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062127333_SeedingAnimalHouseandAddingShowLast.resx">
+      <DependentUpon>201611062127333_SeedingAnimalHouseandAddingShowLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062128477_SeedingAnimalHouse1.resx">
+      <DependentUpon>201611062128477_SeedingAnimalHouse1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062201017_UpdatingMeds.resx">
+      <DependentUpon>201611062201017_UpdatingMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611062231421_AdtlCommentsToDogVetting.resx">
+      <DependentUpon>201611062231421_AdtlCommentsToDogVetting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

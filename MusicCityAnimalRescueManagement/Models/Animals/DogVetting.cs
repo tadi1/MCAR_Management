@@ -32,17 +32,17 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime BordetellaDate { get; set; }
-        [Display(Name = "Bordetella Location")]
+        [Display(Name = "Bordetella Vax Location")]
         public Location BordetellaLocation { get; set; }
 
         [Required]
-        [Display(Name = "Rabies?")]
+        [Display(Name = "Rabies Vax?")]
         public bool Rabies { get; set; }
         [Display(Name = "Rabies Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime RabiesDate { get; set; }
-        [Display(Name = "Rabies Location")]
+        [Display(Name = "Rabies Vax Location")]
         public Location RabiesLocation { get; set; }
 
         [Required]
@@ -52,7 +52,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DA2PPR1Date { get; set; }
-        [Display(Name = "Round One DA2PP Location")]
+        [Display(Name = "Round One DA2PP Vax Location")]
         public Location DA2PPR1Location { get; set; }
 
         [Required]
@@ -62,7 +62,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DA2PPR2Date { get; set; }
-        [Display(Name = "Round Two DA2PP Location")]
+        [Display(Name = "Round Two DA2PP Vax Location")]
         public Location DA2PPR2Location { get; set; }
 
         [Required]
@@ -72,7 +72,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DA2PPR3Date { get; set; }
-        [Display(Name = "Round Three DA2PP Location")]
+        [Display(Name = "Round Three DA2PP Vax Location")]
         public Location DA2PPR3Location { get; set; }
 
         [Required]
@@ -94,6 +94,20 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DewormerDate { get; set; }
+        [Display(Name = "Dewormer Location")]
+        public Location DewormerLocation { get; set; }
 
+        [Required]
+        [Display(Name = "Flea/Tick used?")]
+        public Medication FleaTick { get; set; }
+        [Display(Name = "Flea/Tick Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime FleaTickDate { get; set; }
+        [Display(Name = "Flea/Tick Location")]
+        public Location FleaTickLocation { get; set; }
+
+        [Display(Name = "Additional Comments")]
+        public string AdtlComments { get; set; }
     }
 }

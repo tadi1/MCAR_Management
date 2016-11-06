@@ -1,4 +1,6 @@
-﻿using MusicCityAnimalRescueManagement.Models.Animals;
+﻿using MusicCityAnimalRescueManagement.Models;
+using MusicCityAnimalRescueManagement.Models.Animals;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,10 @@ namespace MusicCityAnimalRescueManagement.ViewModels
     {
         public DogVetting DogVetting { get; set; }
         public IEnumerable<Animal> Animals { get; set; }
+        public IEnumerable<Location> BasicVaxLocations { get; set; }
+        public IEnumerable<Location> RabiesLocations { get; set; }
+        public IEnumerable<Medication> Meds { get; set; }
+
         public Animal Animal { get; set; }
     }
 }

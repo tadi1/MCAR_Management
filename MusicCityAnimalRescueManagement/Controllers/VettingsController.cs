@@ -16,9 +16,15 @@ namespace MusicCityAnimalRescueManagement.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         List<Animal> animals;
+        List<Location> locations;
+        List<Location> rabiesLocations;
+        List<Medication> meds;
+
         public VettingsController()
         {
+            rabiesLocations = db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ToList();
             animals = db.Animals.Where(e => e.AnimalTypeID == 1).ToList();
+            locations = db.Locations.Where(e => e.isActive).Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ToList();
         }
         // GET: Vettings
         public ActionResult Index()
@@ -46,6 +52,9 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             var viewModel = new NewDogVettingViewModel
             {
+                Meds = db.Medications.Where(e => e.isForDogs).ToList(),
+                RabiesLocations = rabiesLocations,
+                BasicVaxLocations = locations,
                 Animals = animals
             };
             return View(viewModel);
@@ -56,7 +65,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateDog([Bind(Include = "id,AnimalsID,Sterilized,SterilizationDate,Rabies,RabiesDate,DA2PPR1,DA2PPR1Date,DA2PPR2,DA2PPR2Date,DA2PPR3,DA2PPR3Date,HeartwormTested,HeartwormDate,DewormerDate")] DogVetting dogVetting)
+        public ActionResult CreateDog([Bind] DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +97,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,AnimalsID,Sterilized,SterilizationDate,Rabies,RabiesDate,DA2PPR1,DA2PPR1Date,DA2PPR2,DA2PPR2Date,DA2PPR3,DA2PPR3Date,HeartwormTested,HeartwormDate,DewormerDate")] DogVetting dogVetting)
+        public ActionResult Edit([Bind] DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {

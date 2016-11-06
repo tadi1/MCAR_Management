@@ -1,0 +1,131 @@
+﻿@model MusicCityAnimalRescueManagement.Models.Animals.Animal
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Animal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MCARId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MCARId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntakeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntakeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.colors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.colors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.breed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.breed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.housetraining)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.housetraining)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adopted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adopted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadyForAdoption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadyForAdoption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PullFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PullFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdoptionFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdoptionFee)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

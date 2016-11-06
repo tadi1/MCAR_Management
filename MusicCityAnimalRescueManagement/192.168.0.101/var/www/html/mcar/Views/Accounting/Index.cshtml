@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.AccountEntries.ExpenseEntry>
+
+@{
+    ViewBag.Title = "Accounting Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2>Accounting Home</h2>
+
+<p>
+    @Html.ActionLink("Show Incomes and Expenses", "Entries")<br />
+
+    @Html.ActionLink("List Expense Entries", "ListExpenses") <br/>
+    @Html.ActionLink("Create New Expense Entry", "CreateExpense")<br /><br />
+    
+    <b>The below actions are not yet implemented!</b><br/>
+    @Html.ActionLink("List Income Entries", "ListIncomes")<br />
+    @Html.ActionLink("Create New Income Entry", "IntakeIncomes")<br />
+
+</p>

@@ -205,3 +205,5 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagem
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments1.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments2.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.AddTempermentAndComments3.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.unsure.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Release\MusicCityAnimalRescueManagement.Migrations.HeartWormtestResult.resources

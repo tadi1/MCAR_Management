@@ -1,7 +1,7 @@
 ﻿@model MusicCityAnimalRescueManagement.ViewModels.NewDogVettingViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Dog Vetting Record";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,6 +25,7 @@
                 @Html.ValidationMessageFor(model => model.Animal, "", new { @class = "text-danger" })
             </div>
         </div>
+        <hr>
 
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.Sterilized, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -43,6 +44,17 @@
                 @Html.ValidationMessageFor(model => model.DogVetting.SterilizationDate, "", new { @class = "text-danger" })
             </div>
         </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.SterilizationLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.SterilizationLocation, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.Rabies, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -63,6 +75,43 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.RabiesLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.SterilizationLocation, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.Bordetella, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DogVetting.Bordetella)
+                    @Html.ValidationMessageFor(model => model.DogVetting.Bordetella, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.BordetellaDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DogVetting.BordetellaDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DogVetting.BordetellaDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.BordetellaLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.BordetellaLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
+
+        <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -79,6 +128,15 @@
                 @Html.ValidationMessageFor(model => model.DogVetting.DA2PPR1Date, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.DA2PPR1Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR1Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
 
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR2, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -99,6 +157,15 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.DA2PPR2Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR2Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR3, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -115,6 +182,15 @@
                 @Html.ValidationMessageFor(model => model.DogVetting.DA2PPR3Date, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.DA2PPR3Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR3Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
 
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.HeartwormTested, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -143,6 +219,7 @@
                 </div>
             </div>
         </div>
+        <hr><hr>
 
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DewormerDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -151,6 +228,55 @@
                 @Html.ValidationMessageFor(model => model.DogVetting.DewormerDate, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.Dewormer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.Dewormer, new SelectList(Model.Meds, "id", "Name"), "Select a Medication", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Meds, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.DewormerLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.DewormerLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.FleaTickDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DogVetting.FleaTickDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DogVetting.FleaTickDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.FleaTick, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.FleaTick, new SelectList(Model.Meds, "id", "Name"), "Select a Medication", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Meds, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.FleaTickLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.FleaTickLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr><hr>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.AdtlComments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DogVetting.AdtlComments, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DogVetting.AdtlComments, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr><hr>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -1,0 +1,31 @@
+﻿@model List<MusicCityAnimalRescueManagement.Models.Animals.Animal>
+@{
+    ViewBag.Title = "ContractPDF";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2>Html List in PDF</h2>
+    <table width="100%">
+        <tr>
+            <td>Name</td>
+
+            <td>Breed</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.name</td>
+
+                <td>@item.breed</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
+
+@Html.ActionLink("Print", "Print", "Animals")

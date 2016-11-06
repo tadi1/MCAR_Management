@@ -1,0 +1,145 @@
+﻿@model MusicCityAnimalRescueManagement.Models.AccountEntries.ExpenseEntry
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ExpenseEntry</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StrAccountType.AccountTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StrAccountType.AccountTypeName)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EffectiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuppliesDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuppliesDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuppliesComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuppliesComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetBillsDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetBillsDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetBillsComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetBillsComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsurancePremiumsDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsurancePremiumsDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsurancePremiumsComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsurancePremiumsComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FosterReimbursementDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FosterReimbursementDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FosterReimbursementComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FosterReimbursementComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiscellaneousExpenseDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiscellaneousExpenseDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiscellaneousExpenseComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiscellaneousExpenseComment)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
