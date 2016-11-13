@@ -17,8 +17,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         List<Animal> animals;
         List<Location> locations;
-        List<Location> rabiesLocations;
-        List<Medication> meds;
+        List<Location> rabiesLocations;        
 
         public VettingsController()
         {
@@ -29,7 +28,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Vettings
         public ActionResult Index()
         {
-            return View(db.DogVettings.ToList());
+            return View(db.DogVettings.Include(e => e.Animal).ToList());
         }
 
         // GET: Vettings/Details/5
@@ -65,7 +64,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateDog([Bind] DogVetting dogVetting)
+        public ActionResult CreateDog(DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +73,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(dogVetting);
+            //return View(dogVetting);
+            return RedirectToAction("Index", "Vettings");
         }
 
         // GET: Vettings/Edit/5

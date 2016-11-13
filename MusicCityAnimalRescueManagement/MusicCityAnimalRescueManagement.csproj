@@ -324,6 +324,30 @@
     <Compile Include="Migrations\201611062231421_AdtlCommentsToDogVetting.Designer.cs">
       <DependentUpon>201611062231421_AdtlCommentsToDogVetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611080056378_RemovedExtraRequiredAnnotations.cs" />
+    <Compile Include="Migrations\201611080056378_RemovedExtraRequiredAnnotations.Designer.cs">
+      <DependentUpon>201611080056378_RemovedExtraRequiredAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080059509_RemovedExtraRequiredAnnotationsTesting.cs" />
+    <Compile Include="Migrations\201611080059509_RemovedExtraRequiredAnnotationsTesting.Designer.cs">
+      <DependentUpon>201611080059509_RemovedExtraRequiredAnnotationsTesting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080111026_TestingNullableDate.cs" />
+    <Compile Include="Migrations\201611080111026_TestingNullableDate.Designer.cs">
+      <DependentUpon>201611080111026_TestingNullableDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080112266_TestingNullableDate1.cs" />
+    <Compile Include="Migrations\201611080112266_TestingNullableDate1.Designer.cs">
+      <DependentUpon>201611080112266_TestingNullableDate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080144239_AddNDVVMID.cs" />
+    <Compile Include="Migrations\201611080144239_AddNDVVMID.Designer.cs">
+      <DependentUpon>201611080144239_AddNDVVMID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080213406_test.cs" />
+    <Compile Include="Migrations\201611080213406_test.Designer.cs">
+      <DependentUpon>201611080213406_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -695,6 +719,7 @@
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\HomeServer.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -1104,6 +1129,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611062231421_AdtlCommentsToDogVetting.resx">
       <DependentUpon>201611062231421_AdtlCommentsToDogVetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080056378_RemovedExtraRequiredAnnotations.resx">
+      <DependentUpon>201611080056378_RemovedExtraRequiredAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080059509_RemovedExtraRequiredAnnotationsTesting.resx">
+      <DependentUpon>201611080059509_RemovedExtraRequiredAnnotationsTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080111026_TestingNullableDate.resx">
+      <DependentUpon>201611080111026_TestingNullableDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080112266_TestingNullableDate1.resx">
+      <DependentUpon>201611080112266_TestingNullableDate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080144239_AddNDVVMID.resx">
+      <DependentUpon>201611080144239_AddNDVVMID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080213406_test.resx">
+      <DependentUpon>201611080213406_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

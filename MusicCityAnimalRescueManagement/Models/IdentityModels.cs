@@ -33,6 +33,7 @@ namespace MusicCityAnimalRescueManagement.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<NewDogVettingViewModel> NewDogVettingViewModel { get; set; }
         public DbSet<NewAnimalViewModel> NewAnimalViewModels { get; set; }
         public DbSet<AccountingViewModel> AccountingViewModels { get; set; }
         public DbSet<Location> Locations { get; set; }

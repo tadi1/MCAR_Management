@@ -115,7 +115,8 @@ namespace MusicCityAnimalRescueManagement.Migrations
                         name = c.String(),
                         isActive = c.Boolean(nullable: false),
                         isFoster = c.Boolean(nullable: false),
-                    })
+
+                })
                 .PrimaryKey(t => t.id);
             
             CreateTable(

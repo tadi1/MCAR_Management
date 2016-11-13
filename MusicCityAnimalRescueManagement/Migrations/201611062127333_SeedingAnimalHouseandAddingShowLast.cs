@@ -7,12 +7,12 @@ namespace MusicCityAnimalRescueManagement.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Locations", "isShowLast", c => c.Boolean(nullable: false));
+            //AddColumn("dbo.Locations", "isShowLast", c => c.Boolean(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Locations", "isShowLast");
+            //DropColumn("dbo.Locations", "isShowLast");
         }
     }
 }

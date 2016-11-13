@@ -10,6 +10,7 @@ namespace MusicCityAnimalRescueManagement.ViewModels
 {
     public class NewDogVettingViewModel
     {
+        public int id { get; set; }
         public DogVetting DogVetting { get; set; }
         public IEnumerable<Animal> Animals { get; set; }
         public IEnumerable<Location> BasicVaxLocations { get; set; }
@@ -17,5 +18,10 @@ namespace MusicCityAnimalRescueManagement.ViewModels
         public IEnumerable<Medication> Meds { get; set; }
 
         public Animal Animal { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return Animals.
+        //}
     }
 }
