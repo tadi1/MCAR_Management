@@ -85,11 +85,16 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DogVetting dogVetting = db.DogVettings.Find(id);
+            var viewModel = new NewDogVettingViewModel
+            {
+                DogVetting = dogVetting
+            };
+
             if (dogVetting == null)
             {
                 return HttpNotFound();
             }
-            return View(dogVetting);
+            return View(viewModel);
         }
 
         // POST: Vettings/Edit/5

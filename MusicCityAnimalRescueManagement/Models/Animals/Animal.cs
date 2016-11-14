@@ -27,6 +27,9 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Name")]
         public string name { get; set; }
 
+        [Display(Name = "Previous Name")]
+        public string previousName { get; set; }
+
         [Required]
         [Display(Name = "Years")]
         public string AgeY { get; set; }
@@ -98,7 +101,6 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Temperament")]
         public string Temperament { get; set; }
 
-        [Required]
         [Display(Name = "Additional Comments")]
         public string AdtlComments{ get; set; }
 

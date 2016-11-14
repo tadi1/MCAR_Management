@@ -348,6 +348,46 @@
     <Compile Include="Migrations\201611080213406_test.Designer.cs">
       <DependentUpon>201611080213406_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611130537166_AddedLocationPhoneNumber.cs" />
+    <Compile Include="Migrations\201611130537166_AddedLocationPhoneNumber.Designer.cs">
+      <DependentUpon>201611130537166_AddedLocationPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611130550079_LocationChanges.cs" />
+    <Compile Include="Migrations\201611130550079_LocationChanges.Designer.cs">
+      <DependentUpon>201611130550079_LocationChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611131742049_TestingDTForLocations.cs" />
+    <Compile Include="Migrations\201611131742049_TestingDTForLocations.Designer.cs">
+      <DependentUpon>201611131742049_TestingDTForLocations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611131744592_ChangedLocationObjsToInts.cs" />
+    <Compile Include="Migrations\201611131744592_ChangedLocationObjsToInts.Designer.cs">
+      <DependentUpon>201611131744592_ChangedLocationObjsToInts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611131750252_SettingIntsToNullableForDogVetting.cs" />
+    <Compile Include="Migrations\201611131750252_SettingIntsToNullableForDogVetting.Designer.cs">
+      <DependentUpon>201611131750252_SettingIntsToNullableForDogVetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611131804286_SettingIntsToNullableForDogVetting1.cs" />
+    <Compile Include="Migrations\201611131804286_SettingIntsToNullableForDogVetting1.Designer.cs">
+      <DependentUpon>201611131804286_SettingIntsToNullableForDogVetting1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611131805576_TestingLocationChanges.cs" />
+    <Compile Include="Migrations\201611131805576_TestingLocationChanges.Designer.cs">
+      <DependentUpon>201611131805576_TestingLocationChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611132112430_Idek.cs" />
+    <Compile Include="Migrations\201611132112430_Idek.Designer.cs">
+      <DependentUpon>201611132112430_Idek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611132119344_ChangedAnimalsIDtoAnimalId.cs" />
+    <Compile Include="Migrations\201611132119344_ChangedAnimalsIDtoAnimalId.Designer.cs">
+      <DependentUpon>201611132119344_ChangedAnimalsIDtoAnimalId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611132204452_addedIsDewormerToMeds.cs" />
+    <Compile Include="Migrations\201611132204452_addedIsDewormerToMeds.Designer.cs">
+      <DependentUpon>201611132204452_addedIsDewormerToMeds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1147,6 +1187,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611080213406_test.resx">
       <DependentUpon>201611080213406_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611130537166_AddedLocationPhoneNumber.resx">
+      <DependentUpon>201611130537166_AddedLocationPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611130550079_LocationChanges.resx">
+      <DependentUpon>201611130550079_LocationChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611131742049_TestingDTForLocations.resx">
+      <DependentUpon>201611131742049_TestingDTForLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611131744592_ChangedLocationObjsToInts.resx">
+      <DependentUpon>201611131744592_ChangedLocationObjsToInts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611131750252_SettingIntsToNullableForDogVetting.resx">
+      <DependentUpon>201611131750252_SettingIntsToNullableForDogVetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611131804286_SettingIntsToNullableForDogVetting1.resx">
+      <DependentUpon>201611131804286_SettingIntsToNullableForDogVetting1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611131805576_TestingLocationChanges.resx">
+      <DependentUpon>201611131805576_TestingLocationChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132112430_Idek.resx">
+      <DependentUpon>201611132112430_Idek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132119344_ChangedAnimalsIDtoAnimalId.resx">
+      <DependentUpon>201611132119344_ChangedAnimalsIDtoAnimalId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132204452_addedIsDewormerToMeds.resx">
+      <DependentUpon>201611132204452_addedIsDewormerToMeds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

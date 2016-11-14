@@ -47,7 +47,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,Address,Notes,Cats,Dogs,isActive,isFoster,isPullLocation")] Location location)
+        public ActionResult Create(Location location)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,Address,Notes,Cats,Dogs,isActive,isFoster,isPullLocation")] Location location)
+        public ActionResult Edit(Location location)
         {
             if (ModelState.IsValid)
             {

@@ -164,7 +164,17 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    { 
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    { 
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }
+
+
+                    @*@Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })*@
                     <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>
@@ -326,8 +336,14 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
-                    <br>
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }                    <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>
                     @Html.ActionLink("Delete", "Delete", new { id = item.id })
@@ -488,7 +504,14 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }
                     <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>

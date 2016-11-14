@@ -10,11 +10,18 @@ namespace MusicCityAnimalRescueManagement.Models
     public class Location
     {
         public int id { get; set; }
+
+        [Required]
         [Display(Name = "Foster/Location Name")]
         public string name { get; set; }
 
         [Display(Name = "Address")]
         public string Address { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Provided phone number not valid")]
+        public string PhoneNumber { get; set; }
 
         [Display(Name = "Notes")]
         public String Notes { get; set; }
@@ -40,7 +47,7 @@ namespace MusicCityAnimalRescueManagement.Models
         [Display(Name = "Can give rabies vax?")]
         public bool isRabiesVaxLocation { get; set; }
 
-        [Display(Name = "DO NOT DISPLAY")]
+        [Display(Name = "DO NOT DISPLAY ME")]
         public bool isShowLast { get; set; }
 
     }

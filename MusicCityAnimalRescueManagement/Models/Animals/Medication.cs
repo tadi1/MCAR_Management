@@ -24,5 +24,8 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "For Dogs?")]
         public bool isForDogs { get; set; }
+
+        [Display(Name = "Dewormer?")]
+        public bool isDewormer { get; set; }
     }
 }
