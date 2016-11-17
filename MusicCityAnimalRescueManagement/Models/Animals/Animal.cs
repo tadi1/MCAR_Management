@@ -14,6 +14,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "MCAR ID")]
         public String MCARId { get; set; }
+        public String SimpleMCARId { get; set; }
 
         //[Required]
         public AnimalTypes AnimalType { get; set; }

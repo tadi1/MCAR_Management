@@ -392,6 +392,10 @@
     <Compile Include="Migrations\201611171929343_RemovedAnnotationForMCARID.Designer.cs">
       <DependentUpon>201611171929343_RemovedAnnotationForMCARID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611172245013_AddSimpleMCARId.cs" />
+    <Compile Include="Migrations\201611172245013_AddSimpleMCARId.Designer.cs">
+      <DependentUpon>201611172245013_AddSimpleMCARId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1224,6 +1228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611171929343_RemovedAnnotationForMCARID.resx">
       <DependentUpon>201611171929343_RemovedAnnotationForMCARID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611172245013_AddSimpleMCARId.resx">
+      <DependentUpon>201611172245013_AddSimpleMCARId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
