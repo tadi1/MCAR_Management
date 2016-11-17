@@ -388,6 +388,10 @@
     <Compile Include="Migrations\201611132204452_addedIsDewormerToMeds.Designer.cs">
       <DependentUpon>201611132204452_addedIsDewormerToMeds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611171929343_RemovedAnnotationForMCARID.cs" />
+    <Compile Include="Migrations\201611171929343_RemovedAnnotationForMCARID.Designer.cs">
+      <DependentUpon>201611171929343_RemovedAnnotationForMCARID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -847,7 +851,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Animals\Intake.cshtml" />
+    <Content Include="Views\Animals\NotUsed_Intake.cshtml" />
     <Content Include="Views\Animals\Delete.cshtml" />
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Animals\Edit.cshtml" />
@@ -1217,6 +1221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132204452_addedIsDewormerToMeds.resx">
       <DependentUpon>201611132204452_addedIsDewormerToMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611171929343_RemovedAnnotationForMCARID.resx">
+      <DependentUpon>201611171929343_RemovedAnnotationForMCARID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

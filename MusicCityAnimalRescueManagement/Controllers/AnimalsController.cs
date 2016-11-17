@@ -71,28 +71,29 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Intake()
-        {
-            //ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName");
-            //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
+        
+        //public ActionResult Intake()
+        //{
+        //    //ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName");
+        //    //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
 
-            var animalTypes = db.AnimalTypes.ToList();
-            var fosterLocations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
-            var pullLocations = db.Locations.ToList().Where(o => o.isPullLocation == true && o.isActive == true).OrderBy(o => o.name);
-            var sexes = db.Sexes.ToList();
-            //SelectList FosterIDs = new SelectList();
-            //FosterIDs.
-            var viewModel = new NewAnimalViewModel
-            {
-                AnimalTypes = animalTypes,
-                FosterLocations = fosterLocations,
-                PullLocations = pullLocations,
-                Sexes = sexes
+        //    var animalTypes = db.AnimalTypes.ToList();
+        //    var fosterLocations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
+        //    var pullLocations = db.Locations.ToList().Where(o => o.isPullLocation == true && o.isActive == true).OrderBy(o => o.name);
+        //    var sexes = db.Sexes.ToList();
+        //    //SelectList FosterIDs = new SelectList();
+        //    //FosterIDs.
+        //    var viewModel = new NewAnimalViewModel
+        //    {
+        //        AnimalTypes = animalTypes,
+        //        FosterLocations = fosterLocations,
+        //        PullLocations = pullLocations,
+        //        Sexes = sexes
 
-            };
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
         // POST: Animals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -107,6 +108,9 @@ namespace MusicCityAnimalRescueManagement.Controllers
             //    db.SaveChanges();
             //    return RedirectToAction("Index");
             //}
+
+            animal.MCARId = AssignMCARId(animal.AnimalTypeID);
+
             db.Animals.Add(animal);
             db.SaveChanges();
             return RedirectToAction("Index", "Animals");
@@ -193,6 +197,34 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private string AssignMCARId(int AnimalTypeID)
+        {
+            int maxID = -1;
+
+            if(AnimalTypeID == 0)
+            { 
+                var MCARIdList = db.Animals.Where(e => e.MCARId.Contains("-C")).Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString()).Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6));
+                maxID = MCARIdList.Select(v => int.Parse(v)).Max();
+
+            }
+            else if (AnimalTypeID == 1)
+            { 
+                var MCARIdList = db.Animals.Where(e => e.MCARId.Contains("-D")).Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString()).Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6));
+                maxID = MCARIdList.Max(int.Parse(p));
+                maxID = MCARIdList.Select(v => Convert.ToInt32(v)).Max();
+                MCARIdList.ToArray().;
+
+            }
+            else
+            {
+                throw new HttpException();
+            }
+
+           
+
+            return string.Empty;
         }
     }
 }
