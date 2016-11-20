@@ -204,6 +204,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             int maxID = -1;
 
+            //Cat
             if(AnimalTypeID == 0)
             {
                 try
@@ -214,10 +215,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 catch(InvalidOperationException)
                 {
                     //This is the first animal of the year for this category
+                    //1CCYY-C
                     return "1" + DateTime.Today.Year.ToString() + "-C";
                 }
 
             }
+            //Dog
             else if (AnimalTypeID == 1)
             { 
                 try
@@ -229,6 +232,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 catch (InvalidOperationException)
                 {
                     //This is the first animal of the year for this category
+                    //1CCYY-D
                     return "1" + DateTime.Today.Year.ToString() + "-D";
                 }
             }

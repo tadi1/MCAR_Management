@@ -396,6 +396,14 @@
     <Compile Include="Migrations\201611172245013_AddSimpleMCARId.Designer.cs">
       <DependentUpon>201611172245013_AddSimpleMCARId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611201505362_SeedingCrates.cs" />
+    <Compile Include="Migrations\201611201505362_SeedingCrates.Designer.cs">
+      <DependentUpon>201611201505362_SeedingCrates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201514424_SeedingTheRestOfInventory.cs" />
+    <Compile Include="Migrations\201611201514424_SeedingTheRestOfInventory.Designer.cs">
+      <DependentUpon>201611201514424_SeedingTheRestOfInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1231,6 +1239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611172245013_AddSimpleMCARId.resx">
       <DependentUpon>201611172245013_AddSimpleMCARId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201505362_SeedingCrates.resx">
+      <DependentUpon>201611201505362_SeedingCrates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201514424_SeedingTheRestOfInventory.resx">
+      <DependentUpon>201611201514424_SeedingTheRestOfInventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
