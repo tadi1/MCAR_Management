@@ -404,6 +404,34 @@
     <Compile Include="Migrations\201611201514424_SeedingTheRestOfInventory.Designer.cs">
       <DependentUpon>201611201514424_SeedingTheRestOfInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611201546173_ChangedLocationDTtoIntInEquipTypes.cs" />
+    <Compile Include="Migrations\201611201546173_ChangedLocationDTtoIntInEquipTypes.Designer.cs">
+      <DependentUpon>201611201546173_ChangedLocationDTtoIntInEquipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201556111_Renaming.cs" />
+    <Compile Include="Migrations\201611201556111_Renaming.Designer.cs">
+      <DependentUpon>201611201556111_Renaming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201602415_Renaming1.cs" />
+    <Compile Include="Migrations\201611201602415_Renaming1.Designer.cs">
+      <DependentUpon>201611201602415_Renaming1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201609091_Renaming2.cs" />
+    <Compile Include="Migrations\201611201609091_Renaming2.Designer.cs">
+      <DependentUpon>201611201609091_Renaming2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201614021_RenamingContext.cs" />
+    <Compile Include="Migrations\201611201614021_RenamingContext.Designer.cs">
+      <DependentUpon>201611201614021_RenamingContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201624370_AddedIDtoEquipVM.cs" />
+    <Compile Include="Migrations\201611201624370_AddedIDtoEquipVM.Designer.cs">
+      <DependentUpon>201611201624370_AddedIDtoEquipVM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201658534_VSSaysINeedThis.cs" />
+    <Compile Include="Migrations\201611201658534_VSSaysINeedThis.Designer.cs">
+      <DependentUpon>201611201658534_VSSaysINeedThis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -417,15 +445,16 @@
     <Compile Include="Models\Animals\Status.cs" />
     <Compile Include="Models\Animals\Sexes.cs" />
     <Compile Include="Models\Equipment\EquipmentTypes.cs" />
-    <Compile Include="Models\Equipment\InventoryItem.cs" />
+    <Compile Include="Models\Equipment\EquipmentItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IncomeEntryMetadata.cs" />
+    <None Include="Models\IncomeEntryMetadata.cs.bak" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountingViewModel.cs" />
+    <Compile Include="ViewModels\EquipmentViewModel.cs" />
     <Compile Include="ViewModels\NewAnimalViewModel.cs" />
     <Compile Include="ViewModels\NewDogVettingViewModel.cs" />
     <Compile Include="Views\Accounting\CreateExpense.generated.cs">
@@ -447,21 +476,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditExpense.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Accounting\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Accounting\_ListExpenses.generated.cs">
-      <DependentUpon>_ListExpenses.cshtml</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Views\Accounting\ListExpenses.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListExpenses.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Account\ConfirmEmail.generated.cs">
       <AutoGen>True</AutoGen>
@@ -544,31 +558,6 @@
       <DependentUpon>Edit.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\EquipmentTypes\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Equipment\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Equipment\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Equipment\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Equipment\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Equipment\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
@@ -870,10 +859,6 @@
     <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Animals\View.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Accounting\_ListExpenses.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListExpenses.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Accounting\Entries.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
@@ -902,6 +887,11 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Equipment\Create.cshtml" />
+    <Content Include="Views\Equipment\Delete.cshtml" />
+    <Content Include="Views\Equipment\Details.cshtml" />
+    <Content Include="Views\Equipment\Edit.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1031,35 +1021,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EditExpense.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Accounting\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Accounting\Index.cshtml.bak" />
-    <Content Include="Views\Accounting\ListExpenses.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ListExpenses.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Equipment\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Equipment\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Equipment\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Equipment\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Equipment\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\EquipmentTypes\Create.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Create.generated.cs</LastGenOutput>
@@ -1080,11 +1041,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Inventory\Create.cshtml" />
-    <Content Include="Views\Inventory\Delete.cshtml" />
-    <Content Include="Views\Inventory\Details.cshtml" />
-    <Content Include="Views\Inventory\Edit.cshtml" />
-    <Content Include="Views\Inventory\Index.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -1245,6 +1201,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611201514424_SeedingTheRestOfInventory.resx">
       <DependentUpon>201611201514424_SeedingTheRestOfInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201546173_ChangedLocationDTtoIntInEquipTypes.resx">
+      <DependentUpon>201611201546173_ChangedLocationDTtoIntInEquipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201556111_Renaming.resx">
+      <DependentUpon>201611201556111_Renaming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201602415_Renaming1.resx">
+      <DependentUpon>201611201602415_Renaming1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201609091_Renaming2.resx">
+      <DependentUpon>201611201609091_Renaming2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201614021_RenamingContext.resx">
+      <DependentUpon>201611201614021_RenamingContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201624370_AddedIDtoEquipVM.resx">
+      <DependentUpon>201611201624370_AddedIDtoEquipVM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201658534_VSSaysINeedThis.resx">
+      <DependentUpon>201611201658534_VSSaysINeedThis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

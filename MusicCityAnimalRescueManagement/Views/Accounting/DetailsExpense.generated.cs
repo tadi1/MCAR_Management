@@ -365,7 +365,7 @@ WriteLiteral("    ");
 
             
             #line 129 "..\..\Views\Accounting\DetailsExpense.cshtml"
-Write(Html.ActionLink("Edit", "Edit", new { id = Model.Id }));
+Write(Html.ActionLink("Edit", "EditExpense", new { id = Model.Id }));
 
             
             #line default
@@ -376,7 +376,7 @@ WriteLiteral("    ");
 
             
             #line 130 "..\..\Views\Accounting\DetailsExpense.cshtml"
-Write(Html.ActionLink("Back to List", "Index"));
+Write(Html.ActionLink("Back to List", "Entries"));
 
             
             #line default

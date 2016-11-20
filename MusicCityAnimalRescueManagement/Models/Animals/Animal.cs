@@ -16,6 +16,10 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public String MCARId { get; set; }
         public String SimpleMCARId { get; set; }
 
+        [Display(Name="Sex")]
+        [Required]
+        public Animal.Sexes Sex { get; set; }
+
         //[Required]
         public AnimalTypes AnimalType { get; set; }
 
@@ -104,5 +108,10 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Additional Comments")]
         public string AdtlComments{ get; set; }
 
+        public enum Sexes
+        {
+            Male,
+            Female
+        }
     }
 }

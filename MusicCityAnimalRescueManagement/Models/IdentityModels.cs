@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MusicCityAnimalRescueManagement.Models.AccountEntries;
 using MusicCityAnimalRescueManagement.Models.Animals;
+using MusicCityAnimalRescueManagement.Models.Equipment;
 using MusicCityAnimalRescueManagement.ViewModels;
 
 namespace MusicCityAnimalRescueManagement.Models
@@ -41,12 +42,12 @@ namespace MusicCityAnimalRescueManagement.Models
         public DbSet<AnimalTypes> AnimalTypes { get; set; }
         public DbSet<ExpenseEntry> ExpenseEntries { get; set; }
         public DbSet<AccountType> AccountTypes { get; set; }
-        public DbSet<Equipment.InventoryItem> Inventories { get; set; }
         public DbSet<Equipment.EquipmentTypes> EquipmentTypes { get; set; }
         public DbSet<IncomeEntry> IncomeEntries { get; set; }
         public DbSet <DogVetting> DogVettings{ get; set; }
         public DbSet <Medication> Medications { get; set; }
         public DbSet <Sex> Sexes { get; set; }
         public DbSet <Status> Statuses  { get; set; }
+        public DbSet<EquipmentItem> EquipmentItems { get; set; }
     }
 }

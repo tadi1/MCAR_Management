@@ -76,7 +76,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 db.ExpenseEntries.Add(expenseEntry);
                 db.SaveChanges();
-                return RedirectToAction("ListExpenses");
+                //return RedirectToAction("ListExpenses");
+                return RedirectToAction("Entries");
             }
 
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", expenseEntry.AccountTypeID);
@@ -110,26 +111,26 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 db.Entry(expenseEntry).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Entries");
             }
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", expenseEntry.AccountTypeID);
             return View(expenseEntry);
         }
 
         // GET: Accounting/Delete/5
-        public ActionResult DeleteExpense(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
-            if (expenseEntry == null)
-            {
-                return HttpNotFound();
-            }
-            return View(expenseEntry);
-        }
+        //public ActionResult DeleteExpense(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
+        //    if (expenseEntry == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(expenseEntry);
+        //}
 
         // POST: Accounting/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -139,7 +140,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
             db.ExpenseEntries.Remove(expenseEntry);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Entries");
         }
 
 
@@ -178,7 +179,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 db.IncomeEntries.Add(incomeEntry);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Entries");
             }
 
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", incomeEntry.AccountTypeID);
@@ -212,26 +213,26 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 db.Entry(incomeEntry).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Entries");
             }
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", incomeEntry.AccountTypeID);
             return View(incomeEntry);
         }
 
         // GET: IncomeEntries/Delete/5
-        public ActionResult DeleteIncome(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
-            if (incomeEntry == null)
-            {
-                return HttpNotFound();
-            }
-            return View(incomeEntry);
-        }
+        //public ActionResult DeleteIncome(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
+        //    if (incomeEntry == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(incomeEntry);
+        //}
 
         // POST: IncomeEntries/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -241,7 +242,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
             db.IncomeEntries.Remove(incomeEntry);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Entries");
         }
 
         protected override void Dispose(bool disposing)

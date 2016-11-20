@@ -10,306 +10,302 @@
 }
 @Styles.Render("~/Content/dataTables")
 
-<center><b><h1>Accounting Entries</h1></center></b>
+<div style='margin-right: auto; margin-left: auto;text-align: center'>
+    <b><h1>Accounting Entries</h1></b>
+</div>
 
-<center><h2>Expenses</h2></center>
-<p>
-    @Html.ActionLink("Create New Expense Entry", "CreateExpense")
-</p>
-<table class="display" id="ExpenseEntries">
-    <thead>
-        <tr>
-            <th>
-                 Effective Date
-            </th>
-            <th>
-                 Account
-            </th>
-            <th>
-                 Supplies
-            </th>
-            <th>
-                 Supplies Comment
-            </th>
-            <th>
-                 Vet Bills
-            </th>
-            <th>
-                 Vet Bills Comment
-            </th>
-            <th>
-                 Medicine
-            </th>
-            <th>
-                 Medicine Comment
-            </th>
-            <th>
-                 Insurance Premiums
-            </th>
-            <th>
-                 Insurance Premiums Comment
-            </th>
-            <th>
-                 Foster Reimbursement
-            </th> 
-            <th>
-                 Foster Reimbursement Comment
-            </th>
-            <th>
-                 Miscellaneous Expense
-            </th>
-            <th>
-                 Miscellaneous Expense Comment
-            </th>
-            <th>
-                Actions
-            </th>
-            @*<th></th>*@
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (ExpenseEntry entry in Model.ExpenseEntries)
-        {
-            if (entry != null)
-            {
-                <tr>
-                    @*                @Html.HiddenFor(modelItem => item.Id)*@
-                    <td>
-                        @{
-                            String date = entry.EffectiveDate.ToString();
-                            date = date.Substring(0, date.IndexOf(' '));
-                        }
-                        @date
-                    </td>
-                    <td>
-                        @entry.StrAccountType.AccountTypeName
-                    </td>
-                    <td>
-                        @{
-                            if (entry.SuppliesDecimal.HasValue)
-                            {
-                                value = "$(" + entry.SuppliesDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.SuppliesComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.VetBillsDecimal.HasValue)
-                            {
-                                value = "$(" + entry.VetBillsDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.VetBillsComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.MedicineDecimal.HasValue)
-                            {
-                                value = "$(" + entry.MedicineDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.MedicineComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.InsurancePremiumsDecimal.HasValue)
-                            {
-                                value = "$(" + entry.InsurancePremiumsDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.InsurancePremiumsComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.FosterReimbursementDecimal.HasValue)
-                            {
-                                value = "$(" + entry.FosterReimbursementDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.FosterReimbursementComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.MiscellaneousExpenseDecimal.HasValue)
-                            {
-                                value = "$(" + entry.MiscellaneousExpenseDecimal.ToString().Substring(1) + ")";
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.MiscellaneousExpenseComment
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "EditExpense", new { id = entry.Id }) |
-                        @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id }) |
-                        @Html.ActionLink("Delete", "DeleteExpense", new { id = entry.Id })
-                    </td>
-                </tr>
-            }
-        }
-    </tbody>
-    @*<tfoot>
-        <tr>
-            <th colspan="15" style="text-align:right">Total:</th>
-            <th></th>
-        </tr>
-    </tfoot>*@
-</table>
-
-
-<br /><br /><br /><br /><br />
-
-
-<center><h2>Incomes</h2></center>
-<p>
-    @Html.ActionLink("Create New Income Entry", "CreateIncome")
-</p>
-<table class="display" id="IncomeEntries" >
-    <thead>
-        <tr>
-            <th>
-                Effective Date
-            </th>
-            <th>
-                Account
-            </th>
-            <th>
-                Adoptions
-            </th>
-            <th>
-                Number of Cat Adoptions
-            </th>
-            <th>
-                Number of Dog Adoptions
-            </th>
-            <th>
-                Adoptions Comment
-            </th>
-            <th>
-                Donations
-            </th>
-            <th>
-                Donations Comment
-            </th>
-            <th>
-                Miscellaneous Income
-            </th>
-            <th>
-                Miscellaneous Income Comment
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th colspan="5" style="text-align:right">Total:</th>
-            <th></th>
-        </tr>
-    </tfoot>
-    <tbody>
-        @foreach (IncomeEntry entry in Model.IncomeEntries)
-        {
-            if (entry != null)
-            {
-                <tr>
-                    @*                @Html.HiddenFor(modelItem => item.Id)*@
-                    <td>
-                        @{
-                            String date = entry.EffectiveDate.ToString();
-                            date = date.Substring(0, date.IndexOf(' '));
-                        }
-                        @date
-                    </td>
-                    <td>
-                        @entry.StrAccountType.AccountTypeName
-                    </td>
-                    <td>
-                        @{
-                            if (entry.AdoptionsDecimal.HasValue)
-                            {
-                                value = "$" + entry.AdoptionsDecimal.ToString();
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.NumCatAdoptions
-                        @{entry}
-                    </td>
-                    <td>
-                        @entry.NumDogAdoptions
-                    </td>
-                    <td>
-                        @entry.AdoptionsComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.DonationsDecimal.HasValue)
-                            {
-                                value = "$" + entry.DonationsDecimal.ToString();
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.DonationsComment
-                    </td>
-                    <td>
-                        @{
-                            if (entry.MiscellaneousIncomeDecimal.HasValue)
-                            {
-                                value = "$" + entry.MiscellaneousIncomeDecimal.ToString();
-                            }
-                        }
-                        @value
-                        @{ value = String.Empty; }
-                    </td>
-                    <td>
-                        @entry.MiscellaneousIncomeComment
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
-                        @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) |
-                        @Html.ActionLink("Delete", "DeleteIncome", new { id = entry.Id })
-                    </td>
-                </tr>
-            }
-        }
-    </tbody>
-    @*<tfoot>
+    <center><h2>Expenses</h2></center>
+    <p>
+        @Html.ActionLink("Create New Expense Entry", "CreateExpense")
+    </p>
+    <table class="display" id="ExpenseEntries">
+        <thead>
             <tr>
-                <th colspan="15" style="text-align:right">Total:</th>
-                <th></th>
+                <th>
+                    Effective Date
+                </th>
+                <th>
+                    Account
+                </th>
+                <th>
+                    Supplies
+                </th>
+                <th>
+                    Supplies Comment
+                </th>
+                <th>
+                    Vet Bills
+                </th>
+                <th>
+                    Vet Bills Comment
+                </th>
+                <th>
+                    Medicine
+                </th>
+                <th>
+                    Medicine Comment
+                </th>
+                <th>
+                    Insurance Premiums
+                </th>
+                <th>
+                    Insurance Premiums Comment
+                </th>
+                <th>
+                    Foster Reimbursement
+                </th>
+                <th>
+                    Foster Reimbursement Comment
+                </th>
+                <th>
+                    Miscellaneous Expense
+                </th>
+                <th>
+                    Miscellaneous Expense Comment
+                </th>
+                <th>
+                    Actions
+                </th>
+                @*<th></th>*@
             </tr>
-        </tfoot>*@
-</table>
+        </thead>
+        <tbody>
+            @foreach (ExpenseEntry entry in Model.ExpenseEntries)
+            {
+                if (entry != null)
+                {
+                    <tr>
+                        @*                @Html.HiddenFor(modelItem => item.Id)*@
+                        <td>
+                            @{
+                                String date = entry.EffectiveDate.ToString();
+                                date = date.Substring(0, date.IndexOf(' '));
+                            }
+                            @date
+                        </td>
+                        <td>
+                            @entry.StrAccountType.AccountTypeName
+                        </td>
+                        <td>
+                            @{
+                                if (entry.SuppliesDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.SuppliesDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.SuppliesComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.VetBillsDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.VetBillsDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.VetBillsComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.MedicineDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.MedicineDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.MedicineComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.InsurancePremiumsDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.InsurancePremiumsDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.InsurancePremiumsComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.FosterReimbursementDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.FosterReimbursementDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.FosterReimbursementComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.MiscellaneousExpenseDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.MiscellaneousExpenseDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.MiscellaneousExpenseComment
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditExpense", new { id = entry.Id }) |
+                            @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id }) 
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+        @*<tfoot>
+                <tr>
+                    <th colspan="15" style="text-align:right">Total:</th>
+                    <th></th>
+                </tr>
+            </tfoot>*@
+    </table>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <center><h2>Incomes</h2></center>
+    <p>
+        @Html.ActionLink("Create New Income Entry", "CreateIncome")
+    </p>
+    <table class="display" id="IncomeEntries">
+        <thead>
+            <tr>
+                <th>
+                    Effective Date
+                </th>
+                <th>
+                    Account
+                </th>
+                <th>
+                    Adoptions
+                </th>
+                <th>
+                    Number of Cat Adoptions
+                </th>
+                <th>
+                    Number of Dog Adoptions
+                </th>
+                <th>
+                    Adoptions Comment
+                </th>
+                <th>
+                    Donations
+                </th>
+                <th>
+                    Donations Comment
+                </th>
+                <th>
+                    Miscellaneous Income
+                </th>
+                <th>
+                    Miscellaneous Income Comment
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tfoot>
+
+        </tfoot>
+        <tbody>
+            @foreach (IncomeEntry entry in Model.IncomeEntries)
+            {
+                if (entry != null)
+                {
+                    <tr>
+                        @*                @Html.HiddenFor(modelItem => item.Id)*@
+                        <td>
+                            @{
+                                String date = entry.EffectiveDate.ToString();
+                                date = date.Substring(0, date.IndexOf(' '));
+                            }
+                            @date
+                        </td>
+                        <td>
+                            @entry.StrAccountType.AccountTypeName
+                        </td>
+                        <td>
+                            @{
+                                if (entry.AdoptionsDecimal.HasValue)
+                                {
+                                    value = "$" + entry.AdoptionsDecimal.ToString();
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.NumCatAdoptions
+                        </td>
+                        <td>
+                            @entry.NumDogAdoptions
+                        </td>
+                        <td>
+                            @entry.AdoptionsComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.DonationsDecimal.HasValue)
+                                {
+                                    value = "$" + entry.DonationsDecimal.ToString();
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.DonationsComment
+                        </td>
+                        <td>
+                            @{
+                                if (entry.MiscellaneousIncomeDecimal.HasValue)
+                                {
+                                    value = "$" + entry.MiscellaneousIncomeDecimal.ToString();
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.MiscellaneousIncomeComment
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
+                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) 
+                        </td>
+                    </tr>
+                                    }
+                                }
+        </tbody>
+        @*<tfoot>
+                <tr>
+                    <th colspan="15" style="text-align:right">Total:</th>
+                    <th></th>
+                </tr>
+            </tfoot>*@
+    </table>
 
 
 
@@ -318,65 +314,65 @@
 
 
 
-@section scripts
+    @section scripts
 {
-    @Scripts.Render("~/bundles/dataTables")
+        @Scripts.Render("~/bundles/dataTables")
 
-    <script>
-        // WORKS!
-        //$(document).ready(function () {
-        //    $('table.display').DataTable();
-        //});
-        
-        
-        $(document).ready(function () {
-            $('#ExpenseEntries').DataTable({
-                "footerCallback": function (tfoot, data, start, end, display) {
-                    var api = this.api(), data;
-
-                    // Remove the formatting to get integer data for summation
-                    var intVal = function (i) {
-                        return typeof i === 'string' ?
-                            i.replace(/[\$,]/g, '') * 1 :
-                            typeof i === 'number' ?
-                            i : 0;
-                    };
-
-                    // Total over all pages
-                    total = api
-                        .column(6)
-                        .data()
-                        .reduce(function (a, b) {
-                            return intVal(a) + intVal(b);
-                        }, 0);
-
-                    // Total over this page
-                    pageTotal = api
-                        .column(6, { page: 'current' })
-                        .data()
-                        .reduce(function (a, b) {
-                            return intVal(a) + intVal(b);
-                        }, 0);
-
-                    // Update footer
-                    $(api.column(6).footer()).html(
-                        '$' + pageTotal + ' ( $' + total + ' total)'
-                    );
-                }
+        <script>
+            //WORKS!
+            $(document).ready(function () {
+                $('table.display').DataTable();
             });
-        });
-    </script>
 
-    @*<script>
-             $('#IncomeEntries').DataTable({
-                drawCallback: function () {
-                    var api = this.api();
-                    $(api.table().footer()).html(
-                      api.column(4, { page: 'current' }).data().sum()
-                    );
-                }
-            });
-    </script>*@
-}
+
+            //$(document).ready(function () {
+            //    $('#ExpenseEntries').DataTable({
+            //        "footerCallback": function (tfoot, data, start, end, display) {
+            //            var api = this.api(), data;
+
+            //            // Remove the formatting to get integer data for summation
+            //            var intVal = function (i) {
+            //                return typeof i === 'string' ?
+            //                    i.replace(/[\$,]/g, '') * 1 :
+            //                    typeof i === 'number' ?
+            //                    i : 0;
+            //            };
+
+            //            // Total over all pages
+            //            total = api
+            //                .column(6)
+            //                .data()
+            //                .reduce(function (a, b) {
+            //                    return intVal(a) + intVal(b);
+            //                }, 0);
+
+            //            // Total over this page
+            //            pageTotal = api
+            //                .column(6, { page: 'current' })
+            //                .data()
+            //                .reduce(function (a, b) {
+            //                    return intVal(a) + intVal(b);
+            //                }, 0);
+
+            //            // Update footer
+            //            $(api.column(6).footer()).html(
+            //                '$' + pageTotal + ' ( $' + total + ' total)'
+            //            );
+            //        }
+            //    });
+            //});
+        </script>
+
+        @*<script>
+                     $('#IncomeEntries').DataTable({
+                        drawCallback: function () {
+                            var api = this.api();
+                            $(api.table().footer()).html(
+                              api.column(4, { page: 'current' }).data().sum()
+                            );
+                        }
+                    });
+            </script>*@
+    }
 
 

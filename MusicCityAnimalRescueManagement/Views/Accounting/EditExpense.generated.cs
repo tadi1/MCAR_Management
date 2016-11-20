@@ -76,7 +76,7 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteLiteral(">\r\n        <h4>ExpenseEntry</h4>\r\n        <hr />\r\n");
+WriteLiteral(">\r\n        <h4>Expense Entry</h4>\r\n        <hr />\r\n");
 
 WriteLiteral("        ");
 
@@ -703,7 +703,7 @@ WriteLiteral("    ");
 
             
             #line 141 "..\..\Views\Accounting\EditExpense.cshtml"
-Write(Html.ActionLink("Back to List", "Index"));
+Write(Html.ActionLink("Back to List", "Entries"));
 
             
             #line default

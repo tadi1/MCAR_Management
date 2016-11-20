@@ -18,7 +18,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Equipment
         public ActionResult Index()
         {
-            return View(db.Inventories.ToList());
+            return View(db.EquipmentItems.ToList());
         }
 
         // GET: Equipment/Details/5
@@ -28,35 +28,35 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            InventoryItem inventoryItem = db.Inventories.Find(id);
-            if (inventoryItem == null)
+            EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+            if (equipmentItem == null)
             {
                 return HttpNotFound();
             }
-            return View(inventoryItem);
+            return View(equipmentItem);
         }
 
-        // GET: Equipment/Intake
+        // GET: Equipment/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Equipment/Intake
+        // POST: Equipment/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,description")] InventoryItem inventoryItem)
+        public ActionResult Create([Bind(Include = "id,description,LocationId,ItemNumber")] EquipmentItem equipmentItem)
         {
             if (ModelState.IsValid)
             {
-                db.Inventories.Add(inventoryItem);
+                db.EquipmentItems.Add(equipmentItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(inventoryItem);
+            return View(equipmentItem);
         }
 
         // GET: Equipment/Edit/5
@@ -66,12 +66,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            InventoryItem inventoryItem = db.Inventories.Find(id);
-            if (inventoryItem == null)
+            EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+            if (equipmentItem == null)
             {
                 return HttpNotFound();
             }
-            return View(inventoryItem);
+            return View(equipmentItem);
         }
 
         // POST: Equipment/Edit/5
@@ -79,15 +79,15 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,description")] InventoryItem inventoryItem)
+        public ActionResult Edit([Bind(Include = "id,description,LocationId,ItemNumber")] EquipmentItem equipmentItem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(inventoryItem).State = EntityState.Modified;
+                db.Entry(equipmentItem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(inventoryItem);
+            return View(equipmentItem);
         }
 
         // GET: Equipment/Delete/5
@@ -97,12 +97,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            InventoryItem inventoryItem = db.Inventories.Find(id);
-            if (inventoryItem == null)
+            EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+            if (equipmentItem == null)
             {
                 return HttpNotFound();
             }
-            return View(inventoryItem);
+            return View(equipmentItem);
         }
 
         // POST: Equipment/Delete/5
@@ -110,8 +110,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(short id)
         {
-            InventoryItem inventoryItem = db.Inventories.Find(id);
-            db.Inventories.Remove(inventoryItem);
+            EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+            db.EquipmentItems.Remove(equipmentItem);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
