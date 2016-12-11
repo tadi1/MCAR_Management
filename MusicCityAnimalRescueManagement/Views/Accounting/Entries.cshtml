@@ -10,6 +10,14 @@
 }
 @Styles.Render("~/Content/dataTables")
 
+<style>
+.container {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+</style>
+
 <div style='margin-right: auto; margin-left: auto;text-align: center'>
     <b><h1>Accounting Entries</h1></b>
 </div>
@@ -18,57 +26,63 @@
     <p>
         @Html.ActionLink("Create New Expense Entry", "CreateExpense")
     </p>
-    <table class="display" id="ExpenseEntries">
+    <table class="table-responsive" id="ExpenseEntries">
         <thead>
-            <tr>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Account
-                </th>
-                <th>
-                    Supplies
-                </th>
-                <th>
-                    Supplies Comment
-                </th>
-                <th>
-                    Vet Bills
-                </th>
-                <th>
-                    Vet Bills Comment
-                </th>
-                <th>
-                    Medicine
-                </th>
-                <th>
-                    Medicine Comment
-                </th>
-                <th>
-                    Insurance Premiums
-                </th>
-                <th>
-                    Insurance Premiums Comment
-                </th>
-                <th>
-                    Foster Reimbursement
-                </th>
-                <th>
-                    Foster Reimbursement Comment
-                </th>
-                <th>
-                    Miscellaneous Expense
-                </th>
-                <th>
-                    Miscellaneous Expense Comment
-                </th>
-                <th>
-                    Actions
-                </th>
-                @*<th></th>*@
-            </tr>
+        <tr>
+            <th>
+                Effective Date
+            </th>
+            <th>
+                Account
+            </th>
+            <th>
+                Supplies
+            </th>
+            <th>
+                Supplies Comment
+            </th>
+            <th>
+                Vet Bills
+            </th>
+            <th>
+                Vet Bills Comment
+            </th>
+            <th>
+                Medicine
+            </th>
+            <th>
+                Medicine Comment
+            </th>
+            <th>
+                Insurance Premiums
+            </th>
+            <th>
+                Insurance Premiums Comment
+            </th>
+            <th>
+                Foster Reimbursement
+            </th>
+            <th>
+                Foster Reimbursement Comment
+            </th>
+            <th>
+                Miscellaneous Expense
+            </th>
+            <th>
+                Miscellaneous Expense Comment
+            </th>
+            <th>
+                Actions
+            </th>
+            @*<th></th>*@
+        </tr>
         </thead>
+        <tfoot>
+            <tr>
+                <th colspan="2" style="text-align:right">Total:</th>
+                <th></th>
+            </tr>
+        </tfoot>
         <tbody>
             @foreach (ExpenseEntry entry in Model.ExpenseEntries)
             {
@@ -166,11 +180,11 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "EditExpense", new { id = entry.Id }) |
-                            @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id }) 
+                            @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id })
                         </td>
                     </tr>
-                }
-            }
+                                    }
+                                }
         </tbody>
         @*<tfoot>
                 <tr>
@@ -293,7 +307,7 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
-                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) 
+                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id })
                         </td>
                     </tr>
                                     }
@@ -306,7 +320,6 @@
                 </tr>
             </tfoot>*@
     </table>
-
 
 
 

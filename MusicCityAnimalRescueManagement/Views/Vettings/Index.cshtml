@@ -5,11 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Vetting Records</h2>
 
 <p>
     @Html.ActionLink("Add New Dog Record", "CreateDog")
 </p>
+
+<style>
+    .container {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+<h3><center>Dogs</center></h3>
 <table class="display" id="dogs">
     <thead>
         <tr>

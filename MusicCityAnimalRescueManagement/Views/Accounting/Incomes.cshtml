@@ -1,0 +1,144 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.AccountEntries.IncomeEntry>
+
+@{
+    ViewBag.Title = "Incomes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/dataTables")
+
+
+<h2>Incomes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateIncome")
+</p>
+<table class="table" id="IncomeEntries">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StrAccountType.AccountTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumCatAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumDogAdoptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdoptionsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationsComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiscellaneousIncomeComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveDate)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th colspan="10" style="text-align:right">Total:</th>
+            <th></th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrAccountType.AccountTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdoptionsDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumCatAdoptions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumDogAdoptions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdoptionsComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonationsDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonationsComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiscellaneousIncomeDecimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiscellaneousIncomeComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EffectiveDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditIncome", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "DetailsIncome", new { id = item.Id }) |
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dataTables")
+
+    <script>
+        $(document).ready(function () {
+            $('#IncomeEntries').DataTable({
+                "footerCallback": function (row, data, start, end, display) {
+                    var api = this.api(), data;
+
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function (i) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '') * 1 :
+                            typeof i === 'number' ?
+                            i : 0;
+                    };
+
+                    // Total over all pages
+                    total = api
+                        .column(1)
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+
+                    // Total over this page
+                    pageTotal = api
+                        .column(1, { page: 'current' })
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+
+                    // Update footer
+                    $(api.column(1).footer()).html(
+                        '$' + pageTotal + ' ( $' + total + ' total)'
+                    );
+                }
+            });
+        });    </script>
+}

@@ -35,9 +35,15 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(Entries);
         }
 
-        public ActionResult ListExpenses()
+        public ActionResult Expenses()
         {
             var expenseEntries = db.ExpenseEntries.Include(e => e.StrAccountType);
+            return View(expenseEntries.ToList());
+        }
+
+        public ActionResult Incomes()
+        {
+            var expenseEntries = db.IncomeEntries.Include(e => e.StrAccountType);
             return View(expenseEntries.ToList());
         }
 

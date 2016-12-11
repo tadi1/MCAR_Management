@@ -29,6 +29,7 @@ namespace MusicCityAnimalRescueManagement
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-cerulean.css",
+                      "~/Content/bootstrap-cerulean.min.css",
                       "~/Content/bootstrap-theme.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/content/typeahead.css",

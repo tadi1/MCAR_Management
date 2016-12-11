@@ -57,12 +57,19 @@ WriteLiteral(">\r\n    <title>");
             
             #line default
             #line hidden
-WriteLiteral(" - MCAR Management</title>\r\n");
+WriteLiteral(" - MCAR Management</title>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 203), Tuple.Create("\"", 239)
+, Tuple.Create(Tuple.Create("", 209), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery-1.10.2.min.js")
+, 209), false)
+);
+
+WriteLiteral("></script>\r\n\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Views\Shared\_Layout.cshtml"
+            #line 9 "..\..\Views\Shared\_Layout.cshtml"
 Write(Styles.Render("~/Content/css"));
 
             
@@ -73,12 +80,27 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 8 "..\..\Views\Shared\_Layout.cshtml"
+            #line 10 "..\..\Views\Shared\_Layout.cshtml"
 Write(Scripts.Render("~/bundles/modernizr"));
 
             
             #line default
             #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 11 "..\..\Views\Shared\_Layout.cshtml"
+Write(Scripts.Render("~/bundles/lib"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    ");
+
+WriteLiteral("\r\n    ");
+
 WriteLiteral("\r\n    \r\n    <link");
 
 WriteLiteral(" href=\"../../Content/DataTables/css/jquery.dataTables.css\"");
@@ -97,13 +119,6 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 512), Tuple.Create("\"", 548)
-, Tuple.Create(Tuple.Create("", 518), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery-1.10.2.min.js")
-, 518), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(" charset=\"utf8\"");
@@ -115,7 +130,7 @@ WriteLiteral("></script>\r\n\r\n</head>\r\n<body>\r\n");
 WriteLiteral("    ");
 
             
-            #line 17 "..\..\Views\Shared\_Layout.cshtml"
+            #line 21 "..\..\Views\Shared\_Layout.cshtml"
 Write(Html.Partial("_NavBar"));
 
             
@@ -130,7 +145,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 19 "..\..\Views\Shared\_Layout.cshtml"
+            #line 23 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
@@ -139,7 +154,7 @@ WriteLiteral("        ");
 WriteLiteral("\r\n        <hr />\r\n        <footer>\r\n            <p>&copy; ");
 
             
-            #line 22 "..\..\Views\Shared\_Layout.cshtml"
+            #line 26 "..\..\Views\Shared\_Layout.cshtml"
                  Write(DateTime.Now.Year);
 
             
@@ -152,7 +167,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 28 "..\..\Views\Shared\_Layout.cshtml"
+            #line 32 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

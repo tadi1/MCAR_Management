@@ -1,6 +1,7 @@
 [wW]eb.config
 PublishProfiles*/
 [wW]eb.config
+*Auth.cs
 
 #ignore thumbnails created by windows
 Thumbs.db
@@ -30,3 +31,4 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+

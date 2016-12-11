@@ -251,3 +251,8 @@ D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagemen
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.RenamingContext.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.AddedIDtoEquipVM.resources
 D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.VSSaysINeedThis.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.ChangingSexes.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.ModifyingSex.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.ModifyingSex1.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.RemovingSexForTesting.resources
+D:\MCAR\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.ReaddingSexForTesting.resources

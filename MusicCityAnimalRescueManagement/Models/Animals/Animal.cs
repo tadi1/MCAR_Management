@@ -18,7 +18,9 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name="Sex")]
         [Required]
-        public Animal.Sexes Sex { get; set; }
+        public byte SexId { get; set; }
+
+        public Sex Sex { get; set; }
 
         //[Required]
         public AnimalTypes AnimalType { get; set; }
@@ -108,10 +110,5 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Additional Comments")]
         public string AdtlComments{ get; set; }
 
-        public enum Sexes
-        {
-            Male,
-            Female
-        }
     }
 }

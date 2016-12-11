@@ -26,5 +26,10 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
             return View();
         }
+
+        public ActionResult Todo()
+        {
+            return View();
+        }
     }
 }

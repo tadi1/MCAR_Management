@@ -1,4 +1,8 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
+﻿@Styles.Render("~/Content/css")
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -13,10 +17,11 @@
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Accounting", "Entries", "Accounting")</li>
                 <li>@Html.ActionLink("Animals", "Index", "Animals")</li>
+                <li>@Html.ActionLink("Vetting", "Index", "Vettings")</li>
                 <li>@Html.ActionLink("Fosters/Locations", "Index", "Locations")</li>
 
                 @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

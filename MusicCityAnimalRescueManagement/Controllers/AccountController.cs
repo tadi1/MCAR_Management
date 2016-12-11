@@ -135,9 +135,9 @@ namespace MusicCityAnimalRescueManagement.Controllers
             }
         }
 
-        //
-        // GET: /Account/Register
-        [AllowAnonymous]
+
+        //GET: /Account/Register
+       [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -179,7 +179,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(model);
         }
 
-        //
+
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)

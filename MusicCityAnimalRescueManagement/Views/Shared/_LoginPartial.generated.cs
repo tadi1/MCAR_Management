@@ -104,16 +104,9 @@ WriteLiteral("    <ul");
 
 WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
 
-WriteLiteral(">\r\n        <li>");
+WriteLiteral(">\r\n        ");
 
-            
-            #line 19 "..\..\Views\Shared\_LoginPartial.cshtml"
-       Write(Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</li>\r\n        <li>");
+WriteLiteral("\r\n        <li>");
 
             
             #line 20 "..\..\Views\Shared\_LoginPartial.cshtml"

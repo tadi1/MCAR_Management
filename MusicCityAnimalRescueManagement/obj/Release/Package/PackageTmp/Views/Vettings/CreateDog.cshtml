@@ -21,7 +21,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Animal.id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.AnimalsID, new SelectList(Model.Animals, "id", "name"), "Select an Animal", htmlAttributes: new { @class = "form-control"  })
+                @Html.DropDownListFor(model => model.DogVetting.AnimalId, new SelectList(Model.Animals, "id", "name"), "Select an Animal", htmlAttributes: new { @class = "form-control"  })
                 @Html.ValidationMessageFor(model => model.Animal, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -49,7 +49,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.SterilizationLocation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.SterilizationLocation, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.SterilizationLocationId, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -77,7 +77,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.RabiesLocation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.SterilizationLocation, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.RabiesLocationId, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -104,7 +104,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.BordetellaLocation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.BordetellaLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.BordetellaLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -132,7 +132,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR1Location, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.DA2PPR1Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR1LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -159,7 +159,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR2Location, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.DA2PPR2Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR2LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -186,7 +186,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DA2PPR3Location, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.DA2PPR3Location, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.DA2PPR3LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -207,6 +207,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DogVetting.HeartwormDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DogVetting.HeartwormDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DogVetting.HeartwormLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DogVetting.HeartwormLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -238,7 +246,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.DewormerLocation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.DewormerLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.DewormerLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -262,7 +270,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DogVetting.FleaTickLocation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DogVetting.FleaTickLocation, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.DogVetting.FleaTickLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
             </div>
         </div>

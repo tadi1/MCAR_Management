@@ -15,7 +15,7 @@ namespace MusicCityAnimalRescueManagement.Models.AccountEntries
         [Required]
         [Display(Name = "Entry ID")]
         public int Id { get; set; }
-        //[Display(Name = "Which Account?")]
+        [Display(Name = "Which Account?")]
         public AccountType StrAccountType { get; set; }
 
         [Required]

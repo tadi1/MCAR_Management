@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44394</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -432,6 +432,26 @@
     <Compile Include="Migrations\201611201658534_VSSaysINeedThis.Designer.cs">
       <DependentUpon>201611201658534_VSSaysINeedThis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611230010379_ChangingSexes.cs" />
+    <Compile Include="Migrations\201611230010379_ChangingSexes.Designer.cs">
+      <DependentUpon>201611230010379_ChangingSexes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611230022463_ModifyingSex.cs" />
+    <Compile Include="Migrations\201611230022463_ModifyingSex.Designer.cs">
+      <DependentUpon>201611230022463_ModifyingSex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611230023239_ModifyingSex1.cs" />
+    <Compile Include="Migrations\201611230023239_ModifyingSex1.Designer.cs">
+      <DependentUpon>201611230023239_ModifyingSex1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611230107238_RemovingSexForTesting.cs" />
+    <Compile Include="Migrations\201611230107238_RemovingSexForTesting.Designer.cs">
+      <DependentUpon>201611230107238_RemovingSexForTesting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611230113154_ReaddingSexForTesting.cs" />
+    <Compile Include="Migrations\201611230113154_ReaddingSexForTesting.Designer.cs">
+      <DependentUpon>201611230113154_ReaddingSexForTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -537,6 +557,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_ExternalLoginsListPartial.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\_ViewStart.generated.cs">
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\EquipmentTypes\Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -617,6 +642,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Lockout.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\_Layout-Account.generated.cs">
+      <DependentUpon>_Layout-Account.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -634,9 +664,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap-cerulean.css.tad" />
+    <None Include="Content\bootstrap.css.tad" />
     <Content Include="Content\bootstrap-cerulean.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap.css" />
+    <None Include="Content\bootstrap.min.css.tad" />
+    <Content Include="Content\bootstrap-cerulean.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
@@ -856,8 +889,9 @@
     <Content Include="Views\Animals\Delete.cshtml" />
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Animals\Edit.cshtml" />
-    <Content Include="Views\Animals\Index.cshtml" />
-    <Content Include="Views\Animals\View.cshtml" />
+    <Content Include="Views\Accounting\Incomes.cshtml" />
+    <None Include="Views\Animals\Edit.cshtml.old" />
+    <None Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Accounting\Entries.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
@@ -874,6 +908,10 @@
     <Content Include="Views\IncomeEntries\ListIncomes.cshtml" />
     <Content Include="Views\IncomeEntries\_ListIncomes.cshtml" />
     <Content Include="Views\Animals\Create.cshtml" />
+    <Content Include="Views\Account\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Animals\Create.cshtml.bak" />
     <Content Include="Views\Animals\ContractPDF.cshtml" />
     <Content Include="Views\Vettings\CreateDog.cshtml" />
@@ -892,6 +930,13 @@
     <Content Include="Views\Equipment\Details.cshtml" />
     <Content Include="Views\Equipment\Edit.cshtml" />
     <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout-Account.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout-Account.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_NavBar-Account.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Home\Todo.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1223,6 +1268,21 @@
     <EmbeddedResource Include="Migrations\201611201658534_VSSaysINeedThis.resx">
       <DependentUpon>201611201658534_VSSaysINeedThis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230010379_ChangingSexes.resx">
+      <DependentUpon>201611230010379_ChangingSexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230022463_ModifyingSex.resx">
+      <DependentUpon>201611230022463_ModifyingSex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230023239_ModifyingSex1.resx">
+      <DependentUpon>201611230023239_ModifyingSex1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230107238_RemovingSexForTesting.resx">
+      <DependentUpon>201611230107238_RemovingSexForTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611230113154_ReaddingSexForTesting.resx">
+      <DependentUpon>201611230113154_ReaddingSexForTesting.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1242,7 +1302,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52187</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52187/</IISUrl>
+          <IISUrl>https://localhost:44394/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

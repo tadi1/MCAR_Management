@@ -16,6 +16,14 @@
 
 <br/><br/>
 <center><h2>Ready for Adoption</h2></center>
+
+<style>
+    .container {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+
 <table class="display" id="ReadyToAdopt">
     <thead>
         <tr>
@@ -27,6 +35,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AgeY)
@@ -110,6 +121,9 @@
                 </td>
                 <td>
                     <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)
@@ -201,6 +215,9 @@
                 @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AgeY)
             </th>
             <th>
@@ -282,6 +299,9 @@
                 </td>
                 <td>
                     <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)
@@ -369,6 +389,9 @@
                 @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AgeY)
             </th>
             <th>
@@ -450,6 +473,9 @@
                 </td>
                 <td>
                     <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)

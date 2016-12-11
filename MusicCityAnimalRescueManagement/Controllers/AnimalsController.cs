@@ -28,7 +28,11 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Animals
         public ActionResult Index()
         {
-            var animals = db.Animals.Include(e => e.AnimalType).Include(e => e.CurrentFoster).Include(e => e.PullLocation);
+            var animals =
+                db.Animals.Include(e => e.AnimalType)
+                    .Include(e => e.CurrentFoster)
+                    .Include(e => e.PullLocation);
+                    //.Include(e => e.Sex);
             return View(animals.ToList());
         }
 
@@ -138,7 +142,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,MCARId,name,AgeY,AgeM,IntakeDate,colors,breed,description,housetraining,Adopted,ReadyForAdoption,MicrochipNumber,PullFee,AdoptionFee")] Animal animal)
+        public ActionResult Edit(Animal animal)
         {
             if (ModelState.IsValid)
             {

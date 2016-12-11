@@ -295,26 +295,9 @@ WriteLiteral("\r\n                </p>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        </section>\r\n    </div>\r\n    <div");
+WriteLiteral("        </section>\r\n    </div>\r\n    ");
 
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n        <section");
-
-WriteLiteral(" id=\"socialLoginForm\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 56 "..\..\Views\Account\Login.cshtml"
-       Write(Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        </section>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("\r\n</div>\r\n\r\n");
 
 DefineSection("Scripts", () => {
 

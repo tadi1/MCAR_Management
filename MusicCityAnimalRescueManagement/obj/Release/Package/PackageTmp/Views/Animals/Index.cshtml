@@ -16,6 +16,14 @@
 
 <br/><br/>
 <center><h2>Ready for Adoption</h2></center>
+
+<style>
+    .container {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+
 <table class="display" id="ReadyToAdopt">
     <thead>
         <tr>
@@ -27,6 +35,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AgeY)
@@ -109,7 +120,10 @@
                     @Html.DisplayFor(modelItem => item.MCARId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                    <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)
@@ -164,7 +178,17 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    { 
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    { 
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }
+
+
+                    @*@Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })*@
                     <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>
@@ -189,6 +213,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AgeY)
@@ -271,7 +298,10 @@
                     @Html.DisplayFor(modelItem => item.MCARId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                    <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)
@@ -326,8 +356,14 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
-                    <br>
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }                    <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>
                     @Html.ActionLink("Delete", "Delete", new { id = item.id })
@@ -351,6 +387,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AgeY)
@@ -433,7 +472,10 @@
                     @Html.DisplayFor(modelItem => item.MCARId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                    <b>@Html.DisplayFor(modelItem => item.name)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeY)
@@ -488,7 +530,14 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
-                    @Html.ActionLink("Add Vetting", "AddVetting", "Vetting", new { id = item.id })
+                    @if (item.AnimalType.AnimalTypeName == "Dog")
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
+                    }
                     <br>
                     @Html.ActionLink("Details", "Details", new { id = item.id })
                     <br>
