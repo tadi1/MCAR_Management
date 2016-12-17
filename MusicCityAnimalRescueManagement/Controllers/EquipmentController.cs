@@ -40,6 +40,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Equipment/Create
         public ActionResult Create()
         {
+            ViewBag.LocationList = new SelectList(db.Locations
+                    .Where(e => e.isActive)
+                    .Where(e => e.isFoster == true || e.name == "Storage")
+                    .OrderBy(e => e.name),
+                "id",
+                "name");
             return View();
         }
 
@@ -75,8 +81,13 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
             int eqNum = equipmentItem.ItemNumber;
 
-            ViewBag.LocationList = new SelectList(db.Locations.Where(e => e.isActive).OrderBy(e => e.name), "id",
-                "name", equipmentItem.LocationId);
+            ViewBag.LocationList = new SelectList(db.Locations
+                                                .Where(e => e.isActive)
+                                                .Where(e => e.isFoster == true || e.name == "Storage")
+                                                .OrderBy(e => e.name), 
+                                                "id",
+                                                "name",
+                                                equipmentItem.LocationId);
             
             return View(equipmentItem);
         }
