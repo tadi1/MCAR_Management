@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.Equipment;
+using MusicCityAnimalRescueManagement.ViewModels;
 
 namespace MusicCityAnimalRescueManagement.Controllers
 {
@@ -66,29 +67,88 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+
+            var equipmentItem = db.EquipmentItems.Find(id);
+
             if (equipmentItem == null)
-            {
                 return HttpNotFound();
-            }
+
+            int eqNum = equipmentItem.ItemNumber;
+
+            ViewBag.LocationList = new SelectList(db.Locations.Where(e => e.isActive).OrderBy(e => e.name), "id",
+                "name", equipmentItem.LocationId);
+            
             return View(equipmentItem);
         }
+        //public ActionResult Edit(short? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    var locations = db.Locations
+        //        .Where(e => e.isActive)
+        //        .OrderBy(e => e.name)
+        //        .ToList();
+
+        //    var viewModel = new EquipmentViewModel
+        //    {
+        //        Locations = locations,
+        //        EquipmentItem = db.EquipmentItems.Find(id)
+        //    };
+
+        //    //EquipmentItem equipmentItem = db.EquipmentItems.Find(id);
+        //    if (viewModel.EquipmentItem == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(viewModel);
+        //}
 
         // POST: Equipment/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,description,LocationId,ItemNumber")] EquipmentItem equipmentItem)
+        public ActionResult Edit(EquipmentItem equipmentItem)
         {
+            if (equipmentItem == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             if (ModelState.IsValid)
             {
                 db.Entry(equipmentItem).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
+
+            //ViewBag.LocationList = new SelectList(db.Locations.Where(e => e.isActive).OrderBy(e => e.name), "id",
+            //    "name", equipmentItem.LocationId);
             return View(equipmentItem);
         }
+        //public ActionResult Edit(EquipmentViewModel vm)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    vm.EquipmentItem.Location = vm.ItemLocation;
+        //    //    db.Entry(vm.EquipmentItem).State = EntityState.Modified;
+        //    //    db.SaveChanges();
+        //    //    return RedirectToAction("Index");
+        //    //}
+        //    if (ModelState.IsValid)
+        //    {
+        //        //var itemLocation = vm.EquipmentItem.Location;
+        //        var equipmentItem = vm.EquipmentItem;
+        //        //db.Entry(itemLocation).State = EntityState.Modified;
+        //        db.Entry(equipmentItem).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(vm.EquipmentItem);
+        //}
 
         // GET: Equipment/Delete/5
         public ActionResult Delete(short? id)

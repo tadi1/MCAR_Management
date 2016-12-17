@@ -11,8 +11,8 @@ namespace MusicCityAnimalRescueManagement.Models
     {
         public int id { get; set; }
 
-        [Required]
-        [Display(Name = "Foster/Location Name")]
+        //[Required]
+        [Display(Name = "Foster/Location")]
         public string name { get; set; }
 
         [Display(Name = "Address")]

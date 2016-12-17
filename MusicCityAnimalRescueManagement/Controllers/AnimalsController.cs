@@ -58,8 +58,13 @@ namespace MusicCityAnimalRescueManagement.Controllers
             //ViewBag.FosterID = new SelectList(db.Locations.Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name), "id", "name");
 
             var animalTypes = db.AnimalTypes.ToList();
-            var fosterLocations = db.Locations.ToList().Where(o => o.isFoster == true && o.isActive == true).OrderBy(o => o.name);
-            var pullLocations = db.Locations.ToList().Where(o => o.isPullLocation == true);
+            var fosterLocations = db.Locations
+                .ToList()
+                .Where(o => o.isFoster == true && o.isActive == true)
+                .OrderBy(o => o.name);
+            var pullLocations = db.Locations
+                .ToList()
+                .Where(o => o.isPullLocation == true);
             var sexes = db.Sexes.ToList();
             //SelectList FosterIDs = new SelectList();
             //FosterIDs.
@@ -213,7 +218,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 try
                 {
-                    maxID = int.Parse(db.Animals.Where(e => e.MCARId.Contains("-C")).Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString()).Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6)).OrderByDescending(e => e).First());
+                    maxID = int.Parse(db.Animals
+                        .Where(e => e.MCARId.Contains("-C"))
+                        .Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString())
+                        .Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6))
+                        .OrderByDescending(e => e)
+                        .First());
                     return (maxID + 1).ToString() + DateTime.Today.Year.ToString() + "-C";
                 }
                 catch(InvalidOperationException)
@@ -229,7 +239,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
             { 
                 try
                 {
-                    maxID = int.Parse(db.Animals.Where(e => e.MCARId.Contains("-D")).Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString()).Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6)).OrderByDescending(e => e).First());
+                    maxID = int.Parse(db.Animals
+                        .Where(e => e.MCARId.Contains("-D"))
+                        .Where(e => e.MCARId.Substring(e.MCARId.Length - 6, 4) == DateTime.Today.Year.ToString())
+                        .Select(e => e.MCARId.Substring(0, e.MCARId.Length - 6))
+                        .OrderByDescending(e => e)
+                        .First());
                     return (maxID + 1).ToString() + DateTime.Today.Year.ToString() + "-D";
 
                 }

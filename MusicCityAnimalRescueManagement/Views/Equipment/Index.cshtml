@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicCityAnimalRescueManagement.ViewModels.EquipmentViewModel>
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.Equipment.EquipmentItem>
 
 @{
     ViewBag.Title = "Index";
@@ -10,40 +10,56 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="display">
+    <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.EquipmentItem.ItemNumber)
+            @Html.DisplayNameFor(model => model.ItemNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EquipmentItem.description)
+            @Html.DisplayNameFor(model => model.description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EquipmentItem.LocationId)
+            @Html.DisplayNameFor(model => model.Location.name)
         </th>
+
 
         <th></th>
     </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentItem.ItemNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentItem.description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EquipmentItem.LocationId)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.name)
+                </td>
 
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EquipmentItem.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EquipmentItem.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.EquipmentItem.id })
-            </td>
-        </tr>
-    }
-
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dataTables")
+
+    <script>
+        $(document)
+            .ready(function() {
+                $('table.display').DataTable();
+            });
+    </script>
+}
