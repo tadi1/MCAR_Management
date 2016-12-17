@@ -106,6 +106,9 @@
                 @Html.DisplayNameFor(model => model.FleaTickLocation)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.FleaTick)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AdtlComments)
             </th>
             <th></th>
@@ -200,11 +203,14 @@
                     @Html.DisplayFor(modelItem => item.FleaTickLocation.name)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.FleaTick.Name)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.AdtlComments)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) 
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
                     @Html.ActionLink("Delete", "Delete", new { id = item.id })
                 </td>
             </tr>

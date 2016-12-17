@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MusicCityAnimalRescueManagement.Models.Animals
 {
-    public class DogVetting
+    public class CatVetting
     {
         [Required]
         public short id { get; set; }
@@ -16,7 +15,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public Animal Animal { get; set; }
 
         /*Vetting*/
-        
+
         [Display(Name = "Sterilized?")]
         public bool Sterilized { get; set; }
         [Display(Name = "Sterilization Date")]
@@ -29,15 +28,15 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
 
 
-        [Display(Name = "Bordetella?")]
-        public bool Bordetella { get; set; }
-        [Display(Name = "Bordetella Date")]
+        [Display(Name = "FVRCP?")]
+        public bool FVRCP { get; set; }
+        [Display(Name = "FVRCP Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? BordetellaDate { get; set; }
-        [Display(Name = "Bordetella Vax Location")]
-        public Location BordetellaLocation { get; set; }
-        public int? BordetellaLocationId { get; set; }
+        public DateTime? FVRCPDate { get; set; }
+        [Display(Name = "FVRCP Location")]
+        public Location FVRCPLocation { get; set; }
+        public int? FVRCPLocationId { get; set; }
 
 
         [Display(Name = "Rabies Vax?")]
@@ -100,7 +99,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Heartworm Positive?")]
         public bool HeartwormTestResult { get; set; }
 
-        
+
         [Display(Name = "Dewormer used?")]
         public Medication Dewormer { get; set; }
         [Display(Name = "Dewormer Date")]
@@ -115,7 +114,6 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "Flea/Tick used?")]
         public Medication FleaTick { get; set; }
-        public int? FleaTickId { get; set; }
         [Display(Name = "Flea/Tick Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]

@@ -11,6 +11,7 @@ namespace MusicCityAnimalRescueManagement.ViewModels
     {
         public int id { get; set; }
         public EquipmentItem EquipmentItem { get; set; }
-        public Location Location { get; set; }
+        //public Location ItemLocation { get; set; }
+        public IEnumerable<Location> Locations { get; set; }
     }
 }

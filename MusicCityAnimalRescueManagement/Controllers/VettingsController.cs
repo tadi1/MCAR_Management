@@ -21,14 +21,29 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         public VettingsController()
         {
-            rabiesLocations = db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ToList();
-            animals = db.Animals.Where(e => e.AnimalTypeID == 1).ToList();
-            locations = db.Locations.Where(e => e.isActive).Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ToList();
+            rabiesLocations = db.Locations
+                .Where(e => e.isRabiesVaxLocation)
+                .OrderBy(e => e.name)
+                .ThenBy(e => e.isShowLast)
+                .ToList();
+
+            animals = db.Animals
+                .Where(e => e.AnimalTypeID == 1)
+                .OrderBy(e => e.name)
+                .ToList();
+
+            locations = db.Locations
+                .Where(e => e.isActive)
+                .Where(e => e.isBasicVaxLocation)
+                .OrderBy(e => e.isShowLast)
+                .ToList();
         }
         // GET: Vettings
         public ActionResult Index()
         {
-            return View(db.DogVettings.Include(e => e.Animal).ToList());
+            return View(db.DogVettings
+                .Include(e => e.Animal)
+                .ToList());
         }
 
         // GET: Vettings/Details/5

@@ -452,6 +452,22 @@
     <Compile Include="Migrations\201611230113154_ReaddingSexForTesting.Designer.cs">
       <DependentUpon>201611230113154_ReaddingSexForTesting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612112325465_WokringOnFleaAndTick.cs" />
+    <Compile Include="Migrations\201612112325465_WokringOnFleaAndTick.Designer.cs">
+      <DependentUpon>201612112325465_WokringOnFleaAndTick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612112335494_test1.cs" />
+    <Compile Include="Migrations\201612112335494_test1.Designer.cs">
+      <DependentUpon>201612112335494_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612171556019_tryingtofixafuckup.cs" />
+    <Compile Include="Migrations\201612171556019_tryingtofixafuckup.Designer.cs">
+      <DependentUpon>201612171556019_tryingtofixafuckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.cs" />
+    <Compile Include="Migrations\201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.Designer.cs">
+      <DependentUpon>201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -460,6 +476,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animals\Animal.cs" />
     <Compile Include="Models\Animals\AnimalType.cs" />
+    <Compile Include="Models\Animals\CatVetting.cs" />
     <Compile Include="Models\Animals\DogVetting.cs" />
     <Compile Include="Models\Animals\Medication.cs" />
     <Compile Include="Models\Animals\Status.cs" />
@@ -925,11 +942,6 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Equipment\Create.cshtml" />
-    <Content Include="Views\Equipment\Delete.cshtml" />
-    <Content Include="Views\Equipment\Details.cshtml" />
-    <Content Include="Views\Equipment\Edit.cshtml" />
-    <Content Include="Views\Equipment\Index.cshtml" />
     <Content Include="Views\Shared\_Layout-Account.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout-Account.generated.cs</LastGenOutput>
@@ -937,6 +949,8 @@
     <Content Include="Views\Shared\_NavBar-Account.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Home\Todo.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\Edit.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1282,6 +1296,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611230113154_ReaddingSexForTesting.resx">
       <DependentUpon>201611230113154_ReaddingSexForTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612112325465_WokringOnFleaAndTick.resx">
+      <DependentUpon>201612112325465_WokringOnFleaAndTick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612112335494_test1.resx">
+      <DependentUpon>201612112335494_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612171556019_tryingtofixafuckup.resx">
+      <DependentUpon>201612171556019_tryingtofixafuckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.resx">
+      <DependentUpon>201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
