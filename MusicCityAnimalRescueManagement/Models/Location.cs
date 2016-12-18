@@ -41,10 +41,10 @@ namespace MusicCityAnimalRescueManagement.Models
         [Display(Name = "Pull location?")]
         public bool isPullLocation { get; set; }
 
-        [Display(Name = "Basic vaxination?")]
+        [Display(Name = "Provides basic vaxination?")]
         public bool isBasicVaxLocation { get; set; }
 
-        [Display(Name = "Can give rabies vax?")]
+        [Display(Name = "Provides rabies vaccinations?")]
         public bool isRabiesVaxLocation { get; set; }
 
         [Display(Name = "DO NOT DISPLAY ME")]
