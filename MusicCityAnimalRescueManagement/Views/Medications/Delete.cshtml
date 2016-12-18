@@ -1,0 +1,73 @@
+﻿@model MusicCityAnimalRescueManagement.Models.Animals.Medication
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Medication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isFleaTick)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isFleaTick)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isHeartworm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isHeartworm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isForCats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isForCats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isForDogs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isForDogs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isDewormer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isDewormer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

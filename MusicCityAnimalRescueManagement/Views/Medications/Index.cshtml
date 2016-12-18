@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MusicCityAnimalRescueManagement.Models.Animals.Medication>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Medications</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isFleaTick)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isHeartworm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isForCats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isForDogs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isDewormer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isFleaTick)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isHeartworm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isForCats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isForDogs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isDewormer)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
