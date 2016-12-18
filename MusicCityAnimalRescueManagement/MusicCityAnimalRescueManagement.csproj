@@ -206,12 +206,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountingController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\EquipmentTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncomeEntriesController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MedicationsController.cs" />
     <Compile Include="Controllers\VettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -468,6 +470,14 @@
     <Compile Include="Migrations\201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.Designer.cs">
       <DependentUpon>201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612181752134_AddingCatVetting.OtherModelChanges.cs" />
+    <Compile Include="Migrations\201612181752134_AddingCatVetting.OtherModelChanges.Designer.cs">
+      <DependentUpon>201612181752134_AddingCatVetting.OtherModelChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612181812552_AddedCatVettingsContext.cs" />
+    <Compile Include="Migrations\201612181812552_AddedCatVettingsContext.Designer.cs">
+      <DependentUpon>201612181812552_AddedCatVettingsContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -478,9 +488,10 @@
     <Compile Include="Models\Animals\AnimalType.cs" />
     <Compile Include="Models\Animals\CatVetting.cs" />
     <Compile Include="Models\Animals\DogVetting.cs" />
-    <Compile Include="Models\Animals\Medication.cs" />
+    <Compile Include="Models\Medication.cs" />
     <Compile Include="Models\Animals\Status.cs" />
     <Compile Include="Models\Animals\Sexes.cs" />
+    <Compile Include="Models\Applications\Demographics.cs" />
     <Compile Include="Models\Equipment\EquipmentTypes.cs" />
     <Compile Include="Models\Equipment\EquipmentItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -954,6 +965,11 @@
     <Content Include="Views\Equipment\Create.cshtml" />
     <Content Include="Views\Equipment\Delete.cshtml" />
     <Content Include="Views\Equipment\Details.cshtml" />
+    <Content Include="Views\Medications\Create.cshtml" />
+    <Content Include="Views\Medications\Delete.cshtml" />
+    <Content Include="Views\Medications\Details.cshtml" />
+    <Content Include="Views\Medications\Edit.cshtml" />
+    <Content Include="Views\Medications\Index.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1112,6 +1128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Applications\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -1311,6 +1328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.resx">
       <DependentUpon>201612171715162_RemovedRequiredFromFosterLocationToFixEquipError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181752134_AddingCatVetting.OtherModelChanges.resx">
+      <DependentUpon>201612181752134_AddingCatVetting.OtherModelChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181812552_AddedCatVettingsContext.resx">
+      <DependentUpon>201612181812552_AddedCatVettingsContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,9 +14,10 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "MCAR ID")]
         public String MCARId { get; set; }
+
         public String SimpleMCARId { get; set; }
 
-        [Display(Name="Sex")]
+        [Display(Name = "Sex")]
         [Required]
         public byte SexId { get; set; }
 
@@ -75,6 +76,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Required]
         [Display(Name = "Pull Location")]
         public int PullLocationID { get; set; }
+
         public Location PullLocation { get; set; }
 
 
@@ -92,8 +94,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Ready for adoption?")]
         public bool ReadyForAdoption { get; set; }
 
-        [Display(Name = "Microchip Number")]
-        public long MicrochipNumber { get; set; }
+
 
         [Display(Name = "Pull Fee")]
         [DataType(DataType.Currency)]
@@ -108,7 +109,18 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public string Temperament { get; set; }
 
         [Display(Name = "Additional Comments")]
-        public string AdtlComments{ get; set; }
+        public string AdtlComments { get; set; }
 
+
+        [Display(Name = "Adoption Date")]
+        public DateTime? AdoptionDate { get; set; }
+
+        [Display(Name = "Adoption Venue")]
+        public Location AdoptionLocation { get; set; }
+
+        public int? AdoptionLocationId { get; set; }
+
+        [Display(Name = "Time in Rescue")]
+        public string InRescueTime { get; set; }
     }
 }

@@ -30,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.isDewormer)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isMicrochipManufacturer)
+        </th>
         <th></th>
     </tr>
 
@@ -52,6 +55,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.isDewormer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isMicrochipManufacturer)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

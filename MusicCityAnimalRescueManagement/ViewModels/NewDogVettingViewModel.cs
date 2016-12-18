@@ -16,6 +16,7 @@ namespace MusicCityAnimalRescueManagement.ViewModels
         public IEnumerable<Location> BasicVaxLocations { get; set; }
         public IEnumerable<Location> RabiesLocations { get; set; }
         public IEnumerable<Medication> Meds { get; set; }
+        public IEnumerable<Medication> MicrochipManufactures { get; set; }
 
         public Animal Animal { get; set; }
 

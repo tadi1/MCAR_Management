@@ -115,7 +115,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Where(e => e.Animal.Adopted == false))
         {
             <tr>
                 <td>

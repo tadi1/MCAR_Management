@@ -16,6 +16,13 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         /*Vetting*/
 
+        [Display(Name = "Microchip Number")]
+        public long MicrochipNumber { get; set; }
+        public Location MicrochipLocation { get; set; }
+        public int? MicrochipLocationId { get; set; }
+        public Medication MicrochipManufacturer { get; set; }
+        public int? MicrochipManufacturerId { get; set; }
+
         [Display(Name = "Sterilized?")]
         public bool Sterilized { get; set; }
         [Display(Name = "Sterilization Date")]
@@ -25,18 +32,6 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Sterilization Location")]
         public Location SterilizationLocation { get; set; }
         public int? SterilizationLocationId { get; set; }
-
-
-
-        [Display(Name = "FVRCP?")]
-        public bool FVRCP { get; set; }
-        [Display(Name = "FVRCP Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? FVRCPDate { get; set; }
-        [Display(Name = "FVRCP Location")]
-        public Location FVRCPLocation { get; set; }
-        public int? FVRCPLocationId { get; set; }
 
 
         [Display(Name = "Rabies Vax?")]
@@ -50,55 +45,42 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public int? RabiesLocationId { get; set; }
 
 
-        [Display(Name = "Round One DA2PP?")]
-        public bool DA2PPR1 { get; set; }
-        [Display(Name = "Round One DA2PP Date")]
+
+        [Display(Name = "FVRCP Round 1?")]
+        public bool FVRCP1 { get; set; }
+        [Display(Name = "FVRCP Round 1 Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? DA2PPR1Date { get; set; }
-        [Display(Name = "Round One DA2PP Vax Location")]
-        public Location DA2PPR1Location { get; set; }
-        public int? DA2PPR1LocationId { get; set; }
+        public DateTime? FVRCP1Date { get; set; }
+        [Display(Name = "FVRCP Round 1 Location")]
+        public Location FVRCP1Location { get; set; }
+        public int? FVRCP1LocationId { get; set; }
 
-
-
-        [Display(Name = "Round Two DA2PP?")]
-        public bool DA2PPR2 { get; set; }
-        [Display(Name = "Round Two DA2PP Date")]
+        [Display(Name = "FVRCP Round 2?")]
+        public bool FVRCP2 { get; set; }
+        [Display(Name = "FVRCP Round 2 Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? DA2PPR2Date { get; set; }
-        [Display(Name = "Round Two DA2PP Vax Location")]
-        public Location DA2PPR2Location { get; set; }
-        public int? DA2PPR2LocationId { get; set; }
+        public DateTime? FVRCP2Date { get; set; }
+        [Display(Name = "FVRCP Round 2 Location")]
+        public Location FVRCP2Location { get; set; }
+        public int? FVRCP2LocationId { get; set; }
 
-
-
-        [Display(Name = "Round Three DA2PP?")]
-        public bool DA2PPR3 { get; set; }
-        [Display(Name = "Round Three DA2PP Date")]
+        
+        [Display(Name = "FVRCP Round 3?")]
+        public bool FVRCP3 { get; set; }
+        [Display(Name = "FVRCP Round 3 Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? DA2PPR3Date { get; set; }
-        [Display(Name = "Round Three DA2PP Vax Location")]
-        public Location DA2PPR3Location { get; set; }
-        public int? DA2PPR3LocationId { get; set; }
+        public DateTime? FVRCP3Date { get; set; }
+        [Display(Name = "FVRCP Round 3 Location")]
+        public Location FVRCP3Location { get; set; }
+        public int? FVRCP3LocationId { get; set; }
 
-
-
-        [Display(Name = "Heartworm Tested?")]
-        public bool HeartwormTested { get; set; }
-        [Display(Name = "Heartworm Test Date")]
+        [Display(Name = "FVRCP Due")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime? HeartwormDate { get; set; }
-        [Display(Name = "Heartworm Test Location")]
-        public Location HeartwormLocation { get; set; }
-        public int? HeartwormLocationId { get; set; }
-
-        [Display(Name = "Heartworm Positive?")]
-        public bool HeartwormTestResult { get; set; }
-
+        public DateTime? FVRCP3Due { get; set; }
 
         [Display(Name = "Dewormer used?")]
         public Medication Dewormer { get; set; }
@@ -110,8 +92,6 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public Location DewormerLocation { get; set; }
         public int? DewormerLocationId { get; set; }
 
-
-
         [Display(Name = "Flea/Tick used?")]
         public Medication FleaTick { get; set; }
         [Display(Name = "Flea/Tick Date")]
@@ -122,7 +102,37 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public Location FleaTickLocation { get; set; }
         public int? FleaTickLocationId { get; set; }
 
+        [Display(Name = "FEV/Leuk Tested?")]
+        public bool FEVLeukTested { get; set; }
+        [Display(Name = "FEV/Leuk Test Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? FEVLeukDate { get; set; }
+        [Display(Name = "FEV/Leuk Test Location")]
+        public Location FEVLeukLocation { get; set; }
+        public int? FEVLeukId { get; set; }
 
+        [Display(Name = "FEV/Leuk Positive?")]
+        public bool FEVLeukResult { get; set; }
+
+        [Display(Name = "Additional Vetting")]
+        public bool AddtlVetting { get; set; }
+
+        [Display(Name = "Vet Diagnosis")]
+        public string VetDiagnosis { get; set; }
+
+        [Display(Name = "Vet Diagnosis Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? VetDiagnosisDate { get; set; }
+
+        public string MedicationsGiven { get; set; }
+
+        [Display(Name = "Next Vet Appointment")]
+        public DateTime NextVet { get; set; }
+
+        [Display(Name = "Vetting Completed")]
+        public DateTime VettingCompleted { get; set; }
 
         [Display(Name = "Additional Comments")]
         public string AdtlComments { get; set; }

@@ -49,6 +49,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Rabies Vax Location")]
         public Location RabiesLocation { get; set; }
         public int? RabiesLocationId { get; set; }
+        public int? RabiesNumber { get; set; }
 
 
         [Display(Name = "Round One DA2PP?")]
@@ -124,7 +125,13 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public Location FleaTickLocation { get; set; }
         public int? FleaTickLocationId { get; set; }
 
+        [Display(Name = "Microchip Number")]
+        public long? MicrochipNumber { get; set; }
+        public Location MicrochipLocation { get; set; }
+        public Medication MicrochipManufacturer { get; set; }
+        public int? MicrochipManufacturerId { get; set; }
 
+        public int? MicrochipLocationId { get; set; }
 
         [Display(Name = "Additional Comments")]
         public string AdtlComments { get; set; }

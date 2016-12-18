@@ -41,6 +41,9 @@ namespace MusicCityAnimalRescueManagement.Models
         [Display(Name = "Pull location?")]
         public bool isPullLocation { get; set; }
 
+        [Display(Name = "Adoption Venue?")]
+        public bool isAdoptionVenue { get; set; }
+
         [Display(Name = "Provides basic vaxination?")]
         public bool isBasicVaxLocation { get; set; }
 

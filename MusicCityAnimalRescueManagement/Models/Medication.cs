@@ -27,5 +27,8 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "Dewormer?")]
         public bool isDewormer { get; set; }
+
+        [Display(Name = "Microchip Manufacturer?")]
+        public bool isMicrochipManufacturer { get; set; }
     }
 }
