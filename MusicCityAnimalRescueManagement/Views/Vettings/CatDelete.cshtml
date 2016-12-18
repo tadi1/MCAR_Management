@@ -1,0 +1,305 @@
+﻿@model MusicCityAnimalRescueManagement.Models.Animals.CatVetting
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CatVetting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.MCARId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.MCARId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DewormerLocation.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DewormerLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleaTickLocation.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP1Location.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP1Location.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP2Location.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP2Location.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP3Location.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP3Location.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipLocation.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabiesLocation.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SterilizationLocation.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipManufacturerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipManufacturerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sterilized)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sterilized)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SterilizationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rabies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rabies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabiesDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP1Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP1Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP2Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP2Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP3Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP3Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FVRCP3Due)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP3Due)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DewormerDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DewormerDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleaTickDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEVLeukTested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEVLeukTested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEVLeukDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEVLeukDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEVLeukId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEVLeukId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEVLeukResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEVLeukResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddtlVetting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddtlVetting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetDiagnosis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetDiagnosis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetDiagnosisDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetDiagnosisDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicationsGiven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicationsGiven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextVet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextVet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VettingCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VettingCompleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdtlComments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdtlComments)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

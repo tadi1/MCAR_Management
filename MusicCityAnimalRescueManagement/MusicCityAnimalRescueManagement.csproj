@@ -207,6 +207,7 @@
     <Compile Include="Controllers\AccountingController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\ApplicationsController.cs" />
+    <Compile Include="Controllers\CatVettingsControllerTEMP.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\EquipmentTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -478,6 +479,10 @@
     <Compile Include="Migrations\201612181812552_AddedCatVettingsContext.Designer.cs">
       <DependentUpon>201612181812552_AddedCatVettingsContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612182131435_madeAFewDatesNullable.cs" />
+    <Compile Include="Migrations\201612182131435_madeAFewDatesNullable.Designer.cs">
+      <DependentUpon>201612182131435_madeAFewDatesNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -504,6 +509,7 @@
     <Compile Include="ViewModels\AccountingViewModel.cs" />
     <Compile Include="ViewModels\EquipmentViewModel.cs" />
     <Compile Include="ViewModels\NewAnimalViewModel.cs" />
+    <Compile Include="ViewModels\NewCatVettingViewModel.cs" />
     <Compile Include="ViewModels\NewDogVettingViewModel.cs" />
     <Compile Include="Views\Accounting\CreateExpense.generated.cs">
       <AutoGen>True</AutoGen>
@@ -943,10 +949,8 @@
     <None Include="Views\Animals\Create.cshtml.bak" />
     <Content Include="Views\Animals\ContractPDF.cshtml" />
     <Content Include="Views\Vettings\CreateDog.cshtml" />
-    <Content Include="Views\Vettings\Delete.cshtml" />
-    <Content Include="Views\Vettings\Details.cshtml" />
-    <Content Include="Views\Vettings\Edit.cshtml" />
-    <Content Include="Views\Vettings\Index.cshtml" />
+    <Content Include="Views\Vettings\DogEdit.cshtml" />
+    <Content Include="Views\Vettings\DogIndex.cshtml" />
     <Content Include="Views\Animals\AnimalReport.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
@@ -970,6 +974,13 @@
     <Content Include="Views\Medications\Details.cshtml" />
     <Content Include="Views\Medications\Edit.cshtml" />
     <Content Include="Views\Medications\Index.cshtml" />
+    <Content Include="Views\Vettings\CreateCat.cshtml" />
+    <Content Include="Views\Vettings\CatDelete.cshtml" />
+    <Content Include="Views\Vettings\CatDetails.cshtml" />
+    <Content Include="Views\Vettings\CatEdit.cshtml" />
+    <Content Include="Views\Vettings\CatIndex.cshtml" />
+    <Content Include="Views\Vettings\DogDetails.cshtml" />
+    <Content Include="Views\Vettings\Index.cshtml" />
     <None Include="web.config" />
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
@@ -1253,6 +1264,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611131750252_SettingIntsToNullableForDogVetting.resx">
       <DependentUpon>201611131750252_SettingIntsToNullableForDogVetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611131804286_SettingIntsToNullableForDogVetting1.resx">
       <DependentUpon>201611131804286_SettingIntsToNullableForDogVetting1.cs</DependentUpon>
@@ -1334,6 +1346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612181812552_AddedCatVettingsContext.resx">
       <DependentUpon>201612181812552_AddedCatVettingsContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612182131435_madeAFewDatesNullable.resx">
+      <DependentUpon>201612182131435_madeAFewDatesNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

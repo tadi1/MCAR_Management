@@ -1,0 +1,334 @@
+﻿@model MusicCityAnimalRescueManagement.ViewModels.NewCatVettingViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><h2>Add Vetting Record</h2><form action="https://localhost:44394/Vettings/CreateDog" method="post" novalidate="novalidate"><div class="form-horizontal"></div></form></h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Cat</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Animal.id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.AnimalId, new SelectList(Model.Animals, "id", "name"), "Select an Animal", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Animal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.MicrochipNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.MicrochipNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.MicrochipNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.MicrochipLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.MicrochipLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BasicVaxLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.MicrochipLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.MicrochipManufacturerId, new SelectList(Model.MicrochipManufactures, "id", "Name"), "Select a Manufacturer", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MicrochipManufactures, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.Sterilized, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.Sterilized)
+                    @Html.ValidationMessageFor(model => model.CatVetting.Sterilized, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.SterilizationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.SterilizationDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.SterilizationDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.SterilizationLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.SterilizationLocationId, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.Rabies, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.Rabies)
+                    @Html.ValidationMessageFor(model => model.CatVetting.Rabies, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.RabiesDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.RabiesDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.RabiesDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.RabiesLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.RabiesLocationId, new SelectList(Model.RabiesLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RabiesLocations, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.FVRCP1)
+                    @Html.ValidationMessageFor(model => model.CatVetting.FVRCP1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP1Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FVRCP1Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP1Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP1Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.FVRCP1LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP1LocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.FVRCP2)
+                    @Html.ValidationMessageFor(model => model.CatVetting.FVRCP2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP2Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FVRCP2Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP2Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP2Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.FVRCP2LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP2LocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.FVRCP3)
+                    @Html.ValidationMessageFor(model => model.CatVetting.FVRCP3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP3Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FVRCP3Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP3Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP3Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.FVRCP3LocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP3LocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FVRCP3Due, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FVRCP3Due, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FVRCP3Due, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.DewormerDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.DewormerDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.DewormerDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.DewormerLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.DewormerLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.DewormerLocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FleaTickDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FleaTickDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FleaTickDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FleaTickLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.FleaTickLocationId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.FleaTickLocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FEVLeukTested, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.FEVLeukTested)
+                    @Html.ValidationMessageFor(model => model.CatVetting.FEVLeukTested, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FEVLeukDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.FEVLeukDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.FEVLeukDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FEVLeukId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatVetting.FEVLeukId, new SelectList(Model.BasicVaxLocations, "id", "name"), "Select a Location", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatVetting.FEVLeukId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.FEVLeukResult, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.FEVLeukResult)
+                    @Html.ValidationMessageFor(model => model.CatVetting.FEVLeukResult, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.AddtlVetting, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CatVetting.AddtlVetting)
+                    @Html.ValidationMessageFor(model => model.CatVetting.AddtlVetting, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.VetDiagnosis, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.VetDiagnosis, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.VetDiagnosis, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.VetDiagnosisDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.VetDiagnosisDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.VetDiagnosisDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.MedicationsGiven, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.MedicationsGiven, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.MedicationsGiven, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.NextVet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.NextVet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.NextVet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.VettingCompleted, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.VettingCompleted, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.VettingCompleted, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.AdtlComments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.AdtlComments, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.AdtlComments, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

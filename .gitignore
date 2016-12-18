@@ -2,6 +2,9 @@
 PublishProfiles*/
 [wW]eb.config
 *Auth.cs
+obj/
+.vs/
+
 
 #ignore thumbnails created by windows
 Thumbs.db

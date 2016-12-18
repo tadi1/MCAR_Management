@@ -15,9 +15,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
     public class VettingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        List<Animal> animals;
+        List<Animal> dogs;
+        List<Animal> cats;
         List<Location> locations;
-        List<Location> rabiesLocations;        
+        List<Location> rabiesLocations;
+        List<Medication> microchipManufactures;
+
 
         public VettingsController()
         {
@@ -27,8 +30,14 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 .ThenBy(e => e.isShowLast)
                 .ToList();
 
-            animals = db.Animals
+            dogs = db.Animals
                 .Where(e => e.AnimalTypeID == 1)
+                .Where(e => e.Adopted == false)
+                .OrderBy(e => e.name)
+                .ToList();
+
+            cats = db.Animals
+                .Where(e => e.AnimalTypeID == 0)
                 .Where(e => e.Adopted == false)
                 .OrderBy(e => e.name)
                 .ToList();
@@ -38,17 +47,33 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 .Where(e => e.isBasicVaxLocation)
                 .OrderBy(e => e.isShowLast)
                 .ToList();
+
+            microchipManufactures = db.Medications
+                .Where(e => e.isMicrochipManufacturer)
+                .ToList();
         }
-        // GET: Vettings
+
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Vettings
+        public ActionResult DogIndex()
         {
             return View(db.DogVettings
                 .Include(e => e.Animal)
                 .ToList());
         }
+        public ActionResult CatIndex()
+        {
+            return View(db.CatVettings
+                .Include(e => e.Animal)
+                .ToList());
+        }
 
         // GET: Vettings/Details/5
-        public ActionResult Details(short? id)
+        public ActionResult DogDetails(short? id)
         {
             if (id == null)
             {
@@ -62,6 +87,20 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(dogVetting);
         }
 
+        public ActionResult CatDetails(short? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CatVetting catVetting = db.CatVettings.Find(id);
+            if (catVetting == null)
+            {
+                return HttpNotFound();
+            }
+            return View(catVetting);
+        }
+
         // GET: Vettings/Create
         public ActionResult CreateDog()
         {
@@ -70,7 +109,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 Meds = db.Medications.Where(e => e.isForDogs).ToList(),
                 RabiesLocations = rabiesLocations,
                 BasicVaxLocations = locations,
-                Animals = animals
+                Animals = dogs,
+                MicrochipManufactures = microchipManufactures
             };
             return View(viewModel);
         }
@@ -90,11 +130,39 @@ namespace MusicCityAnimalRescueManagement.Controllers
             }
 
             //return View(dogVetting);
-            return RedirectToAction("Index", "Vettings");
+            return RedirectToAction("DogIndex", "Vettings");
+        }
+
+        public ActionResult CreateCat()
+        {
+            var viewModel = new NewCatVettingViewModel
+            {
+                Meds = db.Medications.Where(e => e.isForCats).ToList(),
+                RabiesLocations = rabiesLocations,
+                BasicVaxLocations = locations,
+                Animals = cats,
+                MicrochipManufactures = microchipManufactures
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCat(CatVetting catVetting)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CatVettings.Add(catVetting);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            //return View(dogVetting);
+            return RedirectToAction("CatIndex", "Vettings");
         }
 
         // GET: Vettings/Edit/5
-        public ActionResult Edit(short? id)
+        public ActionResult DogEdit(short? id)
         {
             if (id == null)
             {
@@ -118,7 +186,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind] DogVetting dogVetting)
+        public ActionResult DogEdit([Bind] DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {

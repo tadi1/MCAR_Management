@@ -66,6 +66,9 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 .ToList()
                 .Where(o => o.isPullLocation == true);
             var sexes = db.Sexes.ToList();
+
+            var microchipMaunf = db.Medications
+                .Where(e => e.isMicrochipManufacturer);
             //SelectList FosterIDs = new SelectList();
             //FosterIDs.
             var viewModel = new NewAnimalViewModel
@@ -73,7 +76,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 AnimalTypes = animalTypes,
                 FosterLocations = fosterLocations,
                 PullLocations = pullLocations,
-                Sexes = sexes
+                Sexes = sexes,
+                MicrochipManufactures = microchipMaunf
 
             };
 

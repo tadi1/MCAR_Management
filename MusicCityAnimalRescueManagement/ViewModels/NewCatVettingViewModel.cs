@@ -8,10 +8,10 @@ using System.Web;
 
 namespace MusicCityAnimalRescueManagement.ViewModels
 {
-    public class NewDogVettingViewModel
+    public class NewCatVettingViewModel
     {
         public int id { get; set; }
-        public DogVetting DogVetting { get; set; }
+        public CatVetting CatVetting { get; set; }
         public IEnumerable<Animal> Animals { get; set; }
         public IEnumerable<Location> BasicVaxLocations { get; set; }
         public IEnumerable<Location> RabiesLocations { get; set; }

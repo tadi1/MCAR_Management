@@ -13,6 +13,8 @@ namespace MusicCityAnimalRescueManagement.ViewModels
         public IEnumerable<Location> FosterLocations { get; set; }
         public IEnumerable<Location> PullLocations { get; set; }
         public IEnumerable<AnimalTypes> AnimalTypes { get; set; }
+        public IEnumerable<Medication> MicrochipManufactures { get; set; }
+
         public IEnumerable<Sex> Sexes { get; set; }
         public Animal Animal { get; set; }
         public string StrAnimalType { get; set; }

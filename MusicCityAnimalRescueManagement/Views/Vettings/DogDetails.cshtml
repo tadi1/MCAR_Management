@@ -1,0 +1,283 @@
+﻿@model MusicCityAnimalRescueManagement.Models.Animals.DogVetting
+
+@{
+    ViewBag.Title = "DogDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DogDetails</h2>
+
+<div>
+    <h4>DogVetting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.MCARId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.MCARId)
+        </dd>
+
+        <dt>
+            Bordetella Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BordetellaLocation.name)
+        </dd>
+
+        <dt>
+            Round 1 DA2PP Loc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR1Location.name)
+        </dd>
+
+        <dt>
+            Round 2 DA2PP Loc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR2Location.name)
+        </dd>
+
+        <dt>
+            Round 3 DA2PP Loc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR3Location.name)
+        </dd>
+
+        <dt>
+            Dewormer Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DewormerLocation.name)
+        </dd>
+
+        <dt>
+            Flea Tick Loc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickLocation.name)
+        </dd>
+
+        <dt>
+            Heartworm Perven Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormLocation.name)
+        </dd>
+
+        <dt>
+            Microchip Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipLocation.name)
+        </dd>
+
+        <dt>
+            Rabies Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesLocation.name)
+        </dd>
+
+        <dt>
+            Sterilization Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationLocation.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sterilized)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sterilized)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SterilizationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bordetella)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bordetella)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BordetellaDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BordetellaDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rabies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rabies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabiesDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RabiesNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR1Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR1Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR2Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR2Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DA2PPR3Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DA2PPR3Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartwormTested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormTested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartwormDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartwormTestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeartwormTestResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DewormerDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DewormerDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleaTickId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleaTickDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MicrochipManufacturerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipManufacturer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdtlComments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdtlComments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -47,7 +47,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Name,isFleaTick,isHeartworm,isForCats,isForDogs,isDewormer")] Medication medication)
+        public ActionResult Create([Bind(Include = "id,Name,isFleaTick,isHeartworm,isForCats,isForDogs,isDewormer,isMicrochipManufacturer")] Medication medication)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Name,isFleaTick,isHeartworm,isForCats,isForDogs,isDewormer")] Medication medication)
+        public ActionResult Edit([Bind(Include = "id,Name,isFleaTick,isHeartworm,isForCats,isForDogs,isDewormer,isMicrochipManufacturer")] Medication medication)
         {
             if (ModelState.IsValid)
             {

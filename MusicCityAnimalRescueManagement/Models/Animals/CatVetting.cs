@@ -19,8 +19,12 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Microchip Number")]
         public long MicrochipNumber { get; set; }
         public Location MicrochipLocation { get; set; }
+        [Display(Name = "Microchip Manufacturer")]
         public int? MicrochipLocationId { get; set; }
+        [Display(Name = "Microchip Manufacturer")]
+
         public Medication MicrochipManufacturer { get; set; }
+        [Display(Name = "Microchip Manufacturer")]
         public int? MicrochipManufacturerId { get; set; }
 
         [Display(Name = "Sterilized?")]
@@ -108,8 +112,8 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? FEVLeukDate { get; set; }
-        [Display(Name = "FEV/Leuk Test Location")]
         public Location FEVLeukLocation { get; set; }
+        [Display(Name = "FEV/Leuk Test Location")]
         public int? FEVLeukId { get; set; }
 
         [Display(Name = "FEV/Leuk Positive?")]
@@ -119,22 +123,29 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public bool AddtlVetting { get; set; }
 
         [Display(Name = "Vet Diagnosis")]
+        [DataType(DataType.MultilineText)]
         public string VetDiagnosis { get; set; }
 
         [Display(Name = "Vet Diagnosis Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? VetDiagnosisDate { get; set; }
-
+        [Display(Name = "Medications Given")]
+        [DataType(DataType.MultilineText)]
         public string MedicationsGiven { get; set; }
 
         [Display(Name = "Next Vet Appointment")]
-        public DateTime NextVet { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime?NextVet { get; set; }
 
         [Display(Name = "Vetting Completed")]
-        public DateTime VettingCompleted { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime?VettingCompleted { get; set; }
 
         [Display(Name = "Additional Comments")]
+        [DataType(DataType.MultilineText)]
         public string AdtlComments { get; set; }
     }
 }
