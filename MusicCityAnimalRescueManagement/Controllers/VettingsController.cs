@@ -29,6 +29,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
             animals = db.Animals
                 .Where(e => e.AnimalTypeID == 1)
+                .Where(e => e.Adopted == false)
                 .OrderBy(e => e.name)
                 .ToList();
 
