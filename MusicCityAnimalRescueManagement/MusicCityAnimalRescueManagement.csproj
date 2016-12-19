@@ -831,6 +831,7 @@
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\HomeServer.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -925,7 +926,7 @@
     <Content Include="Views\Animals\Edit.cshtml" />
     <Content Include="Views\Accounting\Incomes.cshtml" />
     <None Include="Views\Animals\Edit.cshtml.old" />
-    <None Include="Views\Animals\Index.cshtml" />
+    <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Accounting\Entries.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
