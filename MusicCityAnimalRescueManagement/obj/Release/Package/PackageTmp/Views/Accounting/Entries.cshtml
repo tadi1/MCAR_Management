@@ -28,55 +28,61 @@
     </p>
     <table class="display" id="ExpenseEntries">
         <thead>
-            <tr>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Account
-                </th>
-                <th>
-                    Supplies
-                </th>
-                <th>
-                    Supplies Comment
-                </th>
-                <th>
-                    Vet Bills
-                </th>
-                <th>
-                    Vet Bills Comment
-                </th>
-                <th>
-                    Medicine
-                </th>
-                <th>
-                    Medicine Comment
-                </th>
-                <th>
-                    Insurance Premiums
-                </th>
-                <th>
-                    Insurance Premiums Comment
-                </th>
-                <th>
-                    Foster Reimbursement
-                </th>
-                <th>
-                    Foster Reimbursement Comment
-                </th>
-                <th>
-                    Miscellaneous Expense
-                </th>
-                <th>
-                    Miscellaneous Expense Comment
-                </th>
-                <th>
-                    Actions
-                </th>
-                @*<th></th>*@
-            </tr>
+        <tr>
+            <th>
+                Effective Date
+            </th>
+            <th>
+                Account
+            </th>
+            <th>
+                Supplies
+            </th>
+            <th>
+                Supplies Comment
+            </th>
+            <th>
+                Vet Bills
+            </th>
+            <th>
+                Vet Bills Comment
+            </th>
+            <th>
+                Medicine
+            </th>
+            <th>
+                Medicine Comment
+            </th>
+            <th>
+                Insurance Premiums
+            </th>
+            <th>
+                Insurance Premiums Comment
+            </th>
+            <th>
+                Foster Reimbursement
+            </th>
+            <th>
+                Foster Reimbursement Comment
+            </th>
+            <th>
+                Miscellaneous Expense
+            </th>
+            <th>
+                Miscellaneous Expense Comment
+            </th>
+            <th>
+                Actions
+            </th>
+            @*<th></th>*@
+        </tr>
         </thead>
+        @*<tfoot>
+            <tr>
+                <th colspan="2" style="text-align:right">Total:</th>
+                <th></th>
+            </tr>
+        </tfoot>*@
         <tbody>
             @foreach (ExpenseEntry entry in Model.ExpenseEntries)
             {

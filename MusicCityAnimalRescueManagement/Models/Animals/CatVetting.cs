@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 
 namespace MusicCityAnimalRescueManagement.Models.Animals
@@ -18,6 +19,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "Microchip Number")]
         public long MicrochipNumber { get; set; }
+        [Display(Name = "Microchip Location")]
         public Location MicrochipLocation { get; set; }
         [Display(Name = "Microchip Manufacturer")]
         public int? MicrochipLocationId { get; set; }
@@ -147,5 +149,13 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Additional Comments")]
         [DataType(DataType.MultilineText)]
         public string AdtlComments { get; set; }
+
+        [Display(Name = "Total Vetting Cost")]
+        public decimal VettingTotalDecimal{ get; set; }
+
+        [Display(Name = "Cost of Most Recent Visit")]
+        public decimal TempVettingDecimal { get; set; }
+        [Display(Name = "Reason for Most Recent Visit")]
+        public string ReasonForVisit { get; set; }
     }
 }

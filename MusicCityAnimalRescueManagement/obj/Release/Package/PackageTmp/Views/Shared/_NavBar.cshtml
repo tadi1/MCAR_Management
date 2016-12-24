@@ -16,9 +16,25 @@
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Accounting", "Entries", "Accounting")</li>
-                <li>@Html.ActionLink("Animals", "Index", "Animals")</li>
-                <li>@Html.ActionLink("Vetting", "Index", "Vettings")</li>
-                <li>@Html.ActionLink("Fosters/Locations", "Index", "Locations")</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="True">Animals <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("List", "Index", "Animals")</li>
+                        <li>@Html.ActionLink("Intake", "Create", "Animals")</li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="True">Vetting <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Dogs", "DogIndex", "Vettings")</li>
+                        <li>@Html.ActionLink("Cats", "CatIndex", "Vettings")</li>
+                        <li>@Html.ActionLink("Medications", "Index", "Medications")</li>
+
+                    </ul>
+                </li>                <li>@Html.ActionLink("Fosters/Locations", "Index", "Locations")</li>
+                <li>@Html.ActionLink("Equipment", "Index", "Equipment")</li>
+                
 
                 @*<li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@

@@ -19,7 +19,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         [Display(Name = "Sex")]
         [Required]
-        public byte SexId { get; set; }
+        public short SexId { get; set; }
 
         public Sex Sex { get; set; }
 

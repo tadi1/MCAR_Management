@@ -6,10 +6,10 @@
 
 <h2><h2>Add Vetting Record</h2><form action="https://localhost:44394/Vettings/CreateDog" method="post" novalidate="novalidate"><div class="form-horizontal"></div></form></h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Cat</h4>
         <hr />
@@ -22,7 +22,7 @@
         </div>
         <hr />
 
-
+        <h3>Microchip</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.MicrochipNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,13 +40,14 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CatVetting.MicrochipLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CatVetting.MicrochipManufacturer, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.CatVetting.MicrochipManufacturerId, new SelectList(Model.MicrochipManufactures, "id", "Name"), "Select a Manufacturer", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MicrochipManufactures, "", new { @class = "text-danger" })
             </div>
         </div>
         <hr />
+        <h3>Spay/Neuter</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.Sterilized, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -74,6 +75,7 @@
             </div>
         </div>
         <hr />
+        <h3>Rabies</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.Rabies, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -101,6 +103,7 @@
             </div>
         </div>
         <hr />
+        <h3>FVRCP</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.FVRCP1, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -188,6 +191,7 @@
             </div>
         </div>
         <hr />
+        <h3>Dewormer</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.DewormerDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -205,6 +209,7 @@
             </div>
         </div>
         <hr />
+        <h3>Flea/Tick</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.FleaTickDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -222,6 +227,7 @@
             </div>
         </div>
         <hr />
+        <h3>FEV/Leukemia</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.FEVLeukTested, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -259,6 +265,7 @@
             </div>
         </div>
         <hr />
+        <h3>Vet Visits</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.AddtlVetting, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -267,6 +274,24 @@
                     @Html.EditorFor(model => model.CatVetting.AddtlVetting)
                     @Html.ValidationMessageFor(model => model.CatVetting.AddtlVetting, "", new { @class = "text-danger" })
                 </div>
+            </div>
+        </div>
+    
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.TempVettingDecimal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.TempVettingDecimal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.TempVettingDecimal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatVetting.ReasonForVisit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatVetting.ReasonForVisit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatVetting.ReasonForVisit, "", new { @class = "text-danger" })
             </div>
         </div>
 

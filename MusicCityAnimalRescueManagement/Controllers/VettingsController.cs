@@ -4,9 +4,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
+using MusicCityAnimalRescueManagement.Models.AccountEntries;
 using MusicCityAnimalRescueManagement.Models.Animals;
 using MusicCityAnimalRescueManagement.ViewModels;
 
@@ -15,11 +15,11 @@ namespace MusicCityAnimalRescueManagement.Controllers
     public class VettingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        List<Animal> dogs;
-        List<Animal> cats;
-        List<Location> locations;
-        List<Location> rabiesLocations;
-        List<Medication> microchipManufactures;
+        readonly List<Animal> dogs;
+        readonly List<Animal> cats;
+        readonly List<Location> locations;
+        readonly List<Location> rabiesLocations;
+        readonly List<Medication> microchipManufactures;
 
 
         public VettingsController()
@@ -135,13 +135,19 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         public ActionResult CreateCat()
         {
+            var catVetting = new CatVetting
+            {
+                TempVettingDecimal = 0
+            };
+
             var viewModel = new NewCatVettingViewModel
             {
                 Meds = db.Medications.Where(e => e.isForCats).ToList(),
                 RabiesLocations = rabiesLocations,
                 BasicVaxLocations = locations,
                 Animals = cats,
-                MicrochipManufactures = microchipManufactures
+                MicrochipManufactures = microchipManufactures,
+                CatVetting = catVetting
             };
             return View(viewModel);
         }
@@ -152,8 +158,34 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (catVetting.TempVettingDecimal != 0)
+                {
+                    var eE = new ExpenseEntry();
+                    catVetting.Animal = db.Animals.Find(catVetting.AnimalId);
+                    eE.VetBillsDecimal = catVetting.TempVettingDecimal;
+                    eE.VetBillsComment = catVetting.Animal.name + " - " + catVetting.ReasonForVisit;
+                    eE.AccountTypeID = 0;
+                    eE.EffectiveDate = (catVetting.VetDiagnosisDate == null)
+                        ? DateTime.Today
+                        : catVetting.VetDiagnosisDate;
+             
+
+                    db.ExpenseEntries.Add(eE);
+                    db.SaveChanges();
+                }
+
+                catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
                 db.CatVettings.Add(catVetting);
                 db.SaveChanges();
+
+                //var expenseEntry = new ExpenseEntry
+                //{
+                //    VetBillsDecimal = catVetting.TempVettingDecimal,
+                //    VetBillsComment = catVetting.Animal.name + " - " + catVetting.ReasonForVisit,
+                //    AccountTypeID = 0
+                //};
+
+                
                 return RedirectToAction("Index");
             }
 

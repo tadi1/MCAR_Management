@@ -483,6 +483,26 @@
     <Compile Include="Migrations\201612182131435_madeAFewDatesNullable.Designer.cs">
       <DependentUpon>201612182131435_madeAFewDatesNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612232140502_NotSureWhatChanged.cs" />
+    <Compile Include="Migrations\201612232140502_NotSureWhatChanged.Designer.cs">
+      <DependentUpon>201612232140502_NotSureWhatChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612240738374_NotSureWhatChanged1.cs" />
+    <Compile Include="Migrations\201612240738374_NotSureWhatChanged1.Designer.cs">
+      <DependentUpon>201612240738374_NotSureWhatChanged1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612240802144_WorkingOnDBIssue.cs" />
+    <Compile Include="Migrations\201612240802144_WorkingOnDBIssue.Designer.cs">
+      <DependentUpon>201612240802144_WorkingOnDBIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612240803139_WorkingOnDBIssuePart2.cs" />
+    <Compile Include="Migrations\201612240803139_WorkingOnDBIssuePart2.Designer.cs">
+      <DependentUpon>201612240803139_WorkingOnDBIssuePart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612240811086_WorkingOnDBIssuePart3.cs" />
+    <Compile Include="Migrations\201612240811086_WorkingOnDBIssuePart3.Designer.cs">
+      <DependentUpon>201612240811086_WorkingOnDBIssuePart3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -832,6 +852,7 @@
     <None Include="Properties\PublishProfiles\HomeServer.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-admin.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\mcar-applications.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -982,7 +1003,9 @@
     <Content Include="Views\Vettings\CatIndex.cshtml" />
     <Content Include="Views\Vettings\DogDetails.cshtml" />
     <Content Include="Views\Vettings\Index.cshtml" />
-    <None Include="web.config" />
+    <None Include="web.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.config.bak" />
     <None Include="Web.config.Debug.bak">
       <DependentUpon>Web.config.bak</DependentUpon>
@@ -1350,6 +1373,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612182131435_madeAFewDatesNullable.resx">
       <DependentUpon>201612182131435_madeAFewDatesNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612232140502_NotSureWhatChanged.resx">
+      <DependentUpon>201612232140502_NotSureWhatChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612240738374_NotSureWhatChanged1.resx">
+      <DependentUpon>201612240738374_NotSureWhatChanged1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612240802144_WorkingOnDBIssue.resx">
+      <DependentUpon>201612240802144_WorkingOnDBIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612240803139_WorkingOnDBIssuePart2.resx">
+      <DependentUpon>201612240803139_WorkingOnDBIssuePart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612240811086_WorkingOnDBIssuePart3.resx">
+      <DependentUpon>201612240811086_WorkingOnDBIssuePart3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

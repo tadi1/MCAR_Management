@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" id="locations">
+<table class="display" id="locations">
     <thead>
         <tr>
             <th>
@@ -39,6 +39,16 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.isPullLocation)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.isAdoptionVenue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isBasicVaxLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isRabiesVaxLocation)
             </th>
             <th></th>
         </tr>
@@ -73,6 +83,15 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.isPullLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isAdoptionVenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isBasicVaxLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isRabiesVaxLocation)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
