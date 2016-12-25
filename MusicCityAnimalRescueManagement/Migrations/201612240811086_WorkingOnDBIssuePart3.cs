@@ -8,10 +8,12 @@ namespace MusicCityAnimalRescueManagement.Migrations
         public override void Up()
         {
             DropForeignKey("dbo.Animals", "Sex_id", "dbo.Sexes");
-            //DropIndex("dbo.Animals", new[] { "Sex_id" });
-            ////DropColumn("dbo.Animals", "SexId");
+            DropIndex("dbo.Animals", new[] { "Sex_id" });
+            DropColumn("dbo.Animals", "SexId");
+            AddColumn("dbo.Animals", "SexId", c => c.Short(nullable: true));
+
             //RenameColumn(table: "dbo.Animals", name: "Sex_id", newName: "SexId");
-            AlterColumn("dbo.Animals", "SexId", c => c.Short(nullable: false));
+            //AlterColumn("dbo.Animals", "SexId", c => c.Short(nullable: false));
             //AlterColumn("dbo.Animals", "SexId", c => c.Short(nullable: false));
             AddForeignKey("dbo.Animals", "SexId", "dbo.Sexes", "id", cascadeDelete: true);
 
