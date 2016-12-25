@@ -31,8 +31,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
             var animals =
                 db.Animals.Include(e => e.AnimalType)
                     .Include(e => e.CurrentFoster)
-                    .Include(e => e.PullLocation);
-                    //.Include(e => e.Sex);
+                    .Include(e => e.PullLocation)
+                    .Include(e => e.Sex);
             return View(animals.ToList());
         }
 

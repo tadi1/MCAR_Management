@@ -18,21 +18,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Accounting
-        public ActionResult Index()
-        {
-            //var expenseEntries = db.ExpenseEntries.Include(e => e.StrAccountType);
-            //return View(expenseEntries.ToList());
-            return View();
-        }
-
-
         public ActionResult Entries()
         {
-            dynamic Entries = new ExpandoObject();
-            Entries.ExpenseEntries = GetExpenseEntries();
-            Entries.IncomeEntries = GetIncomeEntries();
-            return View(Entries);
+            dynamic entries = new ExpandoObject();
+            entries.ExpenseEntries = GetExpenseEntries();
+            entries.IncomeEntries = GetIncomeEntries();
+            return View(entries);
         }
 
         public ActionResult Expenses()
@@ -76,7 +67,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateExpense([Bind(Include = "Id,TimeStamp,EffectiveDate,AccountTypeID,SuppliesDecimal,SuppliesComment,VetBillsDecimal,VetBillsComment,MedicineDecimal,MedicineComment,InsurancePremiumsDecimal,InsurancePremiumsComment,FosterReimbursementDecimal,FosterReimbursementComment,MiscellaneousExpenseDecimal,MiscellaneousExpenseComment")] ExpenseEntry expenseEntry)
+        public ActionResult CreateExpense(ExpenseEntry expenseEntry)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +102,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditExpense([Bind(Include = "Id,TimeStamp,EffectiveDate,AccountTypeID,SuppliesDecimal,SuppliesComment,VetBillsDecimal,VetBillsComment,MedicineDecimal,MedicineComment,InsurancePremiumsDecimal,InsurancePremiumsComment,FosterReimbursementDecimal,FosterReimbursementComment,MiscellaneousExpenseDecimal,MiscellaneousExpenseComment")] ExpenseEntry expenseEntry)
+        public ActionResult EditExpense(ExpenseEntry expenseEntry)
         {
             if (ModelState.IsValid)
             {
@@ -122,36 +113,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", expenseEntry.AccountTypeID);
             return View(expenseEntry);
         }
-
-        // GET: Accounting/Delete/5
-        //public ActionResult DeleteExpense(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
-        //    if (expenseEntry == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(expenseEntry);
-        //}
-
-        // POST: Accounting/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmedExpense(int id)
-        {
-            ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
-            db.ExpenseEntries.Remove(expenseEntry);
-            db.SaveChanges();
-            return RedirectToAction("Entries");
-        }
-
-
-
-
+        
         // GET: IncomeEntries/Details/5
         public ActionResult DetailsIncome(int? id)
         {
@@ -167,7 +129,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             return View(incomeEntry);
         }
 
-        // GET: IncomeEntries/Createf
+        // GET: IncomeEntries/Create
         public ActionResult CreateIncome()
         {
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName");
@@ -179,7 +141,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateIncome([Bind(Include = "Id,AccountTypeID,AdoptionsDecimal,NumCatAdoptions,NumDogAdoptions,AdoptionsComment,DonationsDecimal,DonationsComment,MiscellaneousIncomeDecimal,MiscellaneousIncomeComment,EffectiveDate")] IncomeEntry incomeEntry)
+        public ActionResult CreateIncome(IncomeEntry incomeEntry)
         {
             if (ModelState.IsValid)
             {
@@ -213,7 +175,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditIncome([Bind(Include = "Id,AccountTypeID,AdoptionsDecimal,NumCatAdoptions,NumDogAdoptions,AdoptionsComment,DonationsDecimal,DonationsComment,MiscellaneousIncomeDecimal,MiscellaneousIncomeComment,EffectiveDate")] IncomeEntry incomeEntry)
+        public ActionResult EditIncome(IncomeEntry incomeEntry)
         {
             if (ModelState.IsValid)
             {
@@ -224,33 +186,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", incomeEntry.AccountTypeID);
             return View(incomeEntry);
         }
-
-        // GET: IncomeEntries/Delete/5
-        //public ActionResult DeleteIncome(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
-        //    if (incomeEntry == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(incomeEntry);
-        //}
-
-        // POST: IncomeEntries/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmedIncome(int id)
-        {
-            IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
-            db.IncomeEntries.Remove(incomeEntry);
-            db.SaveChanges();
-            return RedirectToAction("Entries");
-        }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -263,9 +199,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         public List<ExpenseEntry> GetExpenseEntries()
         {
-            List<ExpenseEntry> ExpenseEntry = new List<ExpenseEntry>();
-            ExpenseEntry = db.ExpenseEntries.Include(e => e.StrAccountType).ToList();
-            return ExpenseEntry;
+            var expenseEntry = db.ExpenseEntries.Include(e => e.StrAccountType).ToList();
+            return expenseEntry;
         }
 
         public List<IncomeEntry> GetIncomeEntries()

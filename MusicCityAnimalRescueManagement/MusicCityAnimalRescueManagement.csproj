@@ -536,11 +536,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateExpense.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Accounting\DeleteExpense.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DeleteExpense.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Accounting\DetailsExpense.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -946,36 +941,26 @@
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Animals\Edit.cshtml" />
     <Content Include="Views\Accounting\Incomes.cshtml" />
-    <None Include="Views\Animals\Edit.cshtml.old" />
     <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Accounting\Entries.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
-    <Content Include="Views\IncomeEntry\IncomeEntryIndex.cshtml" />
-    <Content Include="Views\IncomeEntry\IncomeEntryCreate.cshtml" />
-    <Content Include="Views\IncomeEntry\IncomeEntryEdit.cshtml" />
-    <Content Include="Views\IncomeEntry\IncomeEntryEditForm.cshtml" />
     <Content Include="Views\Accounting\CreateIncome.cshtml" />
-    <Content Include="Views\Accounting\DeleteIncome.cshtml" />
     <Content Include="Views\Accounting\DetailsIncome.cshtml" />
     <Content Include="Views\Accounting\EditIncome.cshtml" />
-    <Content Include="Views\IncomeEntries\ListIncomes.cshtml" />
-    <Content Include="Views\IncomeEntries\_ListIncomes.cshtml" />
     <Content Include="Views\Animals\Create.cshtml" />
     <Content Include="Views\Account\_ViewStart.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
     </Content>
-    <None Include="Views\Animals\Create.cshtml.bak" />
     <Content Include="Views\Animals\ContractPDF.cshtml" />
     <Content Include="Views\Vettings\CreateDog.cshtml" />
     <Content Include="Views\Vettings\DogEdit.cshtml" />
     <Content Include="Views\Vettings\DogIndex.cshtml" />
     <Content Include="Views\Animals\AnimalReport.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
-    <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
@@ -1121,10 +1106,6 @@
     <Content Include="Views\Accounting\CreateExpense.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CreateExpense.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Accounting\DeleteExpense.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>DeleteExpense.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Accounting\DetailsExpense.cshtml">
       <Generator>RazorGenerator</Generator>
