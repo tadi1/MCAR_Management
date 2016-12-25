@@ -37,11 +37,11 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [Display(Name = "Previous Name")]
         public string previousName { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Years")]
         public string AgeY { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Months")]
         public string AgeM { get; set; }
 
@@ -104,7 +104,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         [DataType(DataType.Currency)]
         public decimal? AdoptionFee { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Temperament")]
         public string Temperament { get; set; }
 

@@ -424,3 +424,4 @@ C:\Users\Takari\Desktop\MCAR_Management\MusicCityAnimalRescueManagement\obj\Debu
 C:\Users\Takari\Desktop\MCAR_Management\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.csproj.GenerateResource.Cache
 C:\Users\Takari\Desktop\MCAR_Management\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.dll
 C:\Users\Takari\Desktop\MCAR_Management\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.pdb
+C:\Users\Takari\Desktop\MCAR_Management\MusicCityAnimalRescueManagement\obj\Debug\MusicCityAnimalRescueManagement.Migrations.AllowingSomeFieldsToBeNullable.resources

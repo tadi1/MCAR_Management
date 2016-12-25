@@ -503,6 +503,10 @@
     <Compile Include="Migrations\201612240811086_WorkingOnDBIssuePart3.Designer.cs">
       <DependentUpon>201612240811086_WorkingOnDBIssuePart3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612250015402_AllowingSomeFieldsToBeNullable.cs" />
+    <Compile Include="Migrations\201612250015402_AllowingSomeFieldsToBeNullable.Designer.cs">
+      <DependentUpon>201612250015402_AllowingSomeFieldsToBeNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1369,6 +1373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612240811086_WorkingOnDBIssuePart3.resx">
       <DependentUpon>201612240811086_WorkingOnDBIssuePart3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612250015402_AllowingSomeFieldsToBeNullable.resx">
+      <DependentUpon>201612250015402_AllowingSomeFieldsToBeNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
