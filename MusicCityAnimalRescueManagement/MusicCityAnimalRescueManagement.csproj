@@ -507,6 +507,14 @@
     <Compile Include="Migrations\201612250015402_AllowingSomeFieldsToBeNullable.Designer.cs">
       <DependentUpon>201612250015402_AllowingSomeFieldsToBeNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612251856143_ChangingDTOfInRescueTime.cs" />
+    <Compile Include="Migrations\201612251856143_ChangingDTOfInRescueTime.Designer.cs">
+      <DependentUpon>201612251856143_ChangingDTOfInRescueTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612260347257_Testing.ThisMayNotBeNeeded.cs" />
+    <Compile Include="Migrations\201612260347257_Testing.ThisMayNotBeNeeded.Designer.cs">
+      <DependentUpon>201612260347257_Testing.ThisMayNotBeNeeded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1376,6 +1384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612250015402_AllowingSomeFieldsToBeNullable.resx">
       <DependentUpon>201612250015402_AllowingSomeFieldsToBeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612251856143_ChangingDTOfInRescueTime.resx">
+      <DependentUpon>201612251856143_ChangingDTOfInRescueTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612260347257_Testing.ThisMayNotBeNeeded.resx">
+      <DependentUpon>201612260347257_Testing.ThisMayNotBeNeeded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

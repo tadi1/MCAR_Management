@@ -8,6 +8,8 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 {
     public class Animal
     {
+        private double? _inRescueTime;
+
         [Required]
         [Display(Name = "Animal")]
         public int id { get; set; }
@@ -120,7 +122,17 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         public int? AdoptionLocationId { get; set; }
 
-        [Display(Name = "Time in Rescue")]
-        public string InRescueTime { get; set; }
+        [Display(Name = "Time in Rescue (Months)")]
+        public double? InRescueTime
+        {
+            get
+            {
+                var result = (AdoptionDate.HasValue)
+                    ? Math.Round(((AdoptionDate.Value - IntakeDate).TotalDays/30), 2)
+                    : Math.Round(((DateTime.Today - IntakeDate).TotalDays/30), 2);
+                return result;
+            }
+            set { this._inRescueTime = value; }
+        }
     }
 }
