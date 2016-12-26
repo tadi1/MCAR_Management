@@ -127,10 +127,9 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         {
             get
             {
-                var result = (AdoptionDate.HasValue)
-                    ? Math.Round(((AdoptionDate.Value - IntakeDate).TotalDays/30), 2)
-                    : Math.Round(((DateTime.Today - IntakeDate).TotalDays/30), 2);
-                return result;
+                return (AdoptionDate.HasValue)
+                    ? Math.Round(((AdoptionDate.Value - IntakeDate).TotalDays / 30), 2)
+                    : Math.Round(((DateTime.Today - IntakeDate).TotalDays / 30), 2);
             }
             set { this._inRescueTime = value; }
         }
