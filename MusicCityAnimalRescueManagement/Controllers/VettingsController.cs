@@ -177,16 +177,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
                 db.CatVettings.Add(catVetting);
                 db.SaveChanges();
-
-                //var expenseEntry = new ExpenseEntry
-                //{
-                //    VetBillsDecimal = catVetting.TempVettingDecimal,
-                //    VetBillsComment = catVetting.Animal.name + " - " + catVetting.ReasonForVisit,
-                //    AccountTypeID = 0
-                //};
-
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("CatIndex");
             }
 
             //return View(dogVetting);
@@ -262,6 +254,69 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult CatEdit(short? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CatVetting catVetting = db.CatVettings.Find(id);
+            if (catVetting == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.AnimalId = new SelectList(db.Animals.Where(e => e.AnimalTypeID == 0).Where(e => e.Adopted == false), "id", "Name", catVetting.AnimalId);
+            ViewBag.DewormerLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.DewormerLocationId);
+            ViewBag.FleaTickLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.FleaTickLocationId);
+            ViewBag.FVRCP1LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.FVRCP1LocationId);
+            ViewBag.FVRCP2LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.FVRCP2LocationId);
+            ViewBag.FVRCP3LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.FVRCP3LocationId);
+            ViewBag.MicrochipLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.MicrochipLocationId);
+            ViewBag.RabiesLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.RabiesLocationId);
+            ViewBag.SterilizationLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.SterilizationLocationId);
+            return View(catVetting);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CatEdit(CatVetting catVetting)
+        {
+            if (ModelState.IsValid)
+            {
+                if (catVetting.TempVettingDecimal != 0)
+                {
+                    var eE = new ExpenseEntry();
+                    catVetting.Animal = db.Animals.Find(catVetting.AnimalId);
+                    eE.VetBillsDecimal = catVetting.TempVettingDecimal;
+                    eE.VetBillsComment = catVetting.Animal.name + " - " + catVetting.ReasonForVisit;
+                    eE.AccountTypeID = 0;
+                    eE.EffectiveDate = (catVetting.VetDiagnosisDate == null)
+                        ? DateTime.Today
+                        : catVetting.VetDiagnosisDate;
+
+
+                    db.ExpenseEntries.Add(eE);
+                    db.SaveChanges();
+                }
+
+                catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
+
+                db.Entry(catVetting).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("CatIndex");
+            }
+            ViewBag.AnimalId = new SelectList(db.Animals.Where(e => e.AnimalTypeID == 0).Where(e => e.Adopted == false), "id", "Name", catVetting.AnimalId);
+            ViewBag.DewormerLocationId = new SelectList(db.Locations, "id", "name", catVetting.DewormerLocationId);
+            ViewBag.FleaTickLocationId = new SelectList(db.Locations, "id", "name", catVetting.FleaTickLocationId);
+            ViewBag.FVRCP1LocationId = new SelectList(db.Locations, "id", "name", catVetting.FVRCP1LocationId);
+            ViewBag.FVRCP2LocationId = new SelectList(db.Locations, "id", "name", catVetting.FVRCP2LocationId);
+            ViewBag.FVRCP3LocationId = new SelectList(db.Locations, "id", "name", catVetting.FVRCP3LocationId);
+            ViewBag.MicrochipLocationId = new SelectList(db.Locations, "id", "name", catVetting.MicrochipLocationId);
+            ViewBag.RabiesLocationId = new SelectList(db.Locations, "id", "name", catVetting.RabiesLocationId);
+            ViewBag.SterilizationLocationId = new SelectList(db.Locations, "id", "name", catVetting.SterilizationLocationId);
+            return View(catVetting);
         }
     }
 }

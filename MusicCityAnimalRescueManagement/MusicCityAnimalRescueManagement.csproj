@@ -949,9 +949,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Animals\NotUsed_Intake.cshtml" />
-    <Content Include="Views\Animals\Delete.cshtml" />
     <Content Include="Views\Animals\Details.cshtml" />
-    <Content Include="Views\Animals\Edit.cshtml" />
     <Content Include="Views\Accounting\Incomes.cshtml" />
     <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
@@ -1000,6 +998,7 @@
     <Content Include="Views\Vettings\CatIndex.cshtml" />
     <Content Include="Views\Vettings\DogDetails.cshtml" />
     <Content Include="Views\Vettings\Index.cshtml" />
+    <Content Include="Views\Animals\Edit.cshtml" />
     <None Include="web.config">
       <SubType>Designer</SubType>
     </None>

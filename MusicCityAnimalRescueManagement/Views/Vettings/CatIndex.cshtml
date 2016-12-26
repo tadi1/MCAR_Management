@@ -24,19 +24,7 @@
         @Html.DisplayNameFor(model => model.Animal.name)
     </th>
     <th>
-        Dewormer Location
-    </th>
-    <th>
-        Flea/Tick Location
-    </th>
-    <th>
         Microchip Location
-    </th>
-    <th>
-        Rabies Vax Location
-    </th>
-    <th>
-        Sterilization Location
     </th>
     <th>
         @Html.DisplayNameFor(model => model.MicrochipNumber)
@@ -48,18 +36,20 @@
         @Html.DisplayNameFor(model => model.Sterilized)
     </th>
     <th>
+        Sterilization Location
+    </th>
+    <th>
         @Html.DisplayNameFor(model => model.SterilizationDate)
     </th>
     <th>
         @Html.DisplayNameFor(model => model.Rabies)
     </th>
     <th>
+        Rabies Vax Location
+    </th>
+    <th>
         @Html.DisplayNameFor(model => model.RabiesDate)
     </th>
-
-
-
-
     <th>
         @Html.DisplayNameFor(model => model.FVRCP1)
     </th>
@@ -93,7 +83,13 @@
         @Html.DisplayNameFor(model => model.FVRCP3Due)
     </th>
     <th>
+        Dewormer Location
+    </th>
+    <th>
         @Html.DisplayNameFor(model => model.DewormerDate)
+    </th>
+    <th>
+        Flea/Tick Location
     </th>
     <th>
         @Html.DisplayNameFor(model => model.FleaTickDate)
@@ -142,22 +138,7 @@
                     @Html.DisplayFor(modelItem => item.Animal.name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DewormerLocation.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FleaTickLocation.name)
-                </td>
-
-
-
-                <td>
                     @Html.DisplayFor(modelItem => item.MicrochipLocation.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RabiesLocation.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SterilizationLocation.name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MicrochipNumber)
@@ -169,15 +150,20 @@
                     @Html.DisplayFor(modelItem => item.Sterilized)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.SterilizationLocation.name)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.SterilizationDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Rabies)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.RabiesLocation.name)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.RabiesDate)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.FVRCP1)
                 </td>
@@ -187,7 +173,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FVRCP1Date)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.FVRCP2)
                 </td>
@@ -203,7 +188,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FVRCP3Location.name)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.FVRCP3Date)
                 </td>
@@ -211,7 +195,13 @@
                     @Html.DisplayFor(modelItem => item.FVRCP3Due)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.DewormerLocation.name)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.DewormerDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FleaTickLocation.name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FleaTickDate)

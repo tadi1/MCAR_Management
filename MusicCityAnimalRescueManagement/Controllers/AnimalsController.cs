@@ -159,6 +159,9 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.SexId = new SelectList(db.Animals, "id", "Name", animal.SexId);
+
             return View(animal);
         }
 

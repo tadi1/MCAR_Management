@@ -12,19 +12,20 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CatVetting</h4>
+        <h4>Edit @Model.Animal.name's vetting entry.</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AnimalId, "AnimalId", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.HiddenFor(model => model.AnimalId)
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.AnimalId, "AnimalId", htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
                 @Html.DropDownList("AnimalId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AnimalId, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
+        <h3>Microchip</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.MicrochipNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -36,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MicrochipLocationId, "MicrochipLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MicrochipLocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("MicrochipLocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MicrochipLocationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +49,8 @@
                 @Html.ValidationMessageFor(model => model.MicrochipManufacturerId, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>Spay/Neuter</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.Sterilized, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -70,10 +72,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SterilizationLocationId, "SterilizationLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("SterilizationLocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("SterilizationLocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SterilizationLocationId, "", new { @class = "text-danger" })
             </div>
         </div>
+        <hr />
+        <h3>Rabies</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Rabies, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -96,11 +100,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.RabiesLocationId, "RabiesLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("RabiesLocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("RabiesLocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RabiesLocationId, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>FVRCP</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.FVRCP1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -122,7 +127,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FVRCP1LocationId, "FVRCP1LocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FVRCP1LocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("FVRCP1LocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FVRCP1LocationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -148,7 +153,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FVRCP2LocationId, "FVRCP2LocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FVRCP2LocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("FVRCP2LocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FVRCP2LocationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -174,7 +179,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FVRCP3LocationId, "FVRCP3LocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FVRCP3LocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("FVRCP3LocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FVRCP3LocationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -186,7 +191,8 @@
                 @Html.ValidationMessageFor(model => model.FVRCP3Due, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>Dewormer</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.DewormerDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -198,11 +204,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DewormerLocationId, "DewormerLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("DewormerLocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("DewormerLocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DewormerLocationId, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>Flea/Tick</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.FleaTickDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -214,11 +221,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FleaTickLocationId, "FleaTickLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FleaTickLocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("FleaTickLocationId", null, "Select a Location", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FleaTickLocationId, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>FEV/Leukemia</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.FEVLeukTested, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -254,6 +262,8 @@
                 </div>
             </div>
         </div>
+        <hr />
+        <h3>Vet Visits</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.AddtlVetting, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -264,8 +274,25 @@
                 </div>
             </div>
         </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.TempVettingDecimal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TempVettingDecimal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TempVettingDecimal, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.ReasonForVisit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReasonForVisit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReasonForVisit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+    <div class="form-group">
             @Html.LabelFor(model => model.VetDiagnosis, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.VetDiagnosis, new { htmlAttributes = new { @class = "form-control" } })
@@ -324,3 +351,8 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}
