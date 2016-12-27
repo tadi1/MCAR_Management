@@ -8,89 +8,30 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CatVetting</h4>
+    <h4>Edit @Model.Animal.name's vetting entry.</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Animal.MCARId)
+            @Html.DisplayNameFor(model => model.Animal.name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Animal.MCARId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DewormerLocation.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DewormerLocation.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FleaTickLocation.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FleaTickLocation.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FVRCP1Location.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FVRCP1Location.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FVRCP2Location.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FVRCP2Location.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FVRCP3Location.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FVRCP3Location.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MicrochipLocation.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MicrochipLocation.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RabiesLocation.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RabiesLocation.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SterilizationLocation.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SterilizationLocation.name)
+            @Html.DisplayFor(model => model.Animal.name)
         </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.MicrochipNumber)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.MicrochipNumber)
         </dd>
+        <dt>
+            Microchip Location
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.MicrochipLocation.name)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.MicrochipManufacturerId)
         </dt>
@@ -108,6 +49,14 @@
         </dd>
 
         <dt>
+            Sterilization Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SterilizationLocation.name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.SterilizationDate)
         </dt>
 
@@ -122,6 +71,14 @@
         <dd>
             @Html.DisplayFor(model => model.Rabies)
         </dd>
+        <dt>
+            Rabies Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RabiesLocation.name)
+        </dd>
+
 
         <dt>
             @Html.DisplayNameFor(model => model.RabiesDate)
@@ -140,6 +97,15 @@
         </dd>
 
         <dt>
+            FVRCP Round 1 Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP1Location.name)
+        </dd>
+
+
+        <dt>
             @Html.DisplayNameFor(model => model.FVRCP1Date)
         </dt>
 
@@ -154,6 +120,14 @@
         <dd>
             @Html.DisplayFor(model => model.FVRCP2)
         </dd>
+        <dt>
+            FVRCP Round 2 Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP2Location.name)
+        </dd>
+
 
         <dt>
             @Html.DisplayNameFor(model => model.FVRCP2Date)
@@ -172,6 +146,15 @@
         </dd>
 
         <dt>
+            FVRCP Round 3 Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FVRCP3Location.name)
+        </dd>
+
+
+        <dt>
             @Html.DisplayNameFor(model => model.FVRCP3Date)
         </dt>
 
@@ -186,13 +169,26 @@
         <dd>
             @Html.DisplayFor(model => model.FVRCP3Due)
         </dd>
+        <dt>
+            Dewormer Location
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.DewormerLocation.name)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.DewormerDate)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DewormerDate)
+        </dd>
+        <dt>
+            Flea/Tick Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleaTickLocation.name)
         </dd>
 
         <dt>
@@ -294,6 +290,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "CatEdit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "CatIndex")
 </p>
