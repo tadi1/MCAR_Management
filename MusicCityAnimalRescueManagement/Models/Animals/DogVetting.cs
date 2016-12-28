@@ -133,7 +133,41 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
         public int? MicrochipLocationId { get; set; }
 
+        [Display(Name = "Additional Vetting")]
+        public bool AddtlVetting { get; set; }
+
+        [Display(Name = "Vet Diagnosis")]
+        [DataType(DataType.MultilineText)]
+        public string VetDiagnosis { get; set; }
+
+        [Display(Name = "Vet Diagnosis Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? VetDiagnosisDate { get; set; }
+        [Display(Name = "Medications Given")]
+        [DataType(DataType.MultilineText)]
+        public string MedicationsGiven { get; set; }
+
+        [Display(Name = "Next Vet Appointment")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? NextVet { get; set; }
+
+        [Display(Name = "Vetting Completed")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? VettingCompleted { get; set; }
+
         [Display(Name = "Additional Comments")]
+        [DataType(DataType.MultilineText)]
         public string AdtlComments { get; set; }
+
+        [Display(Name = "Total Vetting Cost")]
+        public decimal VettingTotalDecimal { get; set; }
+
+        [Display(Name = "Cost of Most Recent Visit")]
+        public decimal TempVettingDecimal { get; set; }
+        [Display(Name = "Reason for Most Recent Visit")]
+        public string ReasonForVisit { get; set; }
     }
 }

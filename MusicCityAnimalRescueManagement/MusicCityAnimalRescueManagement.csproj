@@ -515,6 +515,18 @@
     <Compile Include="Migrations\201612260347257_Testing.ThisMayNotBeNeeded.Designer.cs">
       <DependentUpon>201612260347257_Testing.ThisMayNotBeNeeded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612271746145_Unsure1.cs" />
+    <Compile Include="Migrations\201612271746145_Unsure1.Designer.cs">
+      <DependentUpon>201612271746145_Unsure1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612271800035_Unsure2.cs" />
+    <Compile Include="Migrations\201612271800035_Unsure2.Designer.cs">
+      <DependentUpon>201612271800035_Unsure2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612272154027_AddingFieldsToDogVetting.cs" />
+    <Compile Include="Migrations\201612272154027_AddingFieldsToDogVetting.Designer.cs">
+      <DependentUpon>201612272154027_AddingFieldsToDogVetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountEntries\AccountType.cs" />
     <Compile Include="Models\AccountEntries\Entry.cs" />
@@ -1389,6 +1401,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612260347257_Testing.ThisMayNotBeNeeded.resx">
       <DependentUpon>201612260347257_Testing.ThisMayNotBeNeeded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612271746145_Unsure1.resx">
+      <DependentUpon>201612271746145_Unsure1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612271800035_Unsure2.resx">
+      <DependentUpon>201612271800035_Unsure2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612272154027_AddingFieldsToDogVetting.resx">
+      <DependentUpon>201612272154027_AddingFieldsToDogVetting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

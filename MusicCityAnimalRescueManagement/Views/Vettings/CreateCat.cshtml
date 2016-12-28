@@ -1,6 +1,6 @@
 ﻿@model MusicCityAnimalRescueManagement.ViewModels.NewCatVettingViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Cat Vetting Record";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -334,7 +334,8 @@
                 @Html.ValidationMessageFor(model => model.CatVetting.VettingCompleted, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
+        <h3>Misc.</h3>
         <div class="form-group">
             @Html.LabelFor(model => model.CatVetting.AdtlComments, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

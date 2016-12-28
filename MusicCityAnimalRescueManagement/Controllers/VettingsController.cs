@@ -104,13 +104,19 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // GET: Vettings/Create
         public ActionResult CreateDog()
         {
+            var dogVetting = new DogVetting()
+            {
+                TempVettingDecimal = 0
+            };
+
             var viewModel = new NewDogVettingViewModel
             {
                 Meds = db.Medications.Where(e => e.isForDogs).ToList(),
                 RabiesLocations = rabiesLocations,
                 BasicVaxLocations = locations,
                 Animals = dogs,
-                MicrochipManufactures = microchipManufactures
+                MicrochipManufactures = microchipManufactures,
+                DogVetting = dogVetting
             };
             return View(viewModel);
         }
@@ -124,6 +130,22 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (dogVetting.TempVettingDecimal != 0)
+                {
+                    var eE = new ExpenseEntry();
+                    dogVetting.Animal = db.Animals.Find(dogVetting.AnimalId);
+                    eE.VetBillsDecimal = dogVetting.TempVettingDecimal;
+                    eE.VetBillsComment = dogVetting.Animal.name + " - " + dogVetting.ReasonForVisit;
+                    eE.AccountTypeID = 0;
+                    eE.EffectiveDate = (dogVetting.VetDiagnosisDate == null)
+                        ? DateTime.Today
+                        : dogVetting.VetDiagnosisDate;
+
+
+                    db.ExpenseEntries.Add(eE);
+                    db.SaveChanges();
+                }
+
                 db.DogVettings.Add(dogVetting);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -193,16 +215,25 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DogVetting dogVetting = db.DogVettings.Find(id);
-            var viewModel = new NewDogVettingViewModel
-            {
-                DogVetting = dogVetting
-            };
-
+            dogVetting.TempVettingDecimal = 0;
             if (dogVetting == null)
             {
                 return HttpNotFound();
             }
-            return View(viewModel);
+            ViewBag.AnimalId = new SelectList(db.Animals.Where(e => e.AnimalTypeID == 0).Where(e => e.Adopted == false), "id", "Name", dogVetting.AnimalId);
+            ViewBag.DewormerLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DewormerLocationId);
+            ViewBag.FleaTickLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.FleaTickLocationId);
+            ViewBag.HeartwormLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.HeartwormLocationId);
+            ViewBag.DA2PPR1LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR1LocationId);
+            ViewBag.DA2PPR2LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR2LocationId);
+            ViewBag.DA2PPR3LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR3LocationId);
+            ViewBag.BordetellaLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.BordetellaLocationId);
+            ViewBag.MicrochipLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.MicrochipLocationId);
+            ViewBag.RabiesLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.RabiesLocationId);
+            ViewBag.SterilizationLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.SterilizationLocationId);
+            ViewBag.MicrochipManufacturerId = new SelectList(db.Medications.Where(e => e.isMicrochipManufacturer).OrderBy(e => e.Name), "id", "name", dogVetting.MicrochipManufacturerId);
+
+            return View(dogVetting);
         }
 
         // POST: Vettings/Edit/5
@@ -210,14 +241,28 @@ namespace MusicCityAnimalRescueManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DogEdit([Bind] DogVetting dogVetting)
+        public ActionResult DogEdit(DogVetting dogVetting)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(dogVetting).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DogIndex");
             }
+            ViewBag.AnimalId = new SelectList(db.Animals.Where(e => e.AnimalTypeID == 0).Where(e => e.Adopted == false), "id", "Name", dogVetting.AnimalId);
+            ViewBag.DewormerLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DewormerLocationId);
+            ViewBag.FleaTickLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.FleaTickLocationId);
+            ViewBag.HeartwormLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.HeartwormLocationId);
+            ViewBag.DA2PPR1LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR1LocationId);
+            ViewBag.DA2PPR2LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR2LocationId);
+            ViewBag.DA2PPR3LocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DA2PPR3LocationId);
+            ViewBag.BordetellaLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.BordetellaLocationId);
+            ViewBag.MicrochipLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.MicrochipLocationId);
+            ViewBag.RabiesLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.RabiesLocationId);
+            ViewBag.SterilizationLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.SterilizationLocationId);
+            ViewBag.MicrochipManufacturerId = new SelectList(db.Medications.Where(e => e.isMicrochipManufacturer).OrderBy(e => e.Name), "id", "name", dogVetting.MicrochipManufacturerId);
+
+
             return View(dogVetting);
         }
 
@@ -263,6 +308,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CatVetting catVetting = db.CatVettings.Find(id);
+            catVetting.TempVettingDecimal = 0;
             if (catVetting == null)
             {
                 return HttpNotFound();
@@ -276,6 +322,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
             ViewBag.MicrochipLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.MicrochipLocationId);
             ViewBag.RabiesLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.RabiesLocationId);
             ViewBag.SterilizationLocationId = new SelectList(db.Locations.Where(e => e.isRabiesVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", catVetting.SterilizationLocationId);
+            ViewBag.MicrochipManufacturerId = new SelectList(db.Medications.Where(e => e.isMicrochipManufacturer).OrderBy(e => e.Name), "id", "name", catVetting.MicrochipManufacturerId);
+
             return View(catVetting);
         }
 
@@ -316,6 +364,8 @@ namespace MusicCityAnimalRescueManagement.Controllers
             ViewBag.MicrochipLocationId = new SelectList(db.Locations, "id", "name", catVetting.MicrochipLocationId);
             ViewBag.RabiesLocationId = new SelectList(db.Locations, "id", "name", catVetting.RabiesLocationId);
             ViewBag.SterilizationLocationId = new SelectList(db.Locations, "id", "name", catVetting.SterilizationLocationId);
+            ViewBag.MicrochipManufacturerId = new SelectList(db.Medications.Where(e => e.isMicrochipManufacturer).OrderBy(e => e.Name), "id", "name", catVetting.MicrochipManufacturerId);
+
             return View(catVetting);
         }
     }
