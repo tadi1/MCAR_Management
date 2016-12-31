@@ -18,116 +18,119 @@
 <h3><center>Cats</center></h3>
 <table class="display">
 <thead>
-<tr>
-    <th>
-        @Html.DisplayNameFor(model => model.Animal.name)
-    </th>
-    <th>
-        Microchip Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.MicrochipNumber)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.MicrochipManufacturerId)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.Sterilized)
-    </th>
-    <th>
-        Sterilization Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.SterilizationDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.Rabies)
-    </th>
-    <th>
-        Rabies Vax Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.RabiesDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP1)
-    </th>
-    <th>
-        FVRCP 1 Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP1Date)
-    </th>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+        </th>
+        <th>
+            Microchip Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MicrochipNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MicrochipManufacturerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sterilized)
+        </th>
+        <th>
+            Sterilization Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SterilizationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rabies)
+        </th>
+        <th>
+            Rabies Vax Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RabiesDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP1)
+        </th>
+        <th>
+            FVRCP 1 Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP1Date)
+        </th>
 
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP2)
-    </th>
-    <th>
-        FVRCP 2 Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP2Date)
-    </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP2)
+        </th>
+        <th>
+            FVRCP 2 Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP2Date)
+        </th>
 
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP3)
-    </th>
-    <th>
-        FVRCP 3 Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP3Date)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FVRCP3Due)
-    </th>
-    <th>
-        Dewormer Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.DewormerDate)
-    </th>
-    <th>
-        Flea/Tick Location
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FleaTickDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FEVLeukTested)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FEVLeukDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FEVLeukId)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.FEVLeukResult)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.AddtlVetting)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.VetDiagnosis)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.VetDiagnosisDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.MedicationsGiven)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.NextVet)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.VettingCompleted)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.AdtlComments)
-    </th>
-    <th></th>
-</tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP3)
+        </th>
+        <th>
+            FVRCP 3 Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP3Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FVRCP3Due)
+        </th>
+        <th>
+            Dewormer Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DewormerDate)
+        </th>
+        <th>
+            Flea/Tick Location
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FleaTickDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEVLeukTested)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEVLeukDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEVLeukId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEVLeukResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddtlVetting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VetDiagnosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VetDiagnosisDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicationsGiven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextVet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VettingCompleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdtlComments)
+        </th>
+        <th></th>
+    </tr>
 </thead>
     <tbody>
         @foreach (var item in Model)
@@ -137,13 +140,16 @@
                     @Html.DisplayFor(modelItem => item.Animal.name)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.MicrochipLocation.name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MicrochipNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MicrochipManufacturerId)
+                    @Html.DisplayFor(modelItem => item.MicrochipManufacturer)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Sterilized)
@@ -239,8 +245,8 @@
                     @Html.DisplayFor(modelItem => item.AdtlComments)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "CatEdit", new { id = item.id }) 
-                    @Html.ActionLink("Details", "CatDetails", new { id = item.id }) 
+                    @Html.ActionLink("Edit", "CatEdit", new { id = item.id })
+                    @Html.ActionLink("Details", "CatDetails", new { id = item.id })
                     @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
                 </td>
             </tr>

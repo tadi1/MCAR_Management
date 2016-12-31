@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
+using MusicCityAnimalRescueManagement.Models.AccountEntries;
 using MusicCityAnimalRescueManagement.Models.Animals;
 using MusicCityAnimalRescueManagement.ViewModels;
 //using Rotativa;
@@ -115,14 +116,15 @@ namespace MusicCityAnimalRescueManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Animal animal)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Animals.Add(animal);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            //string smcarid = DateTime.Today.Year.ToString() + 
-            //animal.SimpleMCARId = 
+            var eE = new ExpenseEntry
+            {
+                PullFeeDecimal = animal.PullFee,
+                AccountTypeID = 0,
+                EffectiveDate = animal.IntakeDate,
+                PullFeeComment = animal.name + " - Pull Fee"
+            };
+            db.ExpenseEntries.Add(eE);
+
             animal.MCARId = AssignMCARId(animal.AnimalTypeID);
 
             db.Animals.Add(animal);

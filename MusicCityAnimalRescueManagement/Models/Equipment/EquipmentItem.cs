@@ -23,6 +23,7 @@ namespace MusicCityAnimalRescueManagement.Models.Equipment
         [Editable(false)]
         public int ItemNumber { get; set; }
 
+        [Display(Name = "Location")]
         public virtual Location Location { get; set; }
         //public int ItemNumber
         //{
@@ -33,5 +34,8 @@ namespace MusicCityAnimalRescueManagement.Models.Equipment
         //        _itemNumber = Convert.ToInt32(itemnumberbuilder);
         //    }
         //}
+        [Display(Name = "Approx. Value")]
+        [DataType(DataType.Currency)]
+        public Decimal ApproxValueDecimal { get; set; }
     }
 }

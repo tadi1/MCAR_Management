@@ -12,20 +12,23 @@
 </p>
 <table class="display">
     <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location.name)
-        </th>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApproxValueDecimal)
+            </th>
 
 
-        <th></th>
-    </tr>
+            <th></th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -40,6 +43,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Location.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApproxValueDecimal)
                 </td>
 
                 <td>

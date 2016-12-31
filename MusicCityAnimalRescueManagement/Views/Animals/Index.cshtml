@@ -70,6 +70,12 @@
                 @Html.DisplayNameFor(model => model.PullFee)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+            </th>
+            <th>
+                Total Cost
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AdoptionFee)
             </th>
             <th>
@@ -139,6 +145,12 @@
                     @Html.DisplayFor(modelItem => item.PullFee)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
+                </td>
+                <td>
+                    @(item.VettingTotalDecimal + item.PullFee)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.AdoptionFee)
                 </td>
                 <td>
@@ -160,11 +172,11 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     <br>
                     @if (item.AnimalType.AnimalTypeName == "Dog")
-                    { 
+                    {
                         @Html.ActionLink("Add Vetting", "CreateDog", "Vettings");
                     }
                     else
-                    { 
+                    {
                         @Html.ActionLink("Add Vetting", "CreateCat", "Vettings");
                     }
                     <br>
@@ -223,6 +235,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PullFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+            </th>
+            <th>
+                Total Cost
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AdoptionFee)
@@ -293,6 +311,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PullFee)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
+                </td>
+                <td>
+                    @(item.VettingTotalDecimal + item.PullFee)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AdoptionFee)
@@ -382,6 +407,12 @@
                 @Html.DisplayNameFor(model => model.PullFee)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+            </th>
+            <th>
+                Total Cost
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AdoptionFee)
             </th>
             <th>
@@ -449,6 +480,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PullFee)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
+                </td>
+                <td>
+                    @(item.VettingTotalDecimal + item.PullFee)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AdoptionFee)
@@ -537,6 +575,12 @@
                 @Html.DisplayNameFor(model => model.PullFee)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+            </th>
+            <th>
+                Total Cost
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AdoptionFee)
             </th>
             <th>
@@ -605,6 +649,13 @@
 
                 <td>
                     @Html.DisplayFor(modelItem => item.PullFee)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
+                </td>
+                <td>
+                    @(item.VettingTotalDecimal + item.PullFee)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AdoptionFee)

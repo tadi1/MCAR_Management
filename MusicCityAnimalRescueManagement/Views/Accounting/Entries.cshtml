@@ -66,6 +66,12 @@
                 Foster Reimbursement Comment
             </th>
             <th>
+                Pull Fee Expense
+            </th>
+            <th>
+                Pull Fee Expense Comment
+            </th>
+            <th>
                 Miscellaneous Expense
             </th>
             <th>
@@ -167,6 +173,19 @@
                         </td>
                         <td>
                             @{
+                                if (entry.PullFeeDecimal.HasValue)
+                                {
+                                    value = "$(" + entry.PullFeeDecimal.ToString().Substring(1) + ")";
+                                }
+                            }
+                            @value
+                            @{ value = String.Empty; }
+                        </td>
+                        <td>
+                            @entry.PullFeeComment
+                        </td>
+                        <td>
+                            @{
                                 if (entry.MiscellaneousExpenseDecimal.HasValue)
                                 {
                                     value = "$(" + entry.MiscellaneousExpenseDecimal.ToString().Substring(1) + ")";
@@ -180,7 +199,8 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "EditExpense", new { id = entry.Id }) |
-                            @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id })
+                            @Html.ActionLink("Details", "DetailsExpense", new { id = entry.Id }) |
+                            @Html.ActionLink("Delete", "DeleteExpense", new { id = entry.Id })
                         </td>
                     </tr>
                                     }
@@ -307,7 +327,8 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
-                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id })
+                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) |
+                            @Html.ActionLink("Delete", "DeleteIncome", new { id = entry.Id })
                         </td>
                     </tr>
                                     }

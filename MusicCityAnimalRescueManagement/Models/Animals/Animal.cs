@@ -133,5 +133,9 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
             }
             set { this._inRescueTime = value; }
         }
+
+        [Display(Name = "Total Vetting Cost")]
+        [DataType(DataType.Currency)]
+        public decimal VettingTotalDecimal { get; set; }
     }
 }

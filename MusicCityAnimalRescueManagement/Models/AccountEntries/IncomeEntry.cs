@@ -38,10 +38,10 @@ namespace MusicCityAnimalRescueManagement.Models.AccountEntries
             }
         }
         [Display(Name = "Number of cat adoptions")]
-        public int NumCatAdoptions { get; set; }
+        public int? NumCatAdoptions { get; set; }
 
         [Display(Name = "Number of dog adoptions")]
-        public int NumDogAdoptions { get; set; }
+        public int? NumDogAdoptions { get; set; }
 
         [Display(Name = "Additional adoptions Comment")]
         public string AdoptionsComment { get; set; }

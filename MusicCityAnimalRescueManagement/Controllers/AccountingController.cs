@@ -207,5 +207,52 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             return db.IncomeEntries.ToList();
         }
+
+        public ActionResult DeleteIncome(short? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
+            if (incomeEntry == null)
+            {
+                return HttpNotFound();
+            }
+            return View(incomeEntry);
+        }
+
+        [HttpPost, ActionName("DeleteIncome")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteIncomeConfirmed(short id)
+        {
+            IncomeEntry incomeEntry = db.IncomeEntries.Find(id);
+            db.IncomeEntries.Remove(incomeEntry);
+            db.SaveChanges();
+            return RedirectToAction("Entries");
+        }
+        public ActionResult DeleteExpense(short? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
+            if (expenseEntry == null)
+            {
+                return HttpNotFound();
+            }
+            return View(expenseEntry);
+        }
+
+        [HttpPost, ActionName("DeleteExpense")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteExpenseConfirmed(short id)
+        {
+            ExpenseEntry expenseEntry = db.ExpenseEntries.Find(id);
+            db.ExpenseEntries.Remove(expenseEntry);
+            db.SaveChanges();
+            return RedirectToAction("Entries");
+        }
     }
 }

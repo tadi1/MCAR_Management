@@ -13,6 +13,7 @@ namespace MusicCityAnimalRescueManagement.Models.AccountEntries
         private decimal? _insurancePremiumsDecimal;
         private decimal? _fosterReimbursementDecimal;
         private decimal? _miscellaneousExpenseDecimal;
+        private decimal? _PullFeeDecimal;
 
 
         /* Housekeeping? */
@@ -124,8 +125,25 @@ namespace MusicCityAnimalRescueManagement.Models.AccountEntries
                     _miscellaneousExpenseDecimal = value;
             }
         }
+
         [Display(Name = "Miscellaneous Comment")]
         public string MiscellaneousExpenseComment { get; set; }
+
+        [Display(Name = "Pull Fee Amount")]
+        [DataType(DataType.Currency)]
+        public decimal? PullFeeDecimal
+        {
+            get { return _PullFeeDecimal; }
+            set
+            {
+                if (value.HasValue && value > 0)
+                    _PullFeeDecimal = -1*value;
+                else
+                    _PullFeeDecimal = value;
+            }
+        }
+        [Display(Name = "Pull Fee Comment")]
+        public string PullFeeComment { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

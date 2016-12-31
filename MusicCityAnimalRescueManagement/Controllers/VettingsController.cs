@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using MusicCityAnimalRescueManagement.Models;
 using MusicCityAnimalRescueManagement.Models.AccountEntries;
@@ -69,6 +70,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             return View(db.CatVettings
                 .Include(e => e.Animal)
+                .Include(e => e.MicrochipManufacturer)
                 .ToList());
         }
 
@@ -141,10 +143,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
                         ? DateTime.Today
                         : dogVetting.VetDiagnosisDate;
 
-
+                    dogVetting.VettingTotalDecimal += dogVetting.TempVettingDecimal;
+                    dogVetting.Animal.VettingTotalDecimal = dogVetting.VettingTotalDecimal;
                     db.ExpenseEntries.Add(eE);
                     db.SaveChanges();
                 }
+
 
                 db.DogVettings.Add(dogVetting);
                 db.SaveChanges();
@@ -190,13 +194,13 @@ namespace MusicCityAnimalRescueManagement.Controllers
                     eE.EffectiveDate = (catVetting.VetDiagnosisDate == null)
                         ? DateTime.Today
                         : catVetting.VetDiagnosisDate;
-             
 
+                    catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
+                    catVetting.Animal.VettingTotalDecimal = catVetting.VettingTotalDecimal;
                     db.ExpenseEntries.Add(eE);
                     db.SaveChanges();
                 }
 
-                catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
                 db.CatVettings.Add(catVetting);
                 db.SaveChanges();
                 
@@ -216,10 +220,14 @@ namespace MusicCityAnimalRescueManagement.Controllers
             }
             DogVetting dogVetting = db.DogVettings.Find(id);
             dogVetting.TempVettingDecimal = 0;
+            dogVetting.ReasonForVisit = String.Empty;
+            
+
             if (dogVetting == null)
             {
                 return HttpNotFound();
             }
+
             ViewBag.AnimalId = new SelectList(db.Animals.Where(e => e.AnimalTypeID == 0).Where(e => e.Adopted == false), "id", "Name", dogVetting.AnimalId);
             ViewBag.DewormerLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.DewormerLocationId);
             ViewBag.FleaTickLocationId = new SelectList(db.Locations.Where(e => e.isBasicVaxLocation).OrderBy(e => e.isShowLast).ThenBy(e => e.name), "id", "name", dogVetting.FleaTickLocationId);
@@ -245,6 +253,23 @@ namespace MusicCityAnimalRescueManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (dogVetting.TempVettingDecimal != 0)
+                {
+                    var eE = new ExpenseEntry();
+                    dogVetting.Animal = db.Animals.Find(dogVetting.AnimalId);
+                    eE.VetBillsDecimal = dogVetting.TempVettingDecimal;
+                    eE.VetBillsComment = dogVetting.Animal.name + " - " + dogVetting.ReasonForVisit;
+                    eE.AccountTypeID = 0;
+                    eE.EffectiveDate = (dogVetting.VetDiagnosisDate == null)
+                        ? DateTime.Today
+                        : dogVetting.VetDiagnosisDate;
+
+                    dogVetting.VettingTotalDecimal += dogVetting.TempVettingDecimal;
+                    dogVetting.Animal.VettingTotalDecimal = dogVetting.VettingTotalDecimal;
+                    db.ExpenseEntries.Add(eE);
+                    db.SaveChanges();
+                }
+
                 db.Entry(dogVetting).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("DogIndex");
@@ -309,6 +334,7 @@ namespace MusicCityAnimalRescueManagement.Controllers
             }
             CatVetting catVetting = db.CatVettings.Find(id);
             catVetting.TempVettingDecimal = 0;
+            catVetting.ReasonForVisit = String.Empty;
             if (catVetting == null)
             {
                 return HttpNotFound();
@@ -344,12 +370,12 @@ namespace MusicCityAnimalRescueManagement.Controllers
                         ? DateTime.Today
                         : catVetting.VetDiagnosisDate;
 
-
+                    catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
+                    catVetting.Animal.VettingTotalDecimal = catVetting.VettingTotalDecimal;
                     db.ExpenseEntries.Add(eE);
                     db.SaveChanges();
                 }
 
-                catVetting.VettingTotalDecimal += catVetting.TempVettingDecimal;
 
                 db.Entry(catVetting).State = EntityState.Modified;
                 db.SaveChanges();

@@ -25,6 +25,9 @@
                 @Html.DisplayNameFor(model => model.Animal.name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.VettingTotalDecimal)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.MicrochipNumber)
             </th>
             <th>
@@ -129,6 +132,9 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Animal.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VettingTotalDecimal)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MicrochipNumber)

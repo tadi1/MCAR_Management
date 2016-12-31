@@ -151,6 +151,7 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
         public string AdtlComments { get; set; }
 
         [Display(Name = "Total Vetting Cost")]
+        [DataType(DataType.Currency)]
         public decimal VettingTotalDecimal{ get; set; }
 
         [Display(Name = "Cost of Most Recent Visit")]
