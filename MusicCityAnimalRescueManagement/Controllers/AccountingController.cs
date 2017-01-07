@@ -199,13 +199,14 @@ namespace MusicCityAnimalRescueManagement.Controllers
 
         public List<ExpenseEntry> GetExpenseEntries()
         {
-            var expenseEntry = db.ExpenseEntries.Include(e => e.StrAccountType).ToList();
-            return expenseEntry;
+            var expenseEntries = db.ExpenseEntries.Include(e => e.StrAccountType).ToList();
+            return expenseEntries;
         }
 
         public List<IncomeEntry> GetIncomeEntries()
         {
-            return db.IncomeEntries.ToList();
+            var incomeEntries = db.IncomeEntries.Include(e => e.StrAccountType).ToList();
+            return incomeEntries;
         }
 
         public ActionResult DeleteIncome(short? id)
