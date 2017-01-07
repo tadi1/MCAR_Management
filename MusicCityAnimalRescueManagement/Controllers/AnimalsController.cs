@@ -116,15 +116,17 @@ namespace MusicCityAnimalRescueManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Animal animal)
         {
-            var eE = new ExpenseEntry
-            {
-                PullFeeDecimal = animal.PullFee,
-                AccountTypeID = 0,
-                EffectiveDate = animal.IntakeDate,
-                PullFeeComment = animal.name + " - Pull Fee"
-            };
-            db.ExpenseEntries.Add(eE);
-
+            if(animal.PullFee > 0.00m)
+            { 
+                var eE = new ExpenseEntry
+                {
+                    PullFeeDecimal = animal.PullFee,
+                    AccountTypeID = 0,
+                    EffectiveDate = animal.IntakeDate,
+                    PullFeeComment = animal.name + " - Pull Fee"
+                };
+                db.ExpenseEntries.Add(eE);
+            }
             animal.MCARId = AssignMCARId(animal.AnimalTypeID);
 
             db.Animals.Add(animal);
@@ -145,6 +147,11 @@ namespace MusicCityAnimalRescueManagement.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AdoptionLocationId = new SelectList(db.Locations.OrderBy(m => m.name), "id", "name", animal.AdoptionLocationId);
+            ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName", animal.AnimalTypeID);
+            ViewBag.CurrentFosterID = new SelectList(db.Locations, "id", "name", animal.CurrentFosterID);
+            ViewBag.PullLocationID = new SelectList(db.Locations, "id", "name", animal.PullLocationID);
+            ViewBag.SexId = new SelectList(db.Sexes, "id", "Name", animal.SexId);
             return View(animal);
         }
 
@@ -162,8 +169,11 @@ namespace MusicCityAnimalRescueManagement.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SexId = new SelectList(db.Animals, "id", "Name", animal.SexId);
-
+            ViewBag.AdoptionLocationId = new SelectList(db.Locations, "id", "name", animal.AdoptionLocationId);
+            ViewBag.AnimalTypeID = new SelectList(db.AnimalTypes, "id", "AnimalTypeName", animal.AnimalTypeID);
+            ViewBag.CurrentFosterID = new SelectList(db.Locations, "id", "name", animal.CurrentFosterID);
+            ViewBag.PullLocationID = new SelectList(db.Locations, "id", "name", animal.PullLocationID);
+            ViewBag.SexId = new SelectList(db.Sexes, "id", "Name", animal.SexId);
             return View(animal);
         }
 
