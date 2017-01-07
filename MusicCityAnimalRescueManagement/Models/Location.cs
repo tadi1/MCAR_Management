@@ -15,8 +15,18 @@ namespace MusicCityAnimalRescueManagement.Models
         [Display(Name = "Foster/Location")]
         public string name { get; set; }
 
+        [Display(Name = "Contact (Not for fosters)")]
+        public string Contacts { get; set; }
+
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
         [Display(Name = "Address")]
         public string Address { get; set; }
+
+        [Display(Name = "City, State Zip")]
+        public string City { get; set; }
 
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
@@ -49,6 +59,7 @@ namespace MusicCityAnimalRescueManagement.Models
 
         [Display(Name = "Provides rabies vaccinations?")]
         public bool isRabiesVaxLocation { get; set; }
+
 
         [Display(Name = "DO NOT DISPLAY ME")]
         public bool isShowLast { get; set; }
