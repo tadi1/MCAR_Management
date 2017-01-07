@@ -115,11 +115,13 @@ namespace MusicCityAnimalRescueManagement.Models.Animals
 
 
         [Display(Name = "Adoption Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? AdoptionDate { get; set; }
 
-        [Display(Name = "Adoption Venue")]
+        
         public Location AdoptionLocation { get; set; }
-
+        [Display(Name = "Adoption Location")]
         public int? AdoptionLocationId { get; set; }
 
         [Display(Name = "Time in Rescue (Months)")]
