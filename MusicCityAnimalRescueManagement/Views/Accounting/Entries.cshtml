@@ -222,127 +222,354 @@
     <p>
         @Html.ActionLink("Create New Income Entry", "CreateIncome")
     </p>
-    <table class="display" id="IncomeEntries">
-        <thead>
-            <tr>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Account
-                </th>
-                <th>
-                    Adoptions
-                </th>
-                <th>
-                    Number of Cat Adoptions
-                </th>
-                <th>
-                    Number of Dog Adoptions
-                </th>
-                <th>
-                    Adoptions Comment
-                </th>
-                <th>
-                    Donations
-                </th>
-                <th>
-                    Donations Comment
-                </th>
-                <th>
-                    Miscellaneous Income
-                </th>
-                <th>
-                    Miscellaneous Income Comment
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tfoot>
+<table class="display" id="IncomeEntries">
+    <thead>
+    <tr>
+        <th>
+            Effective Date
+        </th>
+        <th>
+            Account
+        </th>
+        <th>
+            Adoptions
+        </th>
+        <th>
+            Number of Cat Adoptions
+        </th>
+        <th>
+            Number of Dog Adoptions
+        </th>
+        <th>
+            Adoptions Comment
+        </th>
+        <th>
+            Donations
+        </th>
+        <th>
+            Donations Comment
+        </th>
+        <th>
+            Miscellaneous Income
+        </th>
+        <th>
+            Miscellaneous Income Comment
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+    </thead>
+    <tfoot>
 
-        </tfoot>
-        <tbody>
-            @foreach (IncomeEntry entry in Model.IncomeEntries)
-            {
-                if (entry != null)
-                {
-                    <tr>
-                        @*                @Html.HiddenFor(modelItem => item.Id)*@
-                        <td>
-                            @{
-                                String date = entry.EffectiveDate.ToString();
-                                date = date.Substring(0, date.IndexOf(' '));
-                            }
-                            @date
-                        </td>
-                        <td>
-                            @entry.StrAccountType.AccountTypeName
-                        </td>
-                        <td>
-                            @{
-                                if (entry.AdoptionsDecimal.HasValue)
-                                {
-                                    value = "$" + entry.AdoptionsDecimal.ToString();
-                                }
-                            }
-                            @value
-                            @{ value = String.Empty; }
-                        </td>
-                        <td>
-                            @entry.NumCatAdoptions
-                        </td>
-                        <td>
-                            @entry.NumDogAdoptions
-                        </td>
-                        <td>
-                            @entry.AdoptionsComment
-                        </td>
-                        <td>
-                            @{
-                                if (entry.DonationsDecimal.HasValue)
-                                {
-                                    value = "$" + entry.DonationsDecimal.ToString();
-                                }
-                            }
-                            @value
-                            @{ value = String.Empty; }
-                        </td>
-                        <td>
-                            @entry.DonationsComment
-                        </td>
-                        <td>
-                            @{
-                                if (entry.MiscellaneousIncomeDecimal.HasValue)
-                                {
-                                    value = "$" + entry.MiscellaneousIncomeDecimal.ToString();
-                                }
-                            }
-                            @value
-                            @{ value = String.Empty; }
-                        </td>
-                        <td>
-                            @entry.MiscellaneousIncomeComment
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
-                            @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) |
-                            @Html.ActionLink("Delete", "DeleteIncome", new { id = entry.Id })
-                        </td>
-                    </tr>
-                                    }
-                                }
-        </tbody>
-        @*<tfoot>
+    </tfoot>
+    <tbody>
+    @foreach (IncomeEntry entry in Model.IncomeEntries)
+    {
+        if (entry != null)
+        {
+            <tr>
+                @*                @Html.HiddenFor(modelItem => item.Id)*@
+                <td>
+                    @{
+                        String date = entry.EffectiveDate.ToString();
+                        date = date.Substring(0, date.IndexOf(' '));
+                    }
+                    @date
+                </td>
+                <td>
+                    @entry.StrAccountType.AccountTypeName
+                </td>
+                <td>
+                    @{
+                        if (entry.AdoptionsDecimal.HasValue)
+                        {
+                            value = "$" + entry.AdoptionsDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
+                </td>
+                <td>
+                    @entry.NumCatAdoptions
+                </td>
+                <td>
+                    @entry.NumDogAdoptions
+                </td>
+                <td>
+                    @entry.AdoptionsComment
+                </td>
+                <td>
+                    @{
+                        if (entry.DonationsDecimal.HasValue)
+                        {
+                            value = "$" + entry.DonationsDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
+                </td>
+                <td>
+                    @entry.DonationsComment
+                </td>
+                <td>
+                    @{
+                        if (entry.MiscellaneousIncomeDecimal.HasValue)
+                        {
+                            value = "$" + entry.MiscellaneousIncomeDecimal.ToString();
+                        }
+                    }
+                    @value
+                    @{ value = String.Empty; }
+                </td>
+                <td>
+                    @entry.MiscellaneousIncomeComment
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditIncome", new { id = entry.Id }) |
+                    @Html.ActionLink("Details", "DetailsIncome", new { id = entry.Id }) |
+                    @Html.ActionLink("Delete", "DeleteIncome", new { id = entry.Id })
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+    @*<tfoot>
                 <tr>
                     <th colspan="15" style="text-align:right">Total:</th>
                     <th></th>
                 </tr>
             </tfoot>*@
-    </table>
+</table>
+
+@*All of this is hopefully temporary until I come up with a better solution....*@
+@{
+    var payPalExpenses = 0.00m;
+    var payPalIncomes = 0.00m;
+
+    var generalExpenses = 0.00m;
+    var generalIncomes = 0.00m;
+
+    var savingsExpenses = 0.00m;
+    var savingsIncomes = 0.00m;
+
+    var otherExpenses = 0.00m;
+    var otherIncomes = 0.00m;
+}
 
 
+
+@foreach (IncomeEntry entry in Model.IncomeEntries)
+{
+    switch (entry.StrAccountType.AccountTypeName)
+    {
+        case "PayPal":
+            if (entry.AdoptionsDecimal.HasValue)
+            {
+                payPalIncomes += entry.AdoptionsDecimal.Value;
+            }
+            if (entry.DonationsDecimal.HasValue)
+            {
+                payPalIncomes += entry.DonationsDecimal.Value;
+            }
+            if (entry.MiscellaneousIncomeDecimal.HasValue)
+            {
+                payPalIncomes += entry.MiscellaneousIncomeDecimal.Value;
+            }
+            break;
+        case "General":
+            if (entry.AdoptionsDecimal.HasValue)
+            {
+                generalIncomes += entry.AdoptionsDecimal.Value;
+            }
+            if (entry.DonationsDecimal.HasValue)
+            {
+                generalIncomes += entry.DonationsDecimal.Value;
+            }
+            if (entry.MiscellaneousIncomeDecimal.HasValue)
+            {
+                generalIncomes += entry.MiscellaneousIncomeDecimal.Value;
+            }
+            break;
+        case "Other":
+            if (entry.AdoptionsDecimal.HasValue)
+            {
+                otherIncomes += entry.AdoptionsDecimal.Value;
+            }
+            if (entry.DonationsDecimal.HasValue)
+            {
+                otherIncomes += entry.DonationsDecimal.Value;
+            }
+            if (entry.MiscellaneousIncomeDecimal.HasValue)
+            {
+                otherIncomes += entry.MiscellaneousIncomeDecimal.Value;
+            }
+            break;
+        case "Savings":
+            if (entry.AdoptionsDecimal.HasValue)
+            {
+                savingsIncomes += entry.AdoptionsDecimal.Value;
+            }
+            if (entry.DonationsDecimal.HasValue)
+            {
+                savingsIncomes += entry.DonationsDecimal.Value;
+            }
+            if (entry.MiscellaneousIncomeDecimal.HasValue)
+            {
+                savingsIncomes += entry.MiscellaneousIncomeDecimal.Value;
+            }
+            break;
+    }
+}
+
+
+
+
+
+
+@foreach (ExpenseEntry entry in Model.ExpenseEntries)
+{
+    switch (entry.StrAccountType.AccountTypeName)
+    {
+        case "PayPal":
+            if (entry.SuppliesDecimal.HasValue)
+            {
+                payPalExpenses += entry.SuppliesDecimal.Value;
+            }
+            if (entry.VetBillsDecimal.HasValue)
+            {
+                payPalExpenses += entry.VetBillsDecimal.Value;
+            }
+            if (entry.MedicineDecimal.HasValue)
+            {
+                payPalExpenses += entry.MedicineDecimal.Value;
+            }
+            if (entry.InsurancePremiumsDecimal.HasValue)
+            {
+                payPalExpenses += entry.InsurancePremiumsDecimal.Value;
+            }
+            if (entry.FosterReimbursementDecimal.HasValue)
+            {
+                payPalExpenses += entry.FosterReimbursementDecimal.Value;
+            }
+            if (entry.MiscellaneousExpenseDecimal.HasValue)
+            {
+                payPalExpenses += entry.MiscellaneousExpenseDecimal.Value;
+            }
+            if (entry.PullFeeDecimal.HasValue)
+            {
+                payPalExpenses += entry.PullFeeDecimal.Value;
+            }
+            break;
+        case "General":
+            if (entry.SuppliesDecimal.HasValue)
+            {
+                generalExpenses += entry.SuppliesDecimal.Value;
+            }
+            if (entry.VetBillsDecimal.HasValue)
+            {
+                generalExpenses += entry.VetBillsDecimal.Value;
+            }
+            if (entry.MedicineDecimal.HasValue)
+            {
+                generalExpenses += entry.MedicineDecimal.Value;
+            }
+            if (entry.InsurancePremiumsDecimal.HasValue)
+            {
+                generalExpenses += entry.InsurancePremiumsDecimal.Value;
+            }
+            if (entry.FosterReimbursementDecimal.HasValue)
+            {
+                generalExpenses += entry.FosterReimbursementDecimal.Value;
+            }
+            if (entry.MiscellaneousExpenseDecimal.HasValue)
+            {
+                generalExpenses += entry.MiscellaneousExpenseDecimal.Value;
+            }
+            if (entry.PullFeeDecimal.HasValue)
+            {
+                generalExpenses += entry.PullFeeDecimal.Value;
+            }
+            break;
+        case "Other":
+            if (entry.SuppliesDecimal.HasValue)
+            {
+                otherExpenses += entry.SuppliesDecimal.Value;
+            }
+            if (entry.VetBillsDecimal.HasValue)
+            {
+                otherExpenses += entry.VetBillsDecimal.Value;
+            }
+            if (entry.MedicineDecimal.HasValue)
+            {
+                otherExpenses += entry.MedicineDecimal.Value;
+            }
+            if (entry.InsurancePremiumsDecimal.HasValue)
+            {
+                otherExpenses += entry.InsurancePremiumsDecimal.Value;
+            }
+            if (entry.FosterReimbursementDecimal.HasValue)
+            {
+                otherExpenses += entry.FosterReimbursementDecimal.Value;
+            }
+            if (entry.MiscellaneousExpenseDecimal.HasValue)
+            {
+                otherExpenses += entry.MiscellaneousExpenseDecimal.Value;
+            }
+            if (entry.PullFeeDecimal.HasValue)
+            {
+                otherExpenses += entry.PullFeeDecimal.Value;
+            }
+            break;
+        case "Savings":
+            if (entry.SuppliesDecimal.HasValue)
+            {
+                savingsExpenses += entry.SuppliesDecimal.Value;
+            }
+            if (entry.VetBillsDecimal.HasValue)
+            {
+                savingsExpenses += entry.VetBillsDecimal.Value;
+            }
+            if (entry.MedicineDecimal.HasValue)
+            {
+                savingsExpenses += entry.MedicineDecimal.Value;
+            }
+            if (entry.InsurancePremiumsDecimal.HasValue)
+            {
+                savingsExpenses += entry.InsurancePremiumsDecimal.Value;
+            }
+            if (entry.FosterReimbursementDecimal.HasValue)
+            {
+                savingsExpenses += entry.FosterReimbursementDecimal.Value;
+            }
+            if (entry.MiscellaneousExpenseDecimal.HasValue)
+            {
+                savingsExpenses += entry.MiscellaneousExpenseDecimal.Value;
+            }
+            if (entry.PullFeeDecimal.HasValue)
+            {
+                savingsExpenses += entry.PullFeeDecimal.Value;
+            }
+            break;
+    }
+}
+
+    <h2>Overview</h2>
+    General Incomes: @string.Format("{0:C}", generalIncomes) <br/>
+    General Expenses: @string.Format("{0:C}", generalExpenses) <br/>
+    <b>General Balance: @string.Format("{0:C}", generalIncomes + generalExpenses) <br /><br /></b>
+
+    PayPal Incomes: @string.Format("{0:C}", payPalIncomes) <br />
+    PayPal Expenses: @string.Format("{0:C}", payPalExpenses) <br />
+    <b>PayPal Balance: @string.Format("{0:C}", payPalIncomes + payPalExpenses) <br /><br /></b>
+
+    Savings Incomes: @string.Format("{0:C}", savingsIncomes) <br />
+    Savings Expenses: @string.Format("{0:C}", savingsExpenses) <br />
+    <b>Savings Balance: @string.Format("{0:C}", savingsIncomes + savingsExpenses) <br /><br /></b>
+
+    Other Incomes: @string.Format("{0:C}", otherIncomes) <br />
+    Other Expenses: @string.Format("{0:C}", otherExpenses) <br />
+    <b>Other Balance: @string.Format("{0:C}", otherIncomes + otherExpenses) <br /><br /></b>
 
 
 
